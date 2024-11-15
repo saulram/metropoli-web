@@ -11,6 +11,12 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        // text color black #313131
+        text: "#313131",
+        metropoliBg:"#F1F1F1"
+      },
+      fontFamily: {
+        sans: ["Lato", "sans-serif"],
       },
     },
   },
