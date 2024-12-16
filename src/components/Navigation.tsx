@@ -1,13 +1,14 @@
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
 import { FaChevronDown } from "react-icons/fa";
-import {useState} from "react";
+import { useLanguage } from '@/i18n/LanguageContext';
+import { useTranslations } from '@/i18n/useTranslations';
 
 export default function Navigation() {
-    const [language, setLanguage] = useState('es');
+    const { language, setLanguage } = useLanguage();
+    const messages = useTranslations();
 
     return (
         <nav className="flex items-center justify-between p-4 bg-metropoliBg text-text font-sans" style={{
-
             fontSize: '15px',
             fontWeight: 700,
             lineHeight: '18px',
@@ -16,17 +17,17 @@ export default function Navigation() {
             textDecorationSkipInk: 'none'
         }}>
             {/* Logo */}
-            <div className="w-1/4 text-lg font-bold"><img src={"/logotipo_negro.png"} alt={"logotipo "}/></div>
+            <div className="w-1/4 text-lg font-bold"><img src={"/logotipo_negro.png"} alt={"logotipo "} /></div>
 
             {/* Navigation Links */}
             <div className="flex w-1/3 items-center justify-between gap-8">
                 {/* Anchor Link */}
-                <a href="#section" className="text-sm font-semibold text-text/90 hover:text-text">Competencias y Valores</a>
+                <a href="#section" className="text-sm font-semibold text-text/90 hover:text-text">{messages.competenciesAndValues}</a>
 
                 {/* Dropdown */}
                 <Popover>
                     <PopoverButton className="text-sm font-semibold text-text/90 focus:outline-none hover:text-text flex items-center">
-                        <p className="flex items-center space-x-1">Caminos<FaChevronDown/></p>
+                        <p className="flex items-center space-x-1">{messages.roads}<FaChevronDown /></p>
                     </PopoverButton>
                     <PopoverPanel className="absolute z-10 mt-2 w-48 bg-white rounded-md shadow-lg">
                         <div className="p-3">
@@ -64,20 +65,20 @@ export default function Navigation() {
                         textAlign: 'center',
                         borderRadius: '10px'
                     }}>
-                    Enviar Solicitud
+                    {messages.sendRequest}
                 </button>
 
                 {/* Language Selector */}
-                <div className="text-sm font-semibold text-gray-900">
+                <div className="text-sm font-semibold text-gray-900 flex items-center justify-center">
                     <span
-                        className={`cursor-pointer ${language === 'es' ? 'text-blue-500' : ''}`}
+                        className={`cursor-pointer ${language === 'es' ? 'text-blue-500' : ''} mx-1`}
                         onClick={() => setLanguage('es')}
                     >
                         ES
                     </span>
                     {' | '}
                     <span
-                        className={`cursor-pointer ${language === 'en' ? 'text-blue-500' : ''}`}
+                        className={`cursor-pointer ${language === 'en' ? 'text-blue-500' : ''} mx-1`}
                         onClick={() => setLanguage('en')}
                     >
                         EN

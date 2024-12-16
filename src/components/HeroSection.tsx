@@ -1,11 +1,14 @@
+import { useTranslations } from '@/i18n/useTranslations';
 import React from 'react';
 
 export default function HeroSection() {
+    const messages = useTranslations();
+
     return (
         <div className="relative bg-cover bg-center bg-metropoliBg "
              style={{backgroundImage: 'url(/waves.png)', height: '90dvh'}}>
             <div className="absolute top-1/2 left-52 transform -translate-y-1/2 p-8">
-                <p className="text-left text-2xl font-bold text-white" style={{
+                <p className="text-left text-2xl font-bold text-white w-3/5" style={{
                     fontSize: '48px',
                     fontWeight: 500,
                     lineHeight: '48px',
@@ -14,7 +17,7 @@ export default function HeroSection() {
                     textUnderlinePosition: 'from-font',
                     textDecorationSkipInk: 'none'
                 }}>
-                    Los líderes estratégicos y visionarios no <br/>compran <strong>seguros</strong>, invierten en
+                    {messages.leadersInStrategy} <strong>{messages.insurance}</strong> {messages.invest}
                 </p>
                 <p className="text-left text-4xl font-bold bg-clip-text text-transparent" style={{
                     fontSize: '48px',
@@ -28,7 +31,7 @@ export default function HeroSection() {
                     WebkitBackgroundClip: 'text',
                     backgroundClip: 'text'
                 }}>
-                    Momentos de Tranquilidad
+                    {messages.momentsOfTranquility}
                 </p>
                 <div className="h-20"></div>
                 <button
@@ -42,7 +45,7 @@ export default function HeroSection() {
                         textAlign: 'center',
                         borderRadius: '10px'
                     }}>
-                    Asegura tu tranquilidad
+                    {messages.EnsureYourPeaceOfMind}
                 </button>
             </div>
         </div>

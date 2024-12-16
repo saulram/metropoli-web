@@ -8,12 +8,10 @@ import SecurityPaceOfmind from "@/components/SecurityPaceOfmind";
 export default function Example() {
 
   return (
-      <div className="bg-white">
-        <Navigation/>
-          <HeroSection/>
-          <SecurityPaceOfmind/>
-          <div className={"h-dvh"}/>
-
-      </div>
+    <div className="bg-white">
+      <Navigation />
+      <HeroSection />
+      <SecurityPaceOfmind />
+    </div>
   )
 }
