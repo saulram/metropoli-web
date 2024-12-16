@@ -12,4 +12,11 @@ export interface Translations {
   EnsureYourPeaceOfMind: string;
   noPolicy: string;
   securityAndPeaceOfMind: string;
+  futureWithoutFear: string;
+  noMoreWorries: string;
+  enjoyPeaceOfMind: string;
+  wellInsured: string;
+  focusYourEnergy: string;
+  growYourBusiness: string;
+  threeGenerations: string;
 }

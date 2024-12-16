@@ -1,18 +1,19 @@
 "use client"
 import Image from 'next/image';
 import { useTranslations } from '@/i18n/useTranslations';
+import DescriptiveText from './DescriptiveText';
 
 const SecurityPeaceOfMind = () => {
     const messages = useTranslations();
 
     return (
-        <div className="bg-metropoliBg rounded-lg" style={{
+        <div className="bg-metropoliBg" style={{
             backgroundImage: 'url(/waves_bottom.png)',
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'bottom'
+            backgroundPosition: 'bottom',
         }}>
-            <div className='sm:px-0 md:px-28 py-28'>
+            <div className='px-10 md:px-28 py-28'>
                 <div className="w-3/5">
                     <h1 className="font-normal text-40 text-black">
                         {messages.noPolicy}
@@ -22,7 +23,8 @@ const SecurityPeaceOfMind = () => {
                     </h2>
                 </div>
             </div>
-            <div className="flex">
+
+            <div className="flex gap-24">
                 <div>
                     <Image
                         src="/persona-paz.png"
@@ -31,19 +33,23 @@ const SecurityPeaceOfMind = () => {
                         height={367}
                     />
                 </div>
-                <div>
-
+                <div className="w-3/5 ps-20">
+                    <div className='w-72'>
+                    <DescriptiveText title={messages.futureWithoutFear} text={messages.noMoreWorries}/>
+                    </div>
+                    <div className='mt-10 w-72'>
+                        <DescriptiveText title={messages.enjoyPeaceOfMind} text={messages.wellInsured}/>
+                    </div>
+                    <div className='mt-10 w-72'>
+                        <DescriptiveText title={messages.focusYourEnergy} text={messages.growYourBusiness}/>
+                    </div>
                 </div>
             </div>
 
-            <div className="text-center max-w-2xl mx-auto pt-8 text-gray-600 text-base md:text-lg" style={{
-                fontSize: '26px',
-                color: '#707070',
-            }}>
-                <p>
-                    Desde hace tres generaciones, te acompañamos y diseñamos contigo la protección que realmente
-                    necesitas. Así, recuperas tu tiempo y sigues creando más valor para tus clientes.
-                </p>
+            <div className='flex justify-center items-center text-center py-40'>
+                <div className='w-3/5 h-10'>
+                    <DescriptiveText title={messages.threeGenerations} text=''/>
+                </div>
             </div>
         </div>
     );

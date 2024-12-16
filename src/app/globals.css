@@ -31,3 +31,12 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.highlight {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.highlight.in-view {
+  background-color: yellow;
+  color: black;
+}
