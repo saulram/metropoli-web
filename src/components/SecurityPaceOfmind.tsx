@@ -1,60 +1,57 @@
+"use client"
 import Image from 'next/image';
-import DescriptiveText from "@/components/DescriptiveText";
+import { useTranslations } from '@/i18n/useTranslations';
+import DescriptiveText from './DescriptiveText';
 
 const SecurityPeaceOfMind = () => {
+    const messages = useTranslations();
+
     return (
-        <div className="bg-metropoliBg p-8 md:p-24 rounded-lg flex flex-col items-start space-y-8" style={{
+        <div className="bg-metropoliBg" style={{
             backgroundImage: 'url(/waves_bottom.png)',
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'bottom'
+            backgroundPosition: 'bottom',
         }}>
-            {/* Título principal */}
-            <div className="text-left w-full md:w-2/3">
-                <h1 className="font-medium text-black text-4xl md:text-5xl leading-tight">
-                    No estás comprando una póliza.
-                </h1>
-                <h2 className="font-medium text-transparent bg-clip-text" style={{
-                    fontSize: '40',
-                    lineHeight: '48px',
-                    background: 'linear-gradient(90deg, #091934 0%, #1C6EF6 100%)',
-                    WebkitBackgroundClip: 'text',
-                }}>
-                    Estás invirtiendo en tu seguridad y <br/>paz mental.
-                </h2>
-            </div>
-            {/* Contenido */}
-            <div className="flex flex-col lg:flex-row items-center space-y-8 lg:space-y-0 lg:space-x-12 w-full">
-                {/* Imagen */}
-                <div className="w-full lg:w-1/2 h-dvh relative">
-                    <Image
-                        src="/persona-paz.png"
-                        alt="Persona caminando en la naturaleza"
-                        layout="fill"
-                        objectFit="contain"
-                    />
-                </div>
-
-                {/* Texto descriptivo */}
-                <div className="space-y-6 md:space-y-8 lg:space-y-10 w-full lg:w-1/2">
-                    <DescriptiveText title="Un futuro sin tener miedo a lo desconocido."
-                                     text="No más preocupaciones por sentirte sobrevenido o ser un número de cliente más ignorado hasta su próxima renovación."/>
-                    <DescriptiveText title="Gozar de la tranquilidad y paz mental"
-                                     text="de saber que todo lo que te importa está bien asegurado."/>
-                    <DescriptiveText title="Enfocar tu energía en lo que importa:"
-                                     text="crecer tu empresa, disfrutar de tu familia y vivir a tu manera."/>
+            <div className='px-10 md:px-28 py-28'>
+                <div className="w-full md:w-2/5">
+                    <h1 className="font-normal text-40 text-black">
+                        {messages.noPolicy}
+                    </h1>
+                    <h2 className="font-normal text-40 text-gradient">
+                        {messages.securityAndPeaceOfMind}
+                    </h2>
                 </div>
             </div>
 
-            {/* Texto final */}
-            <div className="text-center max-w-2xl mx-auto pt-8 text-gray-600 text-base md:text-lg" style={{
-                fontSize: '26px',
-                color: '#707070',
-            }}>
-                <p>
-                    Desde hace tres generaciones, te acompañamos y diseñamos contigo la protección que realmente
-                    necesitas. Así, recuperas tu tiempo y sigues creando más valor para tus clientes.
-                </p>
+            <div className="flex gap-24">
+                <div className='w-1/2'>
+                    <div className="relative" style={{ height: '80vh' }}>
+                        <Image
+                            src="/persona-paz.png"
+                            alt="Persona caminando en la naturaleza"
+                            layout="fill"
+                            objectFit="contain"
+                        />
+                    </div>
+                </div>
+                <div className="w-1/2 ps-20">
+                    <div className='w-72'>
+                        <DescriptiveText title={messages.futureWithoutFear} text={messages.noMoreWorries} />
+                    </div>
+                    <div className='mt-10 w-72'>
+                        <DescriptiveText title={messages.enjoyPeaceOfMind} text={messages.wellInsured} />
+                    </div>
+                    <div className='mt-10 w-72'>
+                        <DescriptiveText title={messages.focusYourEnergy} text={messages.growYourBusiness} />
+                    </div>
+                </div>
+            </div>
+
+            <div className='flex justify-center items-center text-center py-40'>
+                <div className='w-2/5 '>
+                    <DescriptiveText title={messages.threeGenerations} titleSize='36' text='' />
+                </div>
             </div>
         </div>
     );
