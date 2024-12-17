@@ -8,7 +8,7 @@ export default function Navigation() {
     const messages = useTranslations();
 
     return (
-        <nav className="flex items-center justify-between p-4 bg-metropoliBg text-text font-sans" style={{
+        <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 metropoliBg-80 text-text font-sans" style={{
             fontSize: '15px',
             fontWeight: 700,
             lineHeight: '18px',
@@ -17,10 +17,10 @@ export default function Navigation() {
             textDecorationSkipInk: 'none'
         }}>
             {/* Logo */}
-            <div className="w-1/4 text-lg font-bold"><img src={"/logotipo_negro.png"} alt={"logotipo "} /></div>
+            <div className="w-1/4 text-lg font-bold"><img src={"/logotipo_negro.png"} alt={"logotipo"}/></div>
 
             {/* Navigation Links */}
-            <div className="flex w-1/3 items-center justify-between gap-8">
+            <div className="flex w-3/5 items-center justify-end gap-8">
                 {/* Anchor Link */}
                 <a href="#section" className="text-sm font-semibold text-text/90 hover:text-text">{messages.competenciesAndValues}</a>
 

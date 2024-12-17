@@ -14,7 +14,7 @@ const SecurityPeaceOfMind = () => {
             backgroundPosition: 'bottom',
         }}>
             <div className='px-10 md:px-28 py-28'>
-                <div className="w-3/5">
+                <div className="w-full md:w-2/5">
                     <h1 className="font-normal text-40 text-black">
                         {messages.noPolicy}
                     </h1>
@@ -25,30 +25,32 @@ const SecurityPeaceOfMind = () => {
             </div>
 
             <div className="flex gap-24">
-                <div>
-                    <Image
-                        src="/persona-paz.png"
-                        alt="Persona caminando en la naturaleza"
-                        width={473}
-                        height={367}
-                    />
+                <div className='w-1/2'>
+                    <div className="relative" style={{ height: '80vh' }}>
+                        <Image
+                            src="/persona-paz.png"
+                            alt="Persona caminando en la naturaleza"
+                            layout="fill"
+                            objectFit="contain"
+                        />
+                    </div>
                 </div>
-                <div className="w-3/5 ps-20">
+                <div className="w-1/2 ps-20">
                     <div className='w-72'>
-                    <DescriptiveText title={messages.futureWithoutFear} text={messages.noMoreWorries}/>
+                        <DescriptiveText title={messages.futureWithoutFear} text={messages.noMoreWorries} />
                     </div>
                     <div className='mt-10 w-72'>
-                        <DescriptiveText title={messages.enjoyPeaceOfMind} text={messages.wellInsured}/>
+                        <DescriptiveText title={messages.enjoyPeaceOfMind} text={messages.wellInsured} />
                     </div>
                     <div className='mt-10 w-72'>
-                        <DescriptiveText title={messages.focusYourEnergy} text={messages.growYourBusiness}/>
+                        <DescriptiveText title={messages.focusYourEnergy} text={messages.growYourBusiness} />
                     </div>
                 </div>
             </div>
 
             <div className='flex justify-center items-center text-center py-40'>
-                <div className='w-3/5 h-10'>
-                    <DescriptiveText title={messages.threeGenerations} text=''/>
+                <div className='w-2/5 '>
+                    <DescriptiveText title={messages.threeGenerations} titleSize='36' text='' />
                 </div>
             </div>
         </div>

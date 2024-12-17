@@ -15,6 +15,10 @@
   }
 }
 
+.metropoliBg-80{
+  background-color:rgba(241, 241, 241, 0.90);
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
@@ -39,4 +43,13 @@ body {
 .highlight.in-view {
   background-color: yellow;
   color: black;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.rounded-gradient {
+  border: 10px solid;
+  background: radial-gradient(40% 40% at 50% 50%, #082555 41%, #1C6EF6 80%);
 }

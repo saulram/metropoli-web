@@ -19,4 +19,26 @@ export interface Translations {
   focusYourEnergy: string;
   growYourBusiness: string;
   threeGenerations: string;
+  whichPath: string;
+  thinkingOfOthers: string;
+  investingWisely: string;
+  business: string;
+  personalOrFamily: string;
+  yourPathToPeace: string;
+  focusOnValue: string;
+  weEliminateRisks: string;
+  discoverHow: string;
+  simpleProcess: string;
+  kickoff: string;
+  kickoffDescription: string;
+  discovery: string;
+  discoveryDescription: string;
+  implementation: string;
+  implementationDescription: string;
+  accompaniment: string;
+  accompanimentDescription: string;
+  step1: string;
+  step2: string;
+  step3: string;
+  step4: string;
 }
