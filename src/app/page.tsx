@@ -6,6 +6,7 @@ import SecurityPaceOfmind from "@/components/SecurityPaceOfmind";
 import WayToGo from "@/components/WayToGo";
 import CreateMore from "@/components/CreateMore";
 import ImpeccableTradition from "@/components/ImpeccableTradition";
+import Footer from "@/components/footer";
 
 
 export default function Example() {
@@ -18,6 +19,7 @@ export default function Example() {
       <WayToGo />
       <CreateMore/>
       <ImpeccableTradition/>
+      <Footer />
     </div>
   )
 }

@@ -61,4 +61,11 @@ export interface Translations {
   noBorders: string;
   reinsuranceAccess: string;
   tbsBroker: string;
+  menu: string;
+  legal: string;
+  privacyPolicy: string;
+  legalNotice: string;
+  termsAndConditions: string;
+  languages: string;
+  followUs: string;
 }
