@@ -2,9 +2,34 @@
 import Image from 'next/image';
 import { useTranslations } from '@/i18n/useTranslations';
 import DescriptiveText from './DescriptiveText';
+import { useEffect, useRef, useState } from 'react';
 
 const SecurityPeaceOfMind = () => {
     const messages = useTranslations();
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (ref.current) {
+            observer.observe(ref.current);
+        }
+
+        return () => {
+            if (ref.current) {
+                observer.unobserve(ref.current);
+            }
+        };
+    }, []);
 
     return (
         <div className="bg-metropoliBg" style={{
@@ -13,12 +38,12 @@ const SecurityPeaceOfMind = () => {
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'bottom',
         }}>
-            <div className='px-10 md:px-28 py-28'>
+            <div className='px-10 md:px-28 py-28' ref={ref}>
                 <div className="w-full md:w-2/5">
-                    <h1 className="font-normal text-40 text-black">
+                    <h1 className={`font-normal text-40 text-black ${isVisible ? 'slide-in-left' : 'hidden'}`}>
                         {messages.noPolicy}
                     </h1>
-                    <h2 className="font-normal text-40 text-gradient">
+                    <h2 className={`font-normal text-40 text-gradient ${isVisible ? 'slide-in-left' : 'hidden'}`} style={{ animationDelay: '0.2s' }}>
                         {messages.securityAndPeaceOfMind}
                     </h2>
                 </div>

@@ -5,18 +5,20 @@ interface DescriptiveTextProps {
     text: string;
     width?: string;
     titleSize?: string;
+    isActiveProp?: boolean;
+    containerRef: React.RefObject<HTMLDivElement>;
 }
 
-const DescriptiveText: React.FC<DescriptiveTextProps> = ({ title, text, width, titleSize }) => {
-    const [isActive, setIsActive] = useState(false); // Indica si el texto está activo con el gradiente
+const DescriptiveTextInContainer: React.FC<DescriptiveTextProps> = ({ title, text, width, titleSize, containerRef, isActiveProp }) => {
+    const [isActive, setIsActive] = useState(isActiveProp || false); // Indica si el texto está activo con el gradiente
     const elementRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
-            if (elementRef.current) {
-                const elementTop = elementRef.current.getBoundingClientRect().top + window.scrollY;
-                const elementHeight = elementRef.current.offsetHeight ;
-                const scrollPosition = window.scrollY + window.innerHeight * 0.5;
+            if (elementRef.current && containerRef.current) {
+                const elementTop = elementRef.current.getBoundingClientRect().top + containerRef.current.scrollTop;
+                const elementHeight = elementRef.current.offsetHeight;
+                const scrollPosition = containerRef.current.scrollTop + containerRef.current.clientHeight * 0.5;
 
                 // Activa el gradiente solo cuando el elemento está completamente visible en la posición central
                 if (scrollPosition > elementTop - elementHeight && scrollPosition < elementTop + elementHeight) {
@@ -27,9 +29,16 @@ const DescriptiveText: React.FC<DescriptiveTextProps> = ({ title, text, width, t
             }
         };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+        const container = containerRef.current;
+        if (container) {
+            container.addEventListener('scroll', handleScroll);
+        }
+        return () => {
+            if (container) {
+                container.removeEventListener('scroll', handleScroll);
+            }
+        };
+    }, [containerRef]);
 
     return (
         <div ref={elementRef} style={{ width: width && '25vw' }}>
@@ -65,4 +74,4 @@ const DescriptiveText: React.FC<DescriptiveTextProps> = ({ title, text, width, t
     );
 };
 
-export default DescriptiveText;
+export default DescriptiveTextInContainer;

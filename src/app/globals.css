@@ -53,3 +53,73 @@ body {
   border: 10px solid;
   background: radial-gradient(40% 40% at 50% 50%, #082555 41%, #1C6EF6 80%);
 }
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.hover-effect h3,
+.hover-effect img {
+  transition: color 0.3s ease, text-shadow 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease, background 0.3s ease, -webkit-background-clip 0.3s ease, -webkit-text-fill-color 0.3s ease;
+}
+
+.hover-effect:hover h3 {
+  background: linear-gradient(90deg, #091934 0%, #1C6EF6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.hover-effect:hover img {
+  filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+.scrollable-container {
+  height: 522px; /* Ajusta la altura según tus necesidades */
+  overflow-y: auto; /* Habilita el desplazamiento vertical */
+  overflow-x: hidden; /* Oculta el desplazamiento horizontal si no es necesario */
+  padding: 10px; /* Opcional: agrega un poco de padding */
+  box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+  width: 35%;
+}
+
+/* Estilos para el scrollbar */
+.scrollable-container::-webkit-scrollbar {
+  width: 7px; /* Ancho del scrollbar */
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+  border-radius: 10px 10px 10px 10px; /* Bordes redondeados del thumb */
+  background: #BFCCE4; /* Color de fondo del thumb */
+}
+
+.scrollable-container::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color de fondo del track */
+}
+
+html::-webkit-scrollbar {
+  width: 7px; /* Ancho del scrollbar */
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 10px 10px 10px 10px; /* Bordes redondeados del thumb */
+  background: #BFCCE4; /* Color de fondo del thumb */
+}
+
+html::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color de fondo del track */
+}

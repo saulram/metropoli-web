@@ -6,7 +6,7 @@ export default function HeroSection() {
 
     return (
         <div className="relative bg-cover bg-center bg-metropoliBg "
-             style={{backgroundImage: 'url(/waves.png)', height: '90dvh'}}>
+             style={{backgroundImage: 'url(/waves.png)', height: '100vh'}}>
             <div className="absolute top-1/2 left-52 transform -translate-y-1/2 p-8">
                 <p className="text-left text-2xl font-bold text-white w-3/5" style={{
                     fontSize: '48px',

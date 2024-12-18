@@ -4,6 +4,8 @@ import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import SecurityPaceOfmind from "@/components/SecurityPaceOfmind";
 import WayToGo from "@/components/WayToGo";
+import CreateMore from "@/components/CreateMore";
+import ImpeccableTradition from "@/components/ImpeccableTradition";
 
 
 export default function Example() {
@@ -14,6 +16,8 @@ export default function Example() {
       <HeroSection />
       <SecurityPaceOfmind />
       <WayToGo />
+      <CreateMore/>
+      <ImpeccableTradition/>
     </div>
   )
 }

@@ -24,13 +24,6 @@ const SliderComponent = () => {
     }
   ];
 
-  const steps = [
-    messages.step1,
-    messages.step2,
-    messages.step3,
-    messages.step4
-  ]
-
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? texts.length - 1 : prevIndex - 1));
   };
@@ -117,32 +110,16 @@ const SliderComponent = () => {
           </g>
 
           {/* Text labels */}
-          <text x="100" y="170" textAnchor="middle" fontFamily="Arial" fontSize="16" fill="#1E365C">1. Kickoff</text>
-          <text x="330" y="100" textAnchor="middle" fontFamily="Arial" fontSize="16" fill="#1E365C">2. Descubrimiento</text>
-          <text x="530" y="260" textAnchor="middle" fontFamily="Arial" fontSize="16" fill="#1E365C">3. Implementación</text>
-          <text x="745" y="140" textAnchor="middle" fontFamily="Arial" fontSize="16" fill="#1E365C">4. Acompañamiento</text>
+          <text x="100" y="170" textAnchor="middle" fontFamily="Arial" fontSize="16" fill={currentIndex == 0 ? '#fff' : '#c9c9c9'} >{messages.step1}</text>
+          <text x="330" y="100" textAnchor="middle" fontFamily="Arial" fontSize="16" fill={currentIndex == 1 ? '#fff' : '#c9c9c9'} >{messages.step2}</text>
+          <text x="530" y="260" textAnchor="middle" fontFamily="Arial" fontSize="16" fill={currentIndex == 2 ? '#fff' : '#c9c9c9'} >{messages.step3}</text>
+          <text x="745" y="140" textAnchor="middle" fontFamily="Arial" fontSize="16" fill={currentIndex == 3 ? '#fff' : '#c9c9c9'} >{messages.step4}</text>
 
           <clipPath id="clip0_9_983">
             <rect width="835" height="361" fill="white" />
           </clipPath>
         </svg>
-        {/* {texts.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            style={{
-              width: '14rem',
-              height: '14rem',
-              marginTop: index % 2 == 0 ? '-5rem' : '5rem',
-              color: index == currentIndex ? 'white' : '#8B9AAE',
-              backdropFilter: 'blur(10px)',
-              boxShadow: index == currentIndex ? '0px 5px 6px 8px #24385930 inset' : '10px 7px 6px 8px #BCC9DE inset',
-            }}
-            className={`rounded-full mb-24 ${currentIndex === index ? 'rounded-gradient' : 'bg-[#A3B4D136]'}`}
-          >
-            {steps[index]}
-          </button>
-        ))} */}
+
         <div className='absolute' style={{ top: '50%', left: '50%', width: "30px", height: "30px" }} >
         </div>
       </div>

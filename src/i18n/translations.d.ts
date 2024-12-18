@@ -41,4 +41,24 @@ export interface Translations {
   step2: string;
   step3: string;
   step4: string;
+  peaceOfMind: string;
+  insuranceStress: string;
+  weUnderstand: string;
+  differentApproach: string;
+  freedomToEnjoy: string;
+  experience: string;
+  longTermRelationships: string;
+  impeccableTrajectory: string;
+  sixtyYearsExperience: string;
+  decadesOfKnowledge: string;
+  claimsPaid: string;
+  weDeliver: string;
+  clientRenewal: string;
+  trustEarned: string;
+  aaaCompanies: string;
+  bigCompaniesTrust: string;
+  globalClients: string;
+  noBorders: string;
+  reinsuranceAccess: string;
+  tbsBroker: string;
 }
