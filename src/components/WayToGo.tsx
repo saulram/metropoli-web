@@ -1,31 +1,55 @@
 import { useTranslations } from "@/i18n/useTranslations";
 import SliderComponent from "./SliderComponent";
+import { useEffect, useRef, useState } from "react";
 
 const WayToGo = () => {
   const messages = useTranslations();
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
   return (
-    <div style={{ background: '#F1F1F1' }}>
+    <div style={{ background: '#F1F1F1' }} ref={ref}>
       <div className='px-10 md:px-28 pt-28'>
         <div className="w-3/5">
-          <h1 className="font-medium text-40 text-gradient">
+          <h1 className={`font-medium text-40 text-gradient  ${isVisible ? 'slide-in-left' : 'hidden'}`}>
             {messages.whichPath}
           </h1>
-          <h2 className="font-medium text-2xl text-black">
+          <h2 className={`font-medium text-2xl text-black ${isVisible ? 'slide-in-left' : 'hidden'}`}>
             {messages.thinkingOfOthers}
           </h2>
-          <h2 className="font-medium text-2xl text-gradient lg:w-3/5">
+          <h2 className={`font-medium text-2xl text-gradient lg:w-3/5 ${isVisible ? 'slide-in-left' : 'hidden'}`}>
             {messages.investingWisely}
           </h2>
         </div>
         <div className="flex justify-around mt-32">
-          <div className="text-center">
+          <div className="text-center hover-effect">
             <img src="/business.png" alt="business" />
             <h3 className="font-medium text-xl mt-3 text-slate-400">
               {messages.business}
             </h3>
           </div>
-          <div className="text-center">
+          <div className="text-center hover-effect">
             <img src="/family.png" alt="family" />
             <h3 className="font-medium text-xl mt-3 text-slate-400">
               {messages.personalOrFamily}
