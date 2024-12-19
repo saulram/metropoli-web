@@ -73,6 +73,18 @@ const SliderComponent = () => {
               <stop offset="0.41" stop-color="#082555" />
               <stop offset="1" stop-color="#1C6EF6" />
             </radialGradient>
+            <radialGradient id="paint0_radial_9_1004" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(328 100) scale(100)">
+              <stop offset="0.41" stop-color="#082555" />
+              <stop offset="1" stop-color="#1C6EF6" />
+            </radialGradient>
+            <radialGradient id="paint0_radial_9_1005" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(538 260) scale(100)">
+              <stop offset="0.41" stop-color="#082555" />
+              <stop offset="1" stop-color="#1C6EF6" />
+            </radialGradient>
+            <radialGradient id="paint0_radial_9_1006" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(740 140) scale(100)">
+              <stop offset="0.41" stop-color="#082555" />
+              <stop offset="1" stop-color="#1C6EF6" />
+            </radialGradient>
             <linearGradient id="paint1_linear_9_1003" x1="48" y1="148" x2="248" y2="148" gradientUnits="userSpaceOnUse">
               <stop stop-color="#99C0FF" />
               <stop offset="1" stop-color="#1C6EF6" />
@@ -93,21 +105,21 @@ const SliderComponent = () => {
           </g>
           <g style={{ opacity: currentIndex === 1 ? 1 : 0, transition: 'opacity 0.3s ease' }}>
             <g filter="url(#filter0_bf_9_1003)">
-              <circle cx="330" cy="100" r="90" fill="url(#paint0_radial_9_1003)" />
+              <circle cx="330" cy="100" r="90" fill="url(#paint0_radial_9_1004)" />
               <circle cx="330" cy="100" r="95" stroke="url(#paint1_linear_9_1003)" strokeWidth="10" strokeLinejoin="bevel" strokeDasharray="20 20" />
             </g>
           </g>
 
           <g style={{ opacity: currentIndex === 2 ? 1 : 0, transition: 'opacity 0.3s ease' }}>
             <g filter="url(#filter0_bf_9_1003)">
-              <circle cx="530" cy="260" r="100" fill="url(#paint0_radial_9_1003)" />
+              <circle cx="530" cy="260" r="100" fill="url(#paint0_radial_9_1005)" />
               <circle cx="530" cy="260" r="105" stroke="url(#paint1_linear_9_1003)" strokeWidth="10" strokeLinejoin="bevel" strokeDasharray="20 20" />
             </g>
           </g>
 
           <g style={{ opacity: currentIndex === 3 ? 1 : 0, transition: 'opacity 0.3s ease' }}>
             <g filter="url(#filter0_bf_9_1003)">
-              <circle cx="745" cy="140" r="100" fill="url(#paint0_radial_9_1003)" />
+              <circle cx="745" cy="140" r="100" fill="url(#paint0_radial_9_1006)" />
               <circle cx="745" cy="140" r="105" stroke="url(#paint1_linear_9_1003)" strokeWidth="10" strokeLinejoin="bevel" strokeDasharray="20 20" />
             </g>
           </g>
