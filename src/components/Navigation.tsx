@@ -2,6 +2,7 @@ import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
 import { FaChevronDown } from "react-icons/fa";
 import { useLanguage } from '@/i18n/LanguageContext';
 import { useTranslations } from '@/i18n/useTranslations';
+import Link from 'next/link';
 
 export default function Navigation() {
     const { language, setLanguage } = useLanguage();
@@ -17,13 +18,14 @@ export default function Navigation() {
             textDecorationSkipInk: 'none'
         }}>
             {/* Logo */}
-            <div className="w-1/4 text-lg font-bold"><img src={"/logotipo_negro.png"} alt={"logotipo"}/></div>
+            <div className="w-1/4 text-lg font-bold"><img src={"/logotipo_negro.png"} alt={"logotipo"} /></div>
 
             {/* Navigation Links */}
             <div className="flex w-3/5 items-center justify-end gap-8">
                 {/* Anchor Link */}
-                <a href="#section" className="text-sm font-semibold text-text/90 hover:text-text">{messages.competenciesAndValues}</a>
-
+                <Link href="/competenciesAndValues">
+                    <p className="block">{messages.competenciesAndValues}</p>
+                </Link>
                 {/* Dropdown */}
                 <Popover>
                     <PopoverButton className="text-sm font-semibold text-text/90 focus:outline-none hover:text-text flex items-center">

@@ -1,3 +1,4 @@
+"use client"
 import { useTranslations } from "@/i18n/useTranslations";
 import Link from "next/link";
 
@@ -9,7 +10,7 @@ export default function Footer() {
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'bottom',
-      height: "515px",
+      height: "215px",
       transform: "rotate(180deg)"
     }}>
       <footer className="metropoliBg-dark" style={{transform:"rotate(-180deg)",height: "215px", borderRadius: "40px 40px 0px 0px" }}>
@@ -20,7 +21,7 @@ export default function Footer() {
           </div>
           <div>
             <p className="mb-3">{messages.menu}</p>
-            <Link href="/privacy-policy">
+            <Link href="/competenciesAndValues">
               <p className="block">{messages.competenciesAndValues}</p>
             </Link>
             <Link href="/legal-notice">
