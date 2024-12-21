@@ -2,34 +2,10 @@
 import Image from 'next/image';
 import { useTranslations } from '@/i18n/useTranslations';
 import DescriptiveText from './DescriptiveText';
-import { useEffect, useRef, useState } from 'react';
+import { motion } from 'motion/react';
 
 const SecurityPeaceOfMind = () => {
     const messages = useTranslations();
-    const [isVisible, setIsVisible] = useState(false);
-    const ref = useRef(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                    observer.disconnect();
-                }
-            },
-            { threshold: 0.1 }
-        );
-
-        if (ref.current) {
-            observer.observe(ref.current);
-        }
-
-        return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
-            }
-        };
-    }, []);
 
     return (
         <div className="bg-metropoliBg" style={{
@@ -38,19 +14,47 @@ const SecurityPeaceOfMind = () => {
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'bottom',
         }}>
-            <div className='px-10 md:px-28 py-28' ref={ref}>
+            <div className='px-10 md:px-28 py-28'>
                 <div className="w-full md:w-2/5">
-                    <h1 className={`font-normal text-40 text-black ${isVisible ? 'slide-in-left' : 'hidden'}`}>
+                    <motion.h1 
+                        className="font-normal text-40 text-black"
+                        initial={{ x: -100, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        viewport={{ once: false }}
+                        transition={{ 
+                            duration: 0.8,
+                            ease: [0.16, 1, 0.3, 1]
+                        }}
+                    >
                         {messages.noPolicy}
-                    </h1>
-                    <h2 className={`font-normal text-40 text-gradient ${isVisible ? 'slide-in-left' : 'hidden'}`} style={{ animationDelay: '0.2s' }}>
+                    </motion.h1>
+                    <motion.h2 
+                        className="font-normal text-40 text-gradient"
+                        initial={{ x: -100, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        viewport={{ once: false }}
+                        transition={{ 
+                            duration: 0.8,
+                            delay: 0.2,
+                            ease: [0.16, 1, 0.3, 1]
+                        }}
+                    >
                         {messages.securityAndPeaceOfMind}
-                    </h2>
+                    </motion.h2>
                 </div>
             </div>
 
             <div className="flex gap-24">
-                <div className='w-1/2'>
+                <motion.div 
+                    className='w-1/2'
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false }}
+                    transition={{ 
+                        duration: 0.8,
+                        ease: [0.16, 1, 0.3, 1]
+                    }}
+                >
                     <div className="relative" style={{ height: '80vh' }}>
                         <Image
                             src="/persona-paz.png"
@@ -59,25 +63,58 @@ const SecurityPeaceOfMind = () => {
                             objectFit="contain"
                         />
                     </div>
-                </div>
+                </motion.div>
+
                 <div className="w-1/2 ps-20">
-                    <div className='w-72'>
-                        <DescriptiveText title={messages.futureWithoutFear} text={messages.noMoreWorries} />
-                    </div>
-                    <div className='mt-10 w-72'>
-                        <DescriptiveText title={messages.enjoyPeaceOfMind} text={messages.wellInsured} />
-                    </div>
-                    <div className='mt-10 w-72'>
-                        <DescriptiveText title={messages.focusYourEnergy} text={messages.growYourBusiness} />
-                    </div>
+                    {[
+                        {
+                            title: messages.futureWithoutFear,
+                            text: messages.noMoreWorries,
+                            delay: 0
+                        },
+                        {
+                            title: messages.enjoyPeaceOfMind,
+                            text: messages.wellInsured,
+                            delay: 0.2
+                        },
+                        {
+                            title: messages.focusYourEnergy,
+                            text: messages.growYourBusiness,
+                            delay: 0.4
+                        }
+                    ].map((item, index) => (
+                        <motion.div
+                            key={index}
+                            className={`w-72 ${index !== 0 ? 'mt-10' : ''}`}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: false }}
+                            transition={{
+                                duration: 0.6,
+                                delay: item.delay,
+                                ease: [0.16, 1, 0.3, 1]
+                            }}
+                        >
+                            <DescriptiveText title={item.title} text={item.text} />
+                        </motion.div>
+                    ))}
                 </div>
             </div>
 
-            <div className='flex justify-center items-center text-center py-40'>
-                <div className='w-2/5 '>
+            <motion.div 
+                className='flex justify-center items-center text-center py-40'
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{
+                    duration: 1,
+                    ease: [0.16, 1, 0.3, 1]
+                }}
+            >
+                <div className='w-2/5'>
                     <DescriptiveText title={messages.threeGenerations} titleSize='36' text='' />
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 };

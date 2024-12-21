@@ -1,5 +1,7 @@
+"use client"
 import { useTranslations } from "@/i18n/useTranslations";
 import { useState } from "react";
+import { motion, AnimatePresence } from 'motion/react';
 
 export default function CreateMore() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,44 +30,123 @@ export default function CreateMore() {
   ];
 
   return (
-    <div className="py-36 px-10 md:px-28" style={{
-      background: '#F1F1F1 url(/waves.png) center/cover no-repeat',
-    }}>
+    <motion.div 
+      className="py-36 px-10 md:px-28" 
+      style={{
+        background: '#F1F1F1 url(/waves.png) center/cover no-repeat',
+      }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: false }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="w-full overflow-hidden relative">
-        <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-          {texts.map((text, index) => (
-            <div key={index} className="w-full flex-shrink-0 flex justify-center items-center">
-              <div className='lg:w-2/5 w-2/3'>
-                <p className="font-medium text-center text-3xl text-gradient mb-6">{text.title}</p>
-                <p className="font-medium text-center text-lg text-black mb-6">{text.content}</p>
-                <p className="font-medium text-center text-3xl text-gradient mb-6">{text?.title2}</p>
-                <p className="font-medium text-center text-lg text-black">{text?.content2}</p>
-              </div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ 
+              duration: 0.5,
+              ease: [0.16, 1, 0.3, 1]
+            }}
+            className="flex justify-center items-center"
+          >
+            <div className='lg:w-2/5 w-2/3 h-[300px]'>
+              <motion.p 
+                className="font-medium text-center text-3xl text-gradient mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                {texts[currentIndex].title}
+              </motion.p>
+              <motion.p 
+                className="font-medium text-center text-lg text-black mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                {texts[currentIndex].content}
+              </motion.p>
+              {texts[currentIndex].title2 && (
+                <motion.p 
+                  className="font-medium text-center text-3xl text-gradient mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                >
+                  {texts[currentIndex].title2}
+                </motion.p>
+              )}
+              <motion.p 
+                className="font-medium text-center text-lg text-black"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
+                {texts[currentIndex].content2}
+              </motion.p>
             </div>
-          ))}
-        </div>
-        <button onClick={handlePrev} className="px-4 py-2 rounded-md mr-2 absolute" style={{ bottom: '0%', left: "0%" }}><img src='/rightArrow.png' alt='rightArrow' className="rotate-180" /></button>
-        <button onClick={handleNext} className="px-4 py-2 rounded-md absolute" style={{ bottom: '0%', right: "0%" }}><img src='/rightArrow.png' alt='rightArrow' /></button>
+          </motion.div>
+        </AnimatePresence>
+        <motion.button 
+          onClick={handlePrev} 
+          className="px-4 py-2 rounded-md mr-2 absolute bottom-10" // Cambiado a valor fijo
+          style={{ left: "0" }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <img src='/rightArrow.png' alt='rightArrow' className="rotate-180" />
+        </motion.button>
+
+        <motion.button 
+          onClick={handleNext} 
+          className="px-4 py-2 rounded-md absolute bottom-10" // Cambiado a valor fijo
+          style={{ right: "0%" }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <img src='/rightArrow.png' alt='rightArrow' />
+        </motion.button>
 
         <div className="w-full flex justify-center mt-10 gap-3">
           {texts.map((_, index) => (
-            <button
+            <motion.button
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`w-4 h-4 rounded-full ${currentIndex === index ? 'bg-[#618FDC]' : 'bg-[#BFCCE4]'}`}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
             />
           ))}
         </div>
       </div>
+
       <div className="w-full overflow-hidden relative">
-        <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-          {texts.map((text, index) => (
-            <div key={index + 'img'} className="w-full flex-shrink-0 flex justify-center items-center">
-              <img src={`slide${index + 1}.png`} alt={'slide' + index} />
-            </div>
-          ))}
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex + 'img'}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ 
+              duration: 0.5,
+              ease: [0.16, 1, 0.3, 1]
+            }}
+            className="flex justify-center items-center"
+          >
+            <motion.img 
+              src={`slide${currentIndex + 1}.png`} 
+              alt={'slide' + currentIndex}
+              initial={{ y: 20 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            />
+          </motion.div>
+        </AnimatePresence>
       </div>
-    </div>
+    </motion.div>
   );
 }

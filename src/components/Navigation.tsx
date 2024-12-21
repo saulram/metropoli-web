@@ -54,6 +54,7 @@ export default function Navigation() {
                                     <p className="text-gray-500">{messages.personalOrFamily}</p>
                                 </Link>
                             </div>
+
                         </PopoverPanel>
                     </Popover>
 
@@ -109,6 +110,9 @@ export default function Navigation() {
                     <div className="flex items-center space-x-4">
                         <button
                             className="rounded-md px-3.5 py-2.5 text-sm font-bold text-white shadow-sm focus:outline-none"
+                            onClick={() => {
+
+                            }}
                             style={{
                                 background: 'linear-gradient(90deg, #1E2D49 0%, #112039 25.5%, rgba(25, 57, 113, 0.99299) 78.5%, rgba(14, 80, 187, 0.98) 100%)',
                                 border: '0.5px solid',
