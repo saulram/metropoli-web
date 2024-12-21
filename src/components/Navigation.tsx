@@ -5,11 +5,13 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { useTranslations } from '@/i18n/useTranslations';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Navigation() {
     const { language, setLanguage } = useLanguage();
     const messages = useTranslations();
     const [isOpen, setIsOpen] = useState(false);
+    const router = useRouter();
 
     return (
         <>
@@ -24,8 +26,10 @@ export default function Navigation() {
                     textDecorationSkipInk: 'none'
                 }}>
                 {/* Logo */}
-                <div className="w-1/4 text-lg font-bold">
-                    <img src={"/logotipo_negro.png"} alt={"logotipo"}/>
+                <div className="w-1/4 text-lg font-bold cursor-pointer">
+                    <img src={"/logotipo_negro.png"} alt={"logotipo"} onClick={() => {
+                        router.replace("/")
+                    }} />
                 </div>
 
                 {/* Navigation Links */}
@@ -44,25 +48,15 @@ export default function Navigation() {
                         </PopoverButton>
                         <PopoverPanel className="absolute z-10 mt-2 w-48 bg-white rounded-md shadow-lg">
                             <div className="p-3">
-                                <a className="block rounded-lg py-2 px-3 transition hover:bg-gray-200" href="#">
+                                <Link href="#" className="block rounded-lg py-2 px-3 transition hover:bg-gray-200">
                                     <p className="font-semibold text-gray-900">Insights</p>
-                                    <p className="text-gray-500">Measure actions your users take</p>
-                                </a>
-                                <a className="block rounded-lg py-2 px-3 transition hover:bg-gray-200" href="#">
+                                </Link>
+                                <Link className="block rounded-lg py-2 px-3 transition hover:bg-gray-200" href="#">
                                     <p className="font-semibold text-gray-900">Automations</p>
-                                    <p className="text-gray-500">Create your own targeted content</p>
-                                </a>
-                                <a className="block rounded-lg py-2 px-3 transition hover:bg-gray-200" href="#">
-                                    <p className="font-semibold text-gray-900">Reports</p>
-                                    <p className="text-gray-500">Keep track of your growth</p>
-                                </a>
+                                </Link>
+
                             </div>
-                            <div className="p-3">
-                                <a className="block rounded-lg py-2 px-3 transition hover:bg-gray-200" href="#">
-                                    <p className="font-semibold text-gray-900">Documentation</p>
-                                    <p className="text-gray-500">Start integrating products and tools</p>
-                                </a>
-                            </div>
+
                         </PopoverPanel>
                     </Popover>
 
@@ -77,7 +71,12 @@ export default function Navigation() {
                             width: '175px',
                             textAlign: 'center',
                             borderRadius: '10px'
-                        }}>
+                        }}
+                        onClick={() => {
+                            router.replace("/contact-us")
+
+                        }}
+                    >
                         {messages.sendRequest}
                     </button>
 
@@ -105,8 +104,8 @@ export default function Navigation() {
                 <div className="flex w-full items-center justify-between px-4 py-3 bg-white">
                     {/* Logo */}
                     <div className="flex-shrink-0">
-                        <img 
-                            src="/logotipo_negro.png" 
+                        <img
+                            src="/logotipo_negro.png"
                             alt="METROPOLI"
                             className="h-6"
                         />
@@ -116,6 +115,9 @@ export default function Navigation() {
                     <div className="flex items-center space-x-4">
                         <button
                             className="rounded-md px-3.5 py-2.5 text-sm font-bold text-white shadow-sm focus:outline-none"
+                            onClick={() => {
+
+                            }}
                             style={{
                                 background: 'linear-gradient(90deg, #1E2D49 0%, #112039 25.5%, rgba(25, 57, 113, 0.99299) 78.5%, rgba(14, 80, 187, 0.98) 100%)',
                                 border: '0.5px solid',
@@ -137,7 +139,7 @@ export default function Navigation() {
                 {/* Mobile Menu Panel */}
                 {isOpen && (
                     <div className="fixed inset-0 bg-white z-50" style={{
-                        backgroundImage: 'url(/waves.png)', 
+                        backgroundImage: 'url(/waves.png)',
                         height: '100vh',
                         backgroundPosition: 'center bottom',
                         backgroundRepeat: 'no-repeat'
@@ -187,30 +189,30 @@ export default function Navigation() {
                                         </PopoverPanel>
                                     </Popover>
                                 </div>
-                                                                               {/* Language Selector */}
-                            <div className="px-4 py-4">
-                                <div className="flex items-center space-x-2 text-sm">
-                                    <span
-                                        onClick={() => setLanguage('es')}
-                                        className={`cursor-pointer ${language === 'es' ? 'text-gray-900' : 'text-gray-500'}`}
-                                    >
-                                        Es
-                                    </span>
-                                    <span className="text-gray-500">|</span>
-                                    <span
-                                        onClick={() => setLanguage('en')}
-                                        className={`cursor-pointer ${language === 'en' ? 'text-gray-900' : 'text-gray-500'}`}
-                                    >
-                                        En
-                                    </span>
+                                {/* Language Selector */}
+                                <div className="px-4 py-4">
+                                    <div className="flex items-center space-x-2 text-sm">
+                                        <span
+                                            onClick={() => setLanguage('es')}
+                                            className={`cursor-pointer ${language === 'es' ? 'text-gray-900' : 'text-gray-500'}`}
+                                        >
+                                            Es
+                                        </span>
+                                        <span className="text-gray-500">|</span>
+                                        <span
+                                            onClick={() => setLanguage('en')}
+                                            className={`cursor-pointer ${language === 'en' ? 'text-gray-900' : 'text-gray-500'}`}
+                                        >
+                                            En
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                                </div>
-         
                             </div>
 
-        
                         </div>
+
+
+                    </div>
                 )}
             </nav>
         </>

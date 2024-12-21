@@ -60,5 +60,62 @@
   "globalClients": "Clients from all industries on all continents.",
   "noBorders": "Our experience knows no borders. We are where you need us.",
   "reinsuranceAccess": "Access to International Reinsurance Markets:",
-  "tbsBroker": "Through the reinsurance broker, 'TBS, The Broker Services', we have access to all international reinsurance markets. With TBS, we develop modern and tailored coverages for each of our clients."
+  "tbsBroker": "Through the reinsurance broker, 'TBS, The Broker Services', we have access to all international reinsurance markets. With TBS, we develop modern and tailored coverages for each of our clients.",
+  "form": {
+    "fields": {
+      "name": {
+        "label": "Nombre completo *",
+        "placeholder": "Nombre completo"
+      },
+      "email": {
+        "label": "Correo electrónico *",
+        "placeholder": "Correo electrónico *"
+      },
+      "phone": {
+        "label": "Teléfono / WhatsApp *",
+        "placeholder": "Teléfono / WhatsApp *"
+      },
+      "product": {
+        "label": "¿Qué producto te interesa? *",
+        "placeholder": "¿Qué producto te interesa? *",
+        "options": {
+          "producto1": "Producto 1",
+          "producto2": "Producto 2"
+        }
+      },
+      "contactPreference": {
+        "label": "¿Cómo prefieres que te contactemos?",
+        "placeholder": "¿Cómo prefieres que te contactemos?",
+        "options": {
+          "email": "Correo electrónico",
+          "phone": "Teléfono"
+        }
+      },
+      "company": {
+        "label": "Empresa",
+        "placeholder": "Empresa"
+      },
+      "position": {
+        "label": "Puesto",
+        "placeholder": "Escribe tu puesto"
+      },
+      "industry": {
+        "label": "Industria",
+        "placeholder": "Industria"
+      },
+      "collaborators": {
+        "label": "Número de colaboradores",
+        "placeholder": "Número de colaboradores",
+        "options": {
+          "1-10": "1-10",
+          "11-50": "11-50",
+          "51-200": "51-200"
+        }
+      },
+      "message": {
+        "label": "Cuéntanos detalladamente cómo te podemos ayudar",
+        "placeholder": "Cuéntanos detalladamente cómo te podemos ayudar"
+      }
+    }
+  }
 }
