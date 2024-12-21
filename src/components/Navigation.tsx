@@ -3,6 +3,7 @@ import { FaChevronDown } from "react-icons/fa";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { useLanguage } from '@/i18n/LanguageContext';
 import { useTranslations } from '@/i18n/useTranslations';
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Navigation() {
@@ -30,9 +31,9 @@ export default function Navigation() {
                 {/* Navigation Links */}
                 <div className="flex w-3/5 items-center justify-end gap-8">
                     {/* Anchor Link */}
-                    <a href="#section" className="text-sm font-semibold text-text/90 hover:text-text">
+                    <Link href="/competenciesAndValues" className="text-sm font-semibold text-text/90 hover:text-text">
                         {messages.competenciesAndValues}
-                    </a>
+                    </Link>
 
                     {/* Dropdown */}
                     <Popover>

@@ -13,7 +13,6 @@ export default function Example() {
 
   return (
     <div className="bg-white">
-      
       <Navigation />
       <HeroSection />
       <SecurityPaceOfmind />

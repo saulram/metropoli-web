@@ -68,4 +68,21 @@ export interface Translations {
   termsAndConditions: string;
   languages: string;
   followUs: string;
+  accompanimentValue: string;
+  clientFeelings: string;
+  zeroFriction: string;
+  simpleAndEasy: string;
+  expertise: string;
+  yearsOfExperience: string;
+  values: string;
+  ensure: string;
+  grow: string;
+  honor: string;
+  inspire: string;
+  innovate: string;
+  ensurePeaceOfMind: string;
+  growTogether: string;
+  honorOurWord: string;
+  inspireByExample: string;
+  innovateDaily: string;
 }
