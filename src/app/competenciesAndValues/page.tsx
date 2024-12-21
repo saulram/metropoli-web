@@ -44,17 +44,17 @@ export default function CompetenciesAndValues() {
         background: '#d1d7e1 url(/waves.png) center/cover no-repeat',
       }}>
         <h1 className="font-black text-center text-[#444444] text-xl mb-4">{messages.competenciesAndValues}</h1>
-        <hr className="hr-gradient"/>
+        <hr className="hr-gradient" />
         <div className="mt-28 mb-4">
           <h2 className="values-title-gradient text-40 mb-5">{messages.accompanimentValue}</h2>
           <p className="text-black text-lg">{messages.clientFeelings}</p>
         </div>
-        <hr className="hr-gradient"/>
+        <hr className="hr-gradient" />
         <div className="mt-5 mb-4">
           <h2 className="values-title-gradient text-40 mb-5">{messages.zeroFriction}</h2>
           <p className="text-black text-lg">{messages.simpleAndEasy}</p>
         </div>
-        <hr className="hr-gradient"/>
+        <hr className="hr-gradient" />
         <div className="mt-5 mb-4">
           <h2 className="values-title-gradient text-40 mb-5">{messages.expertise}</h2>
           <p className="text-black text-lg">{messages.yearsOfExperience}</p>
@@ -63,7 +63,7 @@ export default function CompetenciesAndValues() {
           <h2 className="font-black text-center text-3xl text-[#444444] mb-4">{messages.values}</h2>
         </div>
         <div className="flex" style={{ height: "80vh" }}>
-          <div className="my-48" style={{ position: "relative", left: "-15%", zIndex:"49" }}>
+          <div className="my-48" style={{ position: "relative", left: "-15%", zIndex: "49" }}>
             <div style={{ width: "25vw", height: "25vw", borderColor: "#e0e5ed", borderRadius: "1000px", position: "relative" }} className="border-solid border-2">
               <div onMouseEnter={() => { setActive(1); setCurrentIndex(1 - 1) }} className={active == 1 ? "values-selecte-gradient" : 'values-text'} style={{ position: "absolute", top: "-15px", left: "50%", transform: "translateX(-50%)" }}>{messages.ensure}</div>
               <div onMouseEnter={() => { setActive(2); setCurrentIndex(2 - 1) }} className={active == 2 ? "values-selecte-gradient" : 'values-text'} style={{ position: "absolute", top: "15%", left: "90%", transform: "translate(-50%, -50%)" }}>{messages.grow}</div>
@@ -74,7 +74,7 @@ export default function CompetenciesAndValues() {
           </div>
           <div className="flex flex-col justify-center items-center w-full">
             <div className="flex flex-col justify-center items-center w-full" style={{ overflow: 'hidden' }}>
-              <div className="flex transition-transform duration-500" style={{ width:"auto", transform: `translateX(-${currentIndex * 100}%)` }}>
+              <div className="flex transition-transform duration-500" style={{ width: "auto", transform: `translateX(-${currentIndex * 100}%)` }}>
                 {imges.map((element, index) => (
                   <div key={index} className="w-full flex-shrink-0 flex justify-center items-center">
                     <div className='lg:w-2/5 w-2/3 flex flex-col justify-center items-center' style={{ marginLeft: 'auto', marginRight: 'auto' }}>
@@ -85,20 +85,23 @@ export default function CompetenciesAndValues() {
                 ))}
               </div>
             </div>
-            <div className="flex flex-col justify-center items-center mt-10 w-full">
-              <div className="rounded-md px-3.5 py-2.5 text-sm font-bold text-white shadow-sm focus:outline-none"
-                style={{
-                  background: 'linear-gradient(90deg, #1E2D49 0%, #112039 25.5%, rgba(25, 57, 113, 0.99299) 78.5%, rgba(14, 80, 187, 0.98) 100%)',
-                  border: '0.5px solid',
-                  borderImageSource: 'linear-gradient(90deg, #99C0FF 0%, #1C6EF6 100%)',
-                  boxShadow: '0px 4px 4px 0px #00000040 inset',
-                  width: '175px',
-                  textAlign: 'center',
-                  borderRadius: '10px'
-                }}>{messages.EnsureYourPeaceOfMind}</div>
+            <div className="flex flex-col justify-center items-center w-full">
+              <div className="flex flex-col justify-center items-center mt-10 w-full">
+                <div className="rounded-md px-3.5 py-2.5 text-sm font-bold text-white shadow-sm focus:outline-none"
+                  style={{
+                    background: 'linear-gradient(90deg, #1E2D49 0%, #112039 25.5%, rgba(25, 57, 113, 0.99299) 78.5%, rgba(14, 80, 187, 0.98) 100%)',
+                    border: '0.5px solid',
+                    borderImageSource: 'linear-gradient(90deg, #99C0FF 0%, #1C6EF6 100%)',
+                    boxShadow: '0px 4px 4px 0px #00000040 inset',
+                    width: '175px',
+                    textAlign: 'center',
+                    borderRadius: '10px'
+                  }}>{messages.EnsureYourPeaceOfMind}</div>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
       <Footer />
     </div>
