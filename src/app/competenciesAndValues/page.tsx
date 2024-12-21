@@ -88,7 +88,7 @@ export default function CompetenciesAndValues() {
             </div>
             <div className="flex flex-col justify-center items-center w-full">
               <div className="flex flex-col justify-center items-center mt-10 w-full">
-                <Link href="/sendRequest">
+                <Link href="/contact-us">
                   <div className="rounded-md px-3.5 py-2.5 text-sm font-bold text-white shadow-sm focus:outline-none"
                     style={{
                       background: 'linear-gradient(90deg, #1E2D49 0%, #112039 25.5%, rgba(25, 57, 113, 0.99299) 78.5%, rgba(14, 80, 187, 0.98) 100%)',

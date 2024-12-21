@@ -33,7 +33,7 @@ export default function CompetenciesAndValues() {
                 <div className='mt-10 mb-14 md:w-4/5'>
                   <DescriptiveText title={messages.yourPathToYourPeace} text='' button={messages.startsHere} />
                 </div>
-                <Link href="/sendRequest">
+                <Link href="/contact-us">
                   <div className="rounded-md px-3.5 py-2.5 text-sm font-bold text-white shadow-sm focus:outline-none"
                     style={{
                       background: 'linear-gradient(90deg, #1E2D49 0%, #112039 25.5%, rgba(25, 57, 113, 0.99299) 78.5%, rgba(14, 80, 187, 0.98) 100%)',
@@ -128,7 +128,7 @@ export default function CompetenciesAndValues() {
         <div className="flex justify-center items-center w-full mb-14">
           <img src="/business-page.svg" alt="business-img-page" />
         </div>
-        <Link href="/sendRequest">
+        <Link href="/contact-us">
           <div className="flex justify-center items-center w-full mb-40">
             <div className="rounded-md px-3.5 py-2.5 text-sm font-bold text-white shadow-sm focus:outline-none"
               style={{

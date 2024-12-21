@@ -30,7 +30,7 @@ export default function Footer() {
             <Link href="/#roads">
               <p className="block">{messages.roads}</p>
             </Link>
-            <Link href="/sendRequest">
+            <Link href="/contact-us">
               <p className="block">{messages.sendRequest}</p>
             </Link>
           </div>

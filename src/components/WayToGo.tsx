@@ -2,6 +2,7 @@
 import { useTranslations } from "@/i18n/useTranslations";
 import SliderComponent from "./SliderComponent";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 const WayToGo = () => {
   const messages = useTranslations();
@@ -62,10 +63,12 @@ const WayToGo = () => {
             }}
             whileHover={{ scale: 1.05 }}
           >
-            <img src="/business.png" alt="business" />
-            <h3 className="font-medium text-xl mt-3 text-slate-400">
-              {messages.business}
-            </h3>
+            <Link href="/business">
+              <img src="/business.png" alt="business" />
+              <h3 className="font-medium text-xl mt-3 text-slate-400">
+                {messages.business}
+              </h3>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -80,10 +83,12 @@ const WayToGo = () => {
             }}
             whileHover={{ scale: 1.05 }}
           >
-            <img src="/family.png" alt="family" />
-            <h3 className="font-medium text-xl mt-3 text-slate-400">
-              {messages.personalOrFamily}
-            </h3>
+            <Link href={"/personalOrFamily"}>
+              <img src="/family.png" alt="family" />
+              <h3 className="font-medium text-xl mt-3 text-slate-400">
+                {messages.personalOrFamily}
+              </h3>
+            </Link>
           </motion.div>
         </div>
 
