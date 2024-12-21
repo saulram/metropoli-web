@@ -7,7 +7,7 @@ import { motion } from 'motion/react';
 
 export default function Footer() {
   const messages = useTranslations();
-  const { language, setLanguage } = useLanguage();
+  const { setLanguage } = useLanguage();
 
   return (
     <div className="bg-metropoliBg pb-48" style={{
