@@ -6,12 +6,8 @@ import React from 'react';
 const ContactPage: React.FC = () => {
     return (
         <div className="bg-white">
-            {/* App Bar */}
             <Navigation />
-            {/* Main Content */}
-            
             <ContactForm />
-            {/* Footer */}
             <Footer />
         </div>
     );

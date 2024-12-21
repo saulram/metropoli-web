@@ -2,6 +2,7 @@
 import Footer from "@/components/footer";
 import Navigation from "@/components/Navigation";
 import { useTranslations } from "@/i18n/useTranslations";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function CompetenciesAndValues() {
@@ -87,16 +88,18 @@ export default function CompetenciesAndValues() {
             </div>
             <div className="flex flex-col justify-center items-center w-full">
               <div className="flex flex-col justify-center items-center mt-10 w-full">
-                <div className="rounded-md px-3.5 py-2.5 text-sm font-bold text-white shadow-sm focus:outline-none"
-                  style={{
-                    background: 'linear-gradient(90deg, #1E2D49 0%, #112039 25.5%, rgba(25, 57, 113, 0.99299) 78.5%, rgba(14, 80, 187, 0.98) 100%)',
-                    border: '0.5px solid',
-                    borderImageSource: 'linear-gradient(90deg, #99C0FF 0%, #1C6EF6 100%)',
-                    boxShadow: '0px 4px 4px 0px #00000040 inset',
-                    width: '175px',
-                    textAlign: 'center',
-                    borderRadius: '10px'
-                  }}>{messages.EnsureYourPeaceOfMind}</div>
+                <Link href="/sendRequest">
+                  <div className="rounded-md px-3.5 py-2.5 text-sm font-bold text-white shadow-sm focus:outline-none"
+                    style={{
+                      background: 'linear-gradient(90deg, #1E2D49 0%, #112039 25.5%, rgba(25, 57, 113, 0.99299) 78.5%, rgba(14, 80, 187, 0.98) 100%)',
+                      border: '0.5px solid',
+                      borderImageSource: 'linear-gradient(90deg, #99C0FF 0%, #1C6EF6 100%)',
+                      boxShadow: '0px 4px 4px 0px #00000040 inset',
+                      width: '175px',
+                      textAlign: 'center',
+                      borderRadius: '10px'
+                    }}>{messages.EnsureYourPeaceOfMind}</div>
+                </Link>
               </div>
             </div>
           </div>

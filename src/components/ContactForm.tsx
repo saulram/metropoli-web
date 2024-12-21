@@ -40,7 +40,7 @@ const ContactForm: React.FC = () => {
             viewport={{ once: false }}
             transition={{ duration: 0.8 }}
         >
-            <div className="container mt-14 mx-auto px-4 py-8 md:py-16">
+            <div className="container pt-52 mx-auto px-4 py-8 md:py-16">
                 <div className="max-w-[800px] mx-auto">
                     <motion.h1
                         className="text-[32px] md:text-[40px] font-normal leading-[48px] bg-gradient-to-r from-[#091934] to-[#1C6EF6] bg-clip-text text-transparent"
