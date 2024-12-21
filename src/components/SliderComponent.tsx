@@ -115,27 +115,27 @@ const SliderComponent = () => {
                     ease: [0.16, 1, 0.3, 1]
                   }}
                 >
-                  <g style={{ opacity: currentIndex === 0 ? 1 : 0, transition: 'opacity 0.3s ease' }}>
+                  <g style={{ opacity: currentIndex === 0 ? 1 : 0, transition: 'opacity 0.3s ease', cursor: 'pointer' }}>
                     <g filter="url(#filter0_bf_9_1003)">
                       <circle cx="100" cy="170" r="100" fill="url(#paint0_radial_9_1003)" />
                       <circle cx="100" cy="170" r="105" stroke="url(#paint1_linear_9_1003)" strokeWidth="10" strokeLinejoin="bevel" strokeDasharray="20 20" />
                     </g>
                   </g>
-                  <g style={{ opacity: currentIndex === 1 ? 1 : 0, transition: 'opacity 0.3s ease' }}>
+                  <g style={{ opacity: currentIndex === 1 ? 1 : 0, transition: 'opacity 0.3s ease', cursor: 'pointer' }}>
                     <g filter="url(#filter0_bf_9_1003)">
                       <circle cx="330" cy="100" r="90" fill="url(#paint0_radial_9_1004)" />
                       <circle cx="330" cy="100" r="95" stroke="url(#paint1_linear_9_1003)" strokeWidth="10" strokeLinejoin="bevel" strokeDasharray="20 20" />
                     </g>
                   </g>
 
-                  <g style={{ opacity: currentIndex === 2 ? 1 : 0, transition: 'opacity 0.3s ease' }}>
+                  <g style={{ opacity: currentIndex === 2 ? 1 : 0, transition: 'opacity 0.3s ease', cursor: 'pointer' }}>
                     <g filter="url(#filter0_bf_9_1003)">
                       <circle cx="530" cy="260" r="100" fill="url(#paint0_radial_9_1005)" />
                       <circle cx="530" cy="260" r="105" stroke="url(#paint1_linear_9_1003)" strokeWidth="10" strokeLinejoin="bevel" strokeDasharray="20 20" />
                     </g>
                   </g>
 
-                  <g style={{ opacity: currentIndex === 3 ? 1 : 0, transition: 'opacity 0.3s ease' }}>
+                  <g style={{ opacity: currentIndex === 3 ? 1 : 0, transition: 'opacity 0.3s ease', cursor: 'pointer' }}>
                     <g filter="url(#filter0_bf_9_1003)">
                       <circle cx="745" cy="140" r="100" fill="url(#paint0_radial_9_1006)" />
                       <circle cx="745" cy="140" r="105" stroke="url(#paint1_linear_9_1003)" strokeWidth="10" strokeLinejoin="bevel" strokeDasharray="20 20" />
@@ -153,12 +153,15 @@ const SliderComponent = () => {
             { x: "745", y: "140", text: messages.step4 }
           ].map((step, index) => (
             <motion.text
+              onClick={() => {
+                setCurrentIndex(index)
+              }}
               key={index}
               x={step.x}
               y={step.y}
               textAnchor="middle"
               fontFamily='Lato'
-              className="text-base md:text-lg"
+              className="text-base md:text-lg cursor-pointer"
               fill={currentIndex === index ? '#fff' : '#8B9AAE'}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -204,12 +207,12 @@ const SliderComponent = () => {
           style={{ height: 200 }}
         >
           <div className="max-w-2xl mx-auto px-4">
-        <h2 className="font-medium text-center text-xl md:text-3xl text-gradient mb-4 md:mb-6">
-          {texts[currentIndex].title}
-        </h2>
-        <p className="font-medium text-center text-base md:text-lg text-black">
-          {texts[currentIndex].content}
-        </p>
+            <h2 className="font-medium text-center text-xl md:text-3xl text-gradient mb-4 md:mb-6">
+              {texts[currentIndex].title}
+            </h2>
+            <p className="font-medium text-center text-base md:text-lg text-black">
+              {texts[currentIndex].content}
+            </p>
           </div>
         </motion.div>
       </AnimatePresence>
