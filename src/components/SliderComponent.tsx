@@ -70,24 +70,24 @@ const SliderComponent = () => {
               <feGaussianBlur stdDeviation="18.6" result="effect2_foregroundBlur_9_1003" />
             </filter>
             <radialGradient id="paint0_radial_9_1003" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(108 168) scale(100)">
-              <stop offset="0.41" stop-color="#082555" />
-              <stop offset="1" stop-color="#1C6EF6" />
+              <stop offset="0.41" stopColor="#082555" />
+              <stop offset="1" stopColor="#1C6EF6" />
             </radialGradient>
             <radialGradient id="paint0_radial_9_1004" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(328 100) scale(100)">
-              <stop offset="0.41" stop-color="#082555" />
-              <stop offset="1" stop-color="#1C6EF6" />
+              <stop offset="0.41" stopColor="#082555" />
+              <stop offset="1" stopColor="#1C6EF6" />
             </radialGradient>
             <radialGradient id="paint0_radial_9_1005" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(538 260) scale(100)">
-              <stop offset="0.41" stop-color="#082555" />
-              <stop offset="1" stop-color="#1C6EF6" />
+              <stop offset="0.41" stopColor="#082555" />
+              <stop offset="1" stopColor="#1C6EF6" />
             </radialGradient>
             <radialGradient id="paint0_radial_9_1006" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(740 140) scale(100)">
-              <stop offset="0.41" stop-color="#082555" />
-              <stop offset="1" stop-color="#1C6EF6" />
+              <stop offset="0.41" stopColor="#082555" />
+              <stop offset="1" stopColor="#1C6EF6" />
             </radialGradient>
             <linearGradient id="paint1_linear_9_1003" x1="48" y1="148" x2="248" y2="148" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#99C0FF" />
-              <stop offset="1" stop-color="#1C6EF6" />
+              <stop stopColor="#99C0FF" />
+              <stop offset="1" stopColor="#1C6EF6" />
             </linearGradient>
           </defs>
 
