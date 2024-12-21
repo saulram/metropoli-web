@@ -110,7 +110,7 @@ const WayToGo = () => {
 
       <div className="w-full">
         <motion.img
-          src="path.png"
+          src="camino.svg"
           alt="path"
           className="w-full"
           initial={{ opacity: 0, scale: 0.95 }}
