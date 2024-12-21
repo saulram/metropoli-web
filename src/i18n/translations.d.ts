@@ -131,4 +131,6 @@ export interface Translations {
   life: string;
   travel: string;
   everythingInsurable: string;
+  thankYouMessage: string;
+  followUsOnSocialMedia: string;
 }
