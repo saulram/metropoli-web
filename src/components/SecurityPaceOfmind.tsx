@@ -1,5 +1,4 @@
 "use client"
-import Image from 'next/image';
 import { useTranslations } from '@/i18n/useTranslations';
 import DescriptiveText from './DescriptiveText';
 import { motion } from 'motion/react';
@@ -15,25 +14,25 @@ const SecurityPeaceOfMind = () => {
             backgroundPosition: 'bottom',
         }}>
             <div className='px-10 md:px-28 py-28'>
-                <div className="w-full md:w-2/5">
-                    <motion.h1 
+                <div className="w-full md:w-3/5">
+                    <motion.h2
                         className="font-normal text-40 text-black"
                         initial={{ x: -100, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         viewport={{ once: false }}
-                        transition={{ 
+                        transition={{
                             duration: 0.8,
                             ease: [0.16, 1, 0.3, 1]
                         }}
                     >
                         {messages.noPolicy}
-                    </motion.h1>
-                    <motion.h2 
+                    </motion.h2>
+                    <motion.h2
                         className="font-normal text-40 text-gradient"
                         initial={{ x: -100, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         viewport={{ once: false }}
-                        transition={{ 
+                        transition={{
                             duration: 0.8,
                             delay: 0.2,
                             ease: [0.16, 1, 0.3, 1]
@@ -44,24 +43,19 @@ const SecurityPeaceOfMind = () => {
                 </div>
             </div>
 
-            <div className="flex gap-24">
-                <motion.div 
-                    className='w-1/2'
+            <div className="flex gap-24 flex-col-reverse md:flex-row md:item-center md:justify-center">
+                <motion.div
+                    className='md:w-1/2 w-4/5'
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false }}
-                    transition={{ 
+                    transition={{
                         duration: 0.8,
                         ease: [0.16, 1, 0.3, 1]
                     }}
                 >
-                    <div className="relative" style={{ height: '80vh' }}>
-                        <Image
-                            src="/persona-paz.png"
-                            alt="Persona caminando en la naturaleza"
-                            layout="fill"
-                            objectFit="contain"
-                        />
+                    <div>
+                        <img src="/persona-paz.svg" alt="Persona caminando en la naturaleza" className='w-full'/>
                     </div>
                 </motion.div>
 
@@ -101,7 +95,7 @@ const SecurityPeaceOfMind = () => {
                 </div>
             </div>
 
-            <motion.div 
+            <motion.div
                 className='flex justify-center items-center text-center py-40'
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -111,8 +105,8 @@ const SecurityPeaceOfMind = () => {
                     ease: [0.16, 1, 0.3, 1]
                 }}
             >
-                <div className='w-2/5'>
-                    <DescriptiveText title={messages.threeGenerations} titleSize='36' text='' />
+                <div className='md:w-2/5 px-10 md:px-0 text-40'>
+                    <DescriptiveText title={messages.threeGenerations}  text='' />
                 </div>
             </motion.div>
         </div>

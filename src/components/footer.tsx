@@ -2,27 +2,43 @@
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useTranslations } from "@/i18n/useTranslations";
 import Link from "next/link";
+import { motion } from 'motion/react';
+
 
 export default function Footer() {
   const messages = useTranslations();
   const { language, setLanguage } = useLanguage();
 
   return (
-    <div  className="bg-metropoliBg pb-48" style={{
+    <div className="bg-metropoliBg pb-48" style={{
       backgroundImage: 'url(/waves_bottom.png)',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'bottom',
-      height: "215px",
+      minHeight: "215px",
       transform: "rotate(180deg)"
     }}>
-      <footer className="metropoliBg-dark" style={{transform:"rotate(-180deg)",height: "215px", borderRadius: "40px 40px 0px 0px" }}>
-        <div className="px-10 md:px-28 pt-14 flex justify-between">
-          <div className="flex justify-between flex-col items-center">
-            <img src="/GM_logo.png" alt="logo dorado" width={65} className="mb-4"/>
-            <img src="/GM_logo_text.png" alt="texto logo" width={177}/>
-          </div>
-          <div>
+      <footer className="metropoliBg-dark" style={{ transform: "rotate(-180deg)", minHeight: "215px", borderRadius: "40px 40px 0px 0px" }}>
+        <div className="px-10 md:px-28 pt-14 md:flex md:justify-between grid grid-cols-2 md:grid-cols-4 gap-4 text-white text-sm">
+          <motion.div
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{
+              duration: 0.8,
+              ease: [0.16, 1, 0.3, 1]
+            }} className="flex mb-20 md:mb-0 justify-between flex-col items-center col-span-2 md:col-span-1">
+            <img src="/GM_logo.png" alt="logo dorado" width={65} className="mb-4" />
+            <img src="/GM_logo_text.png" alt="texto logo" width={177} />
+          </motion.div>
+          <motion.div
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{
+              duration: 0.8,
+              ease: [0.16, 1, 0.3, 1]
+            }}>
             <p className="mb-3">{messages.menu}</p>
             <Link href="/competenciesAndValues">
               <p className="block">{messages.competenciesAndValues}</p>
@@ -33,8 +49,15 @@ export default function Footer() {
             <Link href="/contact-us">
               <p className="block">{messages.sendRequest}</p>
             </Link>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{
+              duration: 0.8,
+              ease: [0.16, 1, 0.3, 1]
+            }}>
             <p className="mb-3">{messages.legal}</p>
             <Link href="/privacy-policy">
               <p className="block">{messages.privacyPolicy}</p>
@@ -45,19 +68,30 @@ export default function Footer() {
             <Link href="/terms-and-conditions">
               <p className="block">{messages.termsAndConditions}</p>
             </Link>
-          </div>
-          <div>
-            <p>{messages.languages}</p>
-            <div className="flex mb-2">
-              <img onClick={() => setLanguage('es')} src="/flagmx.png" alt="español" className="mr-2" width={17}/>
-              <img onClick={() => setLanguage('en')} src="/flagusa.png" alt="english" width={17}/>
+          </motion.div>
+          <motion.div
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{
+              duration: 0.8,
+              ease: [0.16, 1, 0.3, 1]
+            }} className="grid grid-cols-2 col-span-2 gap-4 md:col-span-1 mb-10 md:mb-0 md:flex md:flex-col">
+            <div>
+              <p>{messages.languages}</p>
+              <div className="flex mb-2">
+                <img onClick={() => setLanguage('es')} src="/flagmx.png" alt="español" className="mr-2" width={17} />
+                <img onClick={() => setLanguage('en')} src="/flagusa.png" alt="english" width={17} />
+              </div>
             </div>
-            <p>{messages.followUs}</p>
-            <div className="flex mb-2">
-              <img src="/facebook.png" alt="facebook" className="mr-2" width={18}/>
-              <img src="/linkedin.png" alt="inkedin" width={18}/>
+            <div>
+              <p>{messages.followUs}</p>
+              <div className="flex mb-2">
+                <img src="/facebook.png" alt="facebook" className="mr-2" width={18} />
+                <img src="/linkedin.png" alt="inkedin" width={18} />
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </footer>
     </div>

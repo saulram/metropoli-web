@@ -9,8 +9,8 @@ const ImpeccableTradition = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <motion.div 
-      className="bg-metropoliBg pb-48" 
+    <motion.div
+      className="bg-metropoliBg pb-40"
       style={{
         backgroundImage: 'url(/waves_bottom.png)',
         backgroundSize: 'contain',
@@ -22,26 +22,26 @@ const ImpeccableTradition = () => {
       viewport={{ once: false }}
       transition={{ duration: 0.8 }}
     >
-      <div className='px-10 md:px-28 py-28'>
+      <div className='px-10 md:px-28  md:py-28 py-20'>
         <div className="w-full md:w-2/5">
-          <motion.h2 
+          <motion.h2
             className="font-normal text-40 text-gradient mb-2"
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: false }}
-            transition={{ 
+            transition={{
               duration: 0.8,
               ease: [0.16, 1, 0.3, 1]
             }}
           >
             {messages.impeccableTrajectory}
           </motion.h2>
-          <motion.h2 
+          <motion.h2
             className="font-normal text-2xl text-gradient mb-4"
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: false }}
-            transition={{ 
+            transition={{
               duration: 0.8,
               delay: 0.2,
               ease: [0.16, 1, 0.3, 1]
@@ -49,12 +49,12 @@ const ImpeccableTradition = () => {
           >
             {messages.sixtyYearsExperience}
           </motion.h2>
-          <motion.h2 
+          <motion.h2
             className="font-normal text-lg text-black"
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: false }}
-            transition={{ 
+            transition={{
               duration: 0.8,
               delay: 0.4,
               ease: [0.16, 1, 0.3, 1]
@@ -66,9 +66,9 @@ const ImpeccableTradition = () => {
       </div>
 
       <div className="flex gap-24">
-        <div className="w-1/2"></div>
-        <motion.div 
-          className="w-1/2 ps-28 scrollable-container" 
+        <div className="md:w-1/2"></div>
+        <motion.div
+          className="md:w-1/2 md:ps-28 scrollable-container md:w-[35%]"
           ref={containerRef}
         >
           {[
@@ -78,21 +78,21 @@ const ImpeccableTradition = () => {
             { title: messages.globalClients, text: messages.noBorders },
             { title: messages.reinsuranceAccess, text: messages.tbsBroker }
           ].map((item, index) => (
-            <motion.div 
+            <motion.div
               key={index}
-              className={`${index !== 0 ? 'mt-10' : ''} w-72`}
+              className={`${index !== 0 ? 'mt-10' : ''} `}
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: false, margin: "-100px" }}
-              transition={{ 
+              transition={{
                 duration: 0.6,
                 delay: index * 0.1, // Escalonado basado en el índice
                 ease: [0.16, 1, 0.3, 1]
               }}
             >
-              <DescriptiveTextInContainer 
-                title={item.title} 
-                text={item.text} 
+              <DescriptiveTextInContainer
+                title={item.title}
+                text={item.text}
                 containerRef={containerRef}
                 isActiveProp={item.isActive}
               />

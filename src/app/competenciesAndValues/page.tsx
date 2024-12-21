@@ -3,6 +3,7 @@ import Footer from "@/components/footer";
 import Navigation from "@/components/Navigation";
 import { useTranslations } from "@/i18n/useTranslations";
 import Link from "next/link";
+import { motion } from 'motion/react';
 import { useState } from "react";
 
 export default function CompetenciesAndValues() {
@@ -44,28 +45,94 @@ export default function CompetenciesAndValues() {
       <div className="px-10 md:px-28 py-28 bg-white" style={{
         background: '#d1d7e1 url(/waves.png) center/cover no-repeat',
       }}>
-        <h1 className="font-black text-center text-[#444444] text-xl mb-4">{messages.competenciesAndValues}</h1>
-        <hr className="hr-gradient" />
-        <div className="mt-28 mb-4">
-          <h2 className="values-title-gradient text-40 mb-5">{messages.accompanimentValue}</h2>
-          <p className="text-black text-lg">{messages.clientFeelings}</p>
+        <motion.h1 initial={{ y: -100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: false }}
+          transition={{
+            duration: 0.8,
+            ease: [0.16, 1, 0.3, 1]
+          }} className="font-black text-center text-[#444444] text-xl mb-4">{messages.competenciesAndValues}</motion.h1>
+        <motion.hr initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: false }}
+          transition={{
+            duration: 0.8,
+            ease: [0.16, 1, 0.3, 1]
+          }} className="hr-gradient" />
+        <div className="mt-10 mb-4">
+          <motion.h2 initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{
+              duration: 0.8,
+              ease: [0.16, 1, 0.3, 1]
+            }} className="values-title-gradient text-40 mb-5">{messages.accompanimentValue}</motion.h2>
+          <motion.p initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{
+              duration: 0.8,
+              ease: [0.16, 1, 0.3, 1]
+            }} className="text-black text-lg">{messages.clientFeelings}</motion.p>
         </div>
-        <hr className="hr-gradient" />
+        <motion.hr initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: false }}
+          transition={{
+            duration: 0.8,
+            ease: [0.16, 1, 0.3, 1]
+          }} className="hr-gradient" />
         <div className="mt-5 mb-4">
-          <h2 className="values-title-gradient text-40 mb-5">{messages.zeroFriction}</h2>
-          <p className="text-black text-lg">{messages.simpleAndEasy}</p>
+          <motion.h2 initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{
+              duration: 0.8,
+              ease: [0.16, 1, 0.3, 1]
+            }} className="values-title-gradient text-40 mb-5">{messages.zeroFriction}</motion.h2>
+          <motion.p initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{
+              duration: 0.8,
+              ease: [0.16, 1, 0.3, 1]
+            }} className="text-black text-lg">{messages.simpleAndEasy}</motion.p>
         </div>
-        <hr className="hr-gradient" />
+        <motion.hr initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: false }}
+          transition={{
+            duration: 0.8,
+            ease: [0.16, 1, 0.3, 1]
+          }} className="hr-gradient" />
         <div className="mt-5 mb-4">
-          <h2 className="values-title-gradient text-40 mb-5">{messages.expertise}</h2>
-          <p className="text-black text-lg">{messages.yearsOfExperience}</p>
+          <motion.h2 initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{
+              duration: 0.8,
+              ease: [0.16, 1, 0.3, 1]
+            }} className="values-title-gradient text-40 mb-5">{messages.expertise}</motion.h2>
+          <motion.p initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{
+              duration: 0.8,
+              ease: [0.16, 1, 0.3, 1]
+            }} className="text-black text-lg">{messages.yearsOfExperience}</motion.p>
         </div>
         <div className="my-28 mb-4">
-          <h2 className="font-black text-center text-3xl text-[#444444] mb-4">{messages.values}</h2>
+          <motion.h2 initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{
+              duration: 0.8,
+              ease: [0.16, 1, 0.3, 1]
+            }} className="font-black text-center text-3xl text-[#444444] mb-4">{messages.values}</motion.h2>
         </div>
-        <div className="flex" style={{ height: "80vh" }}>
-          <div className="my-48" style={{ position: "relative", left: "-15%", zIndex: "49" }}>
-            <div style={{ width: "25vw", height: "25vw", borderColor: "#e0e5ed", borderRadius: "1000px", position: "relative" }} className="border-solid border-2">
+        <div className="flex md:flex-row flex-col " style={{ minHeight: "80vh" }}>
+          <div className="md:my-48 my-10 md:left-[-15%] left-[-40%]" style={{ position: "relative", zIndex: "49" }}>
+            <div style={{ borderColor: "#e0e5ed", borderRadius: "1000px", position: "relative" }} className="border-solid border-2 md:w-[25vw] md:h-[25vw] w-[80vw] h-[80vw]">
               <div onMouseEnter={() => { setActive(1); setCurrentIndex(1 - 1) }} className={active == 1 ? "values-selecte-gradient" : 'values-text'} style={{ position: "absolute", top: "-15px", left: "50%", transform: "translateX(-50%)" }}>{messages.ensure}</div>
               <div onMouseEnter={() => { setActive(2); setCurrentIndex(2 - 1) }} className={active == 2 ? "values-selecte-gradient" : 'values-text'} style={{ position: "absolute", top: "15%", left: "90%", transform: "translate(-50%, -50%)" }}>{messages.grow}</div>
               <div onMouseEnter={() => { setActive(3); setCurrentIndex(3 - 1) }} className={active == 3 ? "values-selecte-gradient" : 'values-text'} style={{ position: "absolute", top: "50%", left: "100%", transform: "translate(-50%, -50%)" }}>{messages.honor}</div>
@@ -79,8 +146,8 @@ export default function CompetenciesAndValues() {
                 {imges.map((element, index) => (
                   <div key={index} className="w-full flex-shrink-0 flex justify-center items-center">
                     <div className='lg:w-2/5 w-2/3 flex flex-col justify-center items-center' style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-                      <img src={element.src} alt={element.alt} style={{ maxHeight: "100%", objectFit: "contain" }} className="mb-6" />
-                      <p className="text-3xl values-title-gradient md:w-3/5 text-center">{element.text}</p>
+                      <img src={element.src} alt={element.alt} style={{ objectFit: "contain" }} className="mb-6 mb:w-[100%] w-[60%]" />
+                      <p className="text-3xl values-title-gradient w-3/5 text-center">{element.text}</p>
                     </div>
                   </div>
                 ))}

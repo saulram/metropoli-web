@@ -30,8 +30,8 @@ export default function CreateMore() {
   ];
 
   return (
-    <motion.div 
-      className="py-36 px-10 md:px-28" 
+    <motion.div
+      className="py-36 px-10 md:px-28"
       style={{
         background: '#F1F1F1 url(/waves.png) center/cover no-repeat',
       }}
@@ -47,14 +47,14 @@ export default function CreateMore() {
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
-            transition={{ 
+            transition={{
               duration: 0.5,
               ease: [0.16, 1, 0.3, 1]
             }}
             className="flex justify-center items-center"
           >
-            <div className='lg:w-2/5 w-2/3 h-[300px]'>
-              <motion.p 
+            <div className='md:w-2/3 md:h-[400px]'>
+              <motion.p
                 className="font-medium text-center text-3xl text-gradient mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ export default function CreateMore() {
               >
                 {texts[currentIndex].title}
               </motion.p>
-              <motion.p 
+              <motion.p
                 className="font-medium text-center text-lg text-black mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ export default function CreateMore() {
                 {texts[currentIndex].content}
               </motion.p>
               {texts[currentIndex].title2 && (
-                <motion.p 
+                <motion.p
                   className="font-medium text-center text-3xl text-gradient mb-6"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -80,7 +80,7 @@ export default function CreateMore() {
                   {texts[currentIndex].title2}
                 </motion.p>
               )}
-              <motion.p 
+              <motion.p
                 className="font-medium text-center text-lg text-black"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -91,27 +91,26 @@ export default function CreateMore() {
             </div>
           </motion.div>
         </AnimatePresence>
-        <motion.button 
-          onClick={handlePrev} 
-          className="px-4 py-2 rounded-md mr-2 absolute bottom-10" // Cambiado a valor fijo
-          style={{ left: "0" }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <img src='/rightArrow.png' alt='rightArrow' className="rotate-180" />
-        </motion.button>
+        <div className="w-full flex justify-center mt-10 gap-3 relative">
+          <motion.button
+            onClick={handlePrev}
+            className="px-4 py-2 rounded-md mr-2 absolute bottom-0" // Cambiado a valor fijo
+            style={{ left: "0" }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <img src='/rightArrow.png' alt='rightArrow' className="rotate-180" />
+          </motion.button>
 
-        <motion.button 
-          onClick={handleNext} 
-          className="px-4 py-2 rounded-md absolute bottom-10" // Cambiado a valor fijo
-          style={{ right: "0%" }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <img src='/rightArrow.png' alt='rightArrow' />
-        </motion.button>
-
-        <div className="w-full flex justify-center mt-10 gap-3">
+          <motion.button
+            onClick={handleNext}
+            className="px-4 py-2 rounded-md absolute bottom-0" // Cambiado a valor fijo
+            style={{ right: "0%" }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <img src='/rightArrow.png' alt='rightArrow' />
+          </motion.button>
           {texts.map((_, index) => (
             <motion.button
               key={index}
@@ -124,21 +123,21 @@ export default function CreateMore() {
         </div>
       </div>
 
-      <div className="w-full overflow-hidden relative">
+      <div className="w-full overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex + 'img'}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ 
+            transition={{
               duration: 0.5,
               ease: [0.16, 1, 0.3, 1]
             }}
             className="flex justify-center items-center"
           >
-            <motion.img 
-              src={`slide${currentIndex + 1}.png`} 
+            <motion.img
+              src={`slide${currentIndex + 1}.png`}
               alt={'slide' + currentIndex}
               initial={{ y: 20 }}
               animate={{ y: 0 }}

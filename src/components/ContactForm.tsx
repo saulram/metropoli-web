@@ -34,13 +34,13 @@ const ContactForm: React.FC = () => {
     return (
         <motion.div
             className="relative bg-cover bg-center bg-metropoliBg"
-            style={{ backgroundImage: 'url(/waves.png)', height: '100vh' }}
+            style={{ backgroundImage: 'url(/waves.png)', minHeight: '100vh' }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: false }}
             transition={{ duration: 0.8 }}
         >
-            <div className="container pt-52 mx-auto px-4 py-8 md:py-16">
+            <div className="container md:pt-40 pt-20 mx-auto px-4 py-8 md:py-16">
                 <div className="max-w-[800px] mx-auto">
                     <motion.h1
                         className="text-[32px] md:text-[40px] font-normal leading-[48px] bg-gradient-to-r from-[#091934] to-[#1C6EF6] bg-clip-text text-transparent"
