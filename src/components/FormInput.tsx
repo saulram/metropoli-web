@@ -7,7 +7,6 @@ interface FormInputProps extends FormField {
 
 export const FormInput: React.FC<FormInputProps> = ({
   id,
-  label,
   type,
   placeholder,
   required,
