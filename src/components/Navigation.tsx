@@ -5,7 +5,6 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { useTranslations } from '@/i18n/useTranslations';
 import Link from 'next/link';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 
 export default function Navigation() {
     const { language, setLanguage } = useLanguage();
