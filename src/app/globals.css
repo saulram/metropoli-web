@@ -27,6 +27,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: 'Lato',Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 .text-40 {
