@@ -10,9 +10,9 @@ const WayToGo = () => {
   return (
     <div style={{ background: '#F1F1F1' }}>
       <div className='px-10 md:px-28 pt-28'>
-        <div className="w-3/5">
+        <div className="">
           <motion.h1
-            className="font-medium text-40 text-gradient"
+            className="font-medium text-40 text-gradient mb-4 md:w-3/5 w-4/5"
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: false }}
@@ -24,7 +24,7 @@ const WayToGo = () => {
             {messages.whichPath}
           </motion.h1>
           <motion.h2
-            className="font-medium text-2xl text-black"
+            className="font-medium text-2xl text-black md:w-3/5 "
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: false }}
@@ -51,9 +51,9 @@ const WayToGo = () => {
           </motion.h2>
         </div>
 
-        <div className="flex justify-around mt-32">
+        <div className="flex justify-around mt-32 flex-col md:flex-row">
           <motion.div
-            className="text-center hover-effect"
+            className="text-center hover-effect mb-10 md:mb-0"
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: false }}
@@ -103,12 +103,12 @@ const WayToGo = () => {
           }}
         >
           <h3 className="text-black text-xl">{messages.yourPathToPeace}</h3>
-          <h3 className="text-black text-3xl mt-4 text-gradient">{messages.focusOnValue}</h3>
-          <h3 className="text-black text-lg mt-4 text-black w-2/5 text-center">{messages.weEliminateRisks}</h3>
+          <h3 className="text-black text-3xl text-center mt-4 text-gradient">{messages.focusOnValue}</h3>
+          <h3 className="text-black text-lg mt-4 text-black md:w-2/5 text-center">{messages.weEliminateRisks}</h3>
         </motion.div>
       </div>
 
-      <div className="relative w-full">
+      <div className="w-full">
         <motion.img
           src="path.png"
           alt="path"
@@ -122,9 +122,9 @@ const WayToGo = () => {
           }}
         />
         <motion.div
-          className='absolute'
-          style={{ bottom: '15%', right: '5%', width: '30%' }}
-          initial={{ x: 100, opacity: 0 }}
+          className='md:w-2/5 w-4/5 md:bottom-40 float-end me-8 md:mt-[-200px]'
+          style={{ overflow:"hidden", }}
+          initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: false }}
           transition={{
@@ -133,8 +133,10 @@ const WayToGo = () => {
             ease: [0.16, 1, 0.3, 1]
           }}
         >
-          <h3 className="font-medium text-end text-40 text-gradient">{messages.discoverHow}</h3>
-          <h3 className="font-medium text-end text-lg text-black">{messages.simpleProcess}</h3>
+          <div className="flex flex-col justify-end items-end">
+            <h3 className="font-medium md:text-end w-3/5 md:w-full text-start text-40 text-gradient">{messages.discoverHow}</h3>
+            <h3 className="font-medium md:text-end w-3/5 md:w-full text-start text-lg text-black">{messages.simpleProcess}</h3>
+          </div>
         </motion.div>
       </div>
 

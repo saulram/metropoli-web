@@ -30,8 +30,15 @@ body {
 }
 
 .text-40 {
-  font-size: 40px;
-  line-height: 48px;
+  font-size: 30px;
+  line-height: 36px;
+}
+
+@media (min-width: 768px) {
+  .text-40 {
+      font-size: 40px;
+      line-height: normal; /* Ajusta esto según tus necesidades */
+  }
 }
 
 .text-gradient {
@@ -40,10 +47,6 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-
-
-
 
 
 .values-selecte-gradient {
@@ -98,13 +101,6 @@ body {
 .fade-active {
   opacity: 1;
 }
-
-
-
-
-
-
-
 
 
 .hr-gradient {
@@ -194,12 +190,11 @@ body {
 }
 
 .scrollable-container {
-  height: 522px; /* Ajusta la altura según tus necesidades */
+  height: 522px;
   overflow-y: auto; /* Habilita el desplazamiento vertical */
   overflow-x: hidden; /* Oculta el desplazamiento horizontal si no es necesario */
   padding: 10px; /* Opcional: agrega un poco de padding */
   box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
-  width: 35%;
 }
 
 /* Estilos para el scrollbar */

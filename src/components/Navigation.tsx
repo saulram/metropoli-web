@@ -98,31 +98,35 @@ export default function Navigation() {
             <nav className="fixed top-0 left-0 right-0 z-50 flex md:hidden">
                 <div className="flex w-full items-center justify-between px-4 py-3 bg-white">
                     {/* Logo */}
-                    <div className="flex-shrink-0">
-                        <img
-                            src="/logotipo_negro.png"
-                            alt="METROPOLI"
-                            className="h-6"
-                        />
-                    </div>
+                    <Link href="/">
+                        <div className="flex-shrink-0">
+                            <img
+                                src="/logotipo_negro.png"
+                                alt="METROPOLI"
+                                className="h-3"
+                            />
+                        </div>
+                    </Link>
 
                     {/* Mobile Send Request Button & Menu */}
                     <div className="flex items-center space-x-4">
-                        <button
-                            className="rounded-md px-3.5 py-2.5 text-sm font-bold text-white shadow-sm focus:outline-none"
-                            onClick={() => {
+                        <Link href={'contact-us'}>
+                            <button
+                                className="rounded-md px-3.5 py-2.5 text-sm font-bold text-white shadow-sm focus:outline-none"
+                                onClick={() => {
 
-                            }}
-                            style={{
-                                background: 'linear-gradient(90deg, #1E2D49 0%, #112039 25.5%, rgba(25, 57, 113, 0.99299) 78.5%, rgba(14, 80, 187, 0.98) 100%)',
-                                border: '0.5px solid',
-                                borderImageSource: 'linear-gradient(90deg, #99C0FF 0%, #1C6EF6 100%)',
-                                boxShadow: '0px 4px 4px 0px #00000040 inset',
-                                textAlign: 'center',
-                                borderRadius: '10px'
-                            }}>
-                            {messages.sendRequest}
-                        </button>
+                                }}
+                                style={{
+                                    background: 'linear-gradient(90deg, #1E2D49 0%, #112039 25.5%, rgba(25, 57, 113, 0.99299) 78.5%, rgba(14, 80, 187, 0.98) 100%)',
+                                    border: '0.5px solid',
+                                    borderImageSource: 'linear-gradient(90deg, #99C0FF 0%, #1C6EF6 100%)',
+                                    boxShadow: '0px 4px 4px 0px #00000040 inset',
+                                    textAlign: 'center',
+                                    borderRadius: '10px'
+                                }}>
+                                {messages.sendRequest}
+                            </button>
+                        </Link>
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             className="text-gray-700 hover:text-gray-900 focus:outline-none"
@@ -156,12 +160,12 @@ export default function Navigation() {
                             </div>
 
                             {/* Mobile Navigation Items */}
-                            <div className="flex-1 px-4 py-6 space-y-6">
-                                <a href="#section" className="block text-lg font-semibold text-gray-900">
+                            <div className="flex-1 px-4 py-6 space-y-6 mb-10">
+                                <Link href="/competenciesAndValues" className="block text-lg font-semibold text-gray-900">
                                     {messages.competenciesAndValues}
-                                </a>
+                                </Link>
 
-                                <div className="block text-lg">
+                                <div className="block text-lg mb-10">
                                     <Popover>
                                         <PopoverButton className="w-full">
                                             <div className="flex items-center justify-between mb-4">
@@ -173,16 +177,31 @@ export default function Navigation() {
                                         </PopoverButton>
                                         <PopoverPanel className="pl-2">
                                             <div className="space-y-4">
-                                                <a href="#" className="block text-gray-900 hover:text-gray-700">
+                                                <Link href="business" className="block text-gray-900 hover:text-gray-700">
                                                     {messages.business}
-                                                </a>
-                                                <a href="#" className="block">
-                                                    <span className="text-gray-900 hover:text-gray-700">{messages.personalFamily}</span>
-                                                </a>
+                                                </Link>
+                                                <Link href="personalOrFamily" className="block">
+                                                    <span className="text-gray-900 hover:text-gray-700">{messages.personalOrFamily}</span>
+                                                </Link>
                                             </div>
                                         </PopoverPanel>
                                     </Popover>
                                 </div>
+                                <Link href="/contact-us">
+                                    <button
+                                        className="mt-4 rounded-md px-3.5 py-2.5 text-sm font-bold text-white shadow-sm focus:outline-none"
+                                        style={{
+                                            background: 'linear-gradient(90deg, #1E2D49 0%, #112039 25.5%, rgba(25, 57, 113, 0.99299) 78.5%, rgba(14, 80, 187, 0.98) 100%)',
+                                            border: '0.5px solid',
+                                            borderImageSource: 'linear-gradient(90deg, #99C0FF 0%, #1C6EF6 100%)',
+                                            boxShadow: '0px 4px 4px 0px #00000040 inset',
+                                            width: '175px',
+                                            textAlign: 'center',
+                                            borderRadius: '10px'
+                                        }}>
+                                        {messages.sendRequest}
+                                    </button>
+                                </Link>
                                 {/* Language Selector */}
                                 <div className="px-4 py-4">
                                     <div className="flex items-center space-x-2 text-sm">

@@ -8,21 +8,19 @@ export default function HeroSection() {
     const messages = useTranslations();
 
     return (
-        <div className="relative bg-cover bg-center bg-metropoliBg"
-             style={{backgroundImage: 'url(/waves.png)', height: '100vh'}}>
-            <div className="absolute top-1/2 left-52 transform -translate-y-1/2 p-8">
-                <motion.p 
-                    className="text-left text-2xl font-bold text-white w-3/5"
+        <div className="relative bg-cover bg-center bg-metropoliBg flex items-center justify-center"
+            style={{ backgroundImage: 'url(/waves.png)', height: '100vh' }}>
+            <div className="px-5 md:px-28 py-28 ">
+                <motion.p
+                    className="text-left text-40 line font-bold text-white md:w-3/5"
                     initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ 
+                    transition={{
                         duration: 1.5,
                         ease: [0.08, 0.82, 0.17, 1], // Slower ease curve
                     }}
                     style={{
-                        fontSize: '48px',
                         fontWeight: 500,
-                        lineHeight: '48px',
                         textAlign: 'left',
                         color: "#000506",
                         textUnderlinePosition: 'from-font',
@@ -31,20 +29,18 @@ export default function HeroSection() {
                     {messages.leadersInStrategy} <strong>{messages.insurance}</strong> {messages.invest}
                 </motion.p>
 
-                <motion.p 
-                    className="text-left text-4xl font-bold bg-clip-text text-transparent"
+                <motion.p
+                    className="text-left text-40 font-bold bg-clip-text text-transparent"
                     initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ 
+                    transition={{
                         duration: 0.8,
                         delay: 0.2,
                         ease: [0.16, 1, 0.3, 1]
                     }}
                     style={{
-                        fontSize: '48px',
                         fontStyle: 'italic',
                         fontWeight: 700,
-                        lineHeight: '48px',
                         textAlign: 'left',
                         textUnderlinePosition: 'from-font',
                         textDecorationSkipInk: 'none',
@@ -60,7 +56,7 @@ export default function HeroSection() {
                 <motion.div
                     initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ 
+                    transition={{
                         duration: 0.8,
                         delay: 0.4,
                         ease: [0.16, 1, 0.3, 1]
@@ -77,7 +73,7 @@ export default function HeroSection() {
                             textAlign: 'center',
                             borderRadius: '10px',
                             display: 'inline-block'
-                        }} 
+                        }}
                         href={'/contact-us'}
                     >
                         {messages.EnsureYourPeaceOfMind}

@@ -177,7 +177,7 @@ const SliderComponent = () => {
           whileHover={{ scale: 1 }}
           whileTap={{ scale: 0.95 }}
           onClick={handlePrev}
-          className="absolute left-0 top-1/2 -translate-y-1/2 p-2 md:p-4"
+          className="absolute left-0 p-2 md:p-4"
         >
           <img src="/rightArrow.png" alt="Previous" className="w-6 h-6 md:w-8 md:h-8 rotate-180" />
         </motion.button>
@@ -186,7 +186,7 @@ const SliderComponent = () => {
           whileHover={{ scale: 1 }}
           whileTap={{ scale: 0.95 }}
           onClick={handleNext}
-          className="absolute right-0 top-1/2 -translate-y-1/2 p-2 md:p-4"
+          className="absolute right-0 p-2 md:p-4"
         >
           <img src="/rightArrow.png" alt="Next" className="w-6 h-6 md:w-8 md:h-8" />
         </motion.button>
