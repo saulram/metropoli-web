@@ -1,9 +1,12 @@
 "use client"
+import { useLanguage } from "@/i18n/LanguageContext";
 import { useTranslations } from "@/i18n/useTranslations";
 import Link from "next/link";
 
 export default function Footer() {
   const messages = useTranslations();
+  const { language, setLanguage } = useLanguage();
+
   return (
     <div  className="bg-metropoliBg pb-48" style={{
       backgroundImage: 'url(/waves_bottom.png)',
@@ -24,10 +27,10 @@ export default function Footer() {
             <Link href="/competenciesAndValues">
               <p className="block">{messages.competenciesAndValues}</p>
             </Link>
-            <Link href="/legal-notice">
+            <Link href="/#roads">
               <p className="block">{messages.roads}</p>
             </Link>
-            <Link href="/terms-and-conditions">
+            <Link href="/contact-us">
               <p className="block">{messages.sendRequest}</p>
             </Link>
           </div>
@@ -46,8 +49,8 @@ export default function Footer() {
           <div>
             <p>{messages.languages}</p>
             <div className="flex mb-2">
-              <img src="/flagmx.png" alt="español" className="mr-2" width={17}/>
-              <img src="/flagusa.png" alt="english" width={17}/>
+              <img onClick={() => setLanguage('es')} src="/flagmx.png" alt="español" className="mr-2" width={17}/>
+              <img onClick={() => setLanguage('en')} src="/flagusa.png" alt="english" width={17}/>
             </div>
             <p>{messages.followUs}</p>
             <div className="flex mb-2">
