@@ -45,6 +45,7 @@ body {
   background: linear-gradient(90deg, #091934 0%, #1C6EF6 100%);
 
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -53,6 +54,7 @@ body {
   position: relative;
   background: linear-gradient(90deg, #091934 0%, #1C6EF6 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 36px;
   transform: scale(1.1);
