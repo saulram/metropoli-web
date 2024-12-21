@@ -7,11 +7,17 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      'sm': '480px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        // text color black #313131
         text: "#313131",
         metropoliBg:"#F1F1F1"
       },
