@@ -105,6 +105,13 @@ export default function CompetenciesAndValues() {
             duration: 0.8,
             ease: [0.16, 1, 0.3, 1]
           }} className="hr-gradient" />
+          <div className="stain"
+          style={{
+            height: '130vh',
+            right: 0,
+            rotate: '180deg',
+            position: 'absolute', // Asegúrate de que el div esté posicionado correctamente
+          }} />
         <div className="mt-5 mb-4">
           <motion.h2 initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -130,9 +137,10 @@ export default function CompetenciesAndValues() {
               ease: [0.16, 1, 0.3, 1]
             }} className="font-black text-center text-3xl text-[#444444] mb-4">{messages.values}</motion.h2>
         </div>
-        <div className="flex md:flex-row flex-col " style={{ minHeight: "80vh" }}>
+        
+        <div className="flex md:flex-row flex-col " style={{ minHeight: "100vh" }}>
           <div className="md:my-48 my-10 md:left-[-15%] left-[-40%]" style={{ position: "relative", zIndex: "49" }}>
-            <div style={{ borderColor: "#e0e5ed", borderRadius: "1000px", position: "relative" }} className="border-solid border-2 md:w-[25vw] md:h-[25vw] w-[80vw] h-[80vw]">
+            <div style={{ borderColor: "#90a0c030", borderRadius: "1000px", position: "relative" }} className="border-solid border-2 md:w-[25vw] md:h-[25vw] w-[80vw] h-[80vw]">
               <div onMouseEnter={() => { setActive(1); setCurrentIndex(1 - 1) }} className={active == 1 ? "values-selecte-gradient" : 'values-text'} style={{ position: "absolute", top: "-15px", left: "50%", transform: "translateX(-50%)" }}>{messages.ensure}</div>
               <div onMouseEnter={() => { setActive(2); setCurrentIndex(2 - 1) }} className={active == 2 ? "values-selecte-gradient" : 'values-text'} style={{ position: "absolute", top: "15%", left: "90%", transform: "translate(-50%, -50%)" }}>{messages.grow}</div>
               <div onMouseEnter={() => { setActive(3); setCurrentIndex(3 - 1) }} className={active == 3 ? "values-selecte-gradient" : 'values-text'} style={{ position: "absolute", top: "50%", left: "100%", transform: "translate(-50%, -50%)" }}>{messages.honor}</div>
@@ -141,12 +149,12 @@ export default function CompetenciesAndValues() {
             </div>
           </div>
           <div className="flex flex-col justify-center items-center w-full">
-            <div className="flex flex-col justify-center items-center w-full" style={{ overflow: 'hidden' }}>
-              <div className="flex transition-transform duration-500" style={{ width: "auto", transform: `translateX(-${currentIndex * 100}%)` }}>
+            <div className="" style={{ overflow: 'hidden' }}>
+              <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                 {imges.map((element, index) => (
                   <div key={index} className="w-full flex-shrink-0 flex justify-center items-center">
-                    <div className='lg:w-2/5 w-2/3 flex flex-col justify-center items-center' style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-                      <img src={element.src} alt={element.alt} style={{ objectFit: "contain" }} className="mb-6 mb:w-[100%] w-[60%]" />
+                    <div className='flex flex-col justify-center items-center md:w-[70%]' style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+                      <img src={element.src} alt={element.alt} style={{ objectFit: "contain" }} className="mb-6 md:w-[200%] w-[60%]" />
                       <p className="text-3xl values-title-gradient w-3/5 text-center">{element.text}</p>
                     </div>
                   </div>

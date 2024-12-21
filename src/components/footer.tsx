@@ -10,7 +10,7 @@ export default function Footer() {
   const { setLanguage } = useLanguage();
 
   return (
-    <div className="bg-metropoliBg pb-48" style={{
+    <div className="bg-metropoliBg" style={{
       backgroundImage: 'url(/waves_bottom.png)',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
@@ -80,15 +80,15 @@ export default function Footer() {
             <div>
               <p>{messages.languages}</p>
               <div className="flex mb-2">
-                <img onClick={() => setLanguage('es')} src="/flagmx.png" alt="español" className="mr-2" width={17} />
-                <img onClick={() => setLanguage('en')} src="/flagusa.png" alt="english" width={17} />
+                <img onClick={() => setLanguage('es')} src="/flag.svg" alt="español" className="mr-2" width={17} />
+                <img onClick={() => setLanguage('en')} src="/usa.svg" alt="english" width={17} />
               </div>
             </div>
             <div>
               <p>{messages.followUs}</p>
               <div className="flex mb-2">
-                <img src="/facebook.png" alt="facebook" className="mr-2" width={18} />
-                <img src="/linkedin.png" alt="inkedin" width={18} />
+                <img src="/facebook.svg" alt="facebook" className="mr-2" width={18} />
+                <img src="/linkedin.svg" alt="inkedin" width={18} />
               </div>
             </div>
           </motion.div>
