@@ -63,7 +63,7 @@ export default function CompetenciesAndValues() {
           <h2 className="font-black text-center text-3xl text-[#444444] mb-4">{messages.values}</h2>
         </div>
         <div className="flex" style={{ height: "80vh" }}>
-          <div className="my-48" style={{ position: "relative", left: "-15%", zIndex:"100" }}>
+          <div className="my-48" style={{ position: "relative", left: "-15%", zIndex:"49" }}>
             <div style={{ width: "25vw", height: "25vw", borderColor: "#e0e5ed", borderRadius: "1000px", position: "relative" }} className="border-solid border-2">
               <div onMouseEnter={() => { setActive(1); setCurrentIndex(1 - 1) }} className={active == 1 ? "values-selecte-gradient" : 'values-text'} style={{ position: "absolute", top: "-15px", left: "50%", transform: "translateX(-50%)" }}>{messages.ensure}</div>
               <div onMouseEnter={() => { setActive(2); setCurrentIndex(2 - 1) }} className={active == 2 ? "values-selecte-gradient" : 'values-text'} style={{ position: "absolute", top: "15%", left: "90%", transform: "translate(-50%, -50%)" }}>{messages.grow}</div>
