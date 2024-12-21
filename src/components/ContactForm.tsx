@@ -32,7 +32,7 @@ const ContactForm: React.FC = () => {
     };
 
     return (
-        <motion.div 
+        <motion.div
             className="relative bg-cover bg-center bg-metropoliBg"
             style={{ backgroundImage: 'url(/waves.png)', height: '100vh' }}
             initial={{ opacity: 0 }}
@@ -42,22 +42,22 @@ const ContactForm: React.FC = () => {
         >
             <div className="container mt-14 mx-auto px-4 py-8 md:py-16">
                 <div className="max-w-[800px] mx-auto">
-                    <motion.h1 
+                    <motion.h1
                         className="text-[32px] md:text-[40px] font-normal leading-[48px] bg-gradient-to-r from-[#091934] to-[#1C6EF6] bg-clip-text text-transparent"
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        transition={{ 
+                        transition={{
                             duration: 0.8,
                             ease: [0.16, 1, 0.3, 1]
                         }}
                     >
                         Asegura tu tranquilidad
                     </motion.h1>
-                    <motion.p 
+                    <motion.p
                         className="text-[#666] mb-8 md:mb-12 text-base md:text-lg max-w-[600px]"
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        transition={{ 
+                        transition={{
                             duration: 0.8,
                             delay: 0.2,
                             ease: [0.16, 1, 0.3, 1]
@@ -68,12 +68,12 @@ const ContactForm: React.FC = () => {
                         ayudarte a encontrar tu tranquilidad.
                     </motion.p>
 
-                    <motion.form 
-                        onSubmit={handleSubmit} 
+                    <motion.form
+                        onSubmit={handleSubmit}
                         className="space-y-6"
                         initial={{ y: 40, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        transition={{ 
+                        transition={{
                             duration: 0.8,
                             delay: 0.4,
                             ease: [0.16, 1, 0.3, 1]
@@ -88,13 +88,14 @@ const ContactForm: React.FC = () => {
                             [7],    // industry
                             [9]     // message
                         ].map((row, rowIndex) => (
-                            <motion.div 
+                            <motion.div
                                 key={rowIndex}
-                                className={`grid md:grid-cols-${row.length} gap-6`}
+
+                                className={`grid ${row.length === 2 ? 'md:grid-cols-2' : ''} gap-6`}
                                 initial={{ y: 20, opacity: 0 }}
                                 whileInView={{ y: 0, opacity: 1 }}
                                 viewport={{ once: false, margin: "-50px" }}
-                                transition={{ 
+                                transition={{
                                     duration: 0.5,
                                     delay: rowIndex * 0.1,
                                     ease: [0.16, 1, 0.3, 1]
@@ -111,12 +112,12 @@ const ContactForm: React.FC = () => {
                             </motion.div>
                         ))}
 
-                        <motion.div 
+                        <motion.div
                             className="pt-4 flex justify-center"
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: false }}
-                            transition={{ 
+                            transition={{
                                 duration: 0.5,
                                 delay: 0.6,
                                 ease: [0.16, 1, 0.3, 1]
