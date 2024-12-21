@@ -115,7 +115,7 @@ export default function CreateMore() {
             <motion.button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-4 h-4 rounded-full ${currentIndex === index ? 'bg-[#618FDC]' : 'bg-[#BFCCE4]'}`}
+              className={`w-[10px] h-[10px] rounded-full ${currentIndex === index ? 'bg-[#618FDC]' : 'bg-[#BFCCE4]'} `}
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
             />

@@ -222,7 +222,9 @@ const SliderComponent = () => {
             onClick={() => setCurrentIndex(index)}
             className={`w-1 h-1 md:w-4 md:h-4 rounded-full transition-colors`}
             style={{
-              backgroundColor: currentIndex === index ? '#618FDC' : '#BFCCE4'
+              backgroundColor: currentIndex === index ? '#618FDC' : '#BFCCE4',
+              width: "10px",
+              height: "10px"
             }}
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
