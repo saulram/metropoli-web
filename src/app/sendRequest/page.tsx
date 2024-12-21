@@ -43,7 +43,7 @@ export default function CompetenciesAndValues() {
       <div className="px-10 md:px-28 py-28 bg-white" style={{
         background: '#d1d7e1 url(/waves.png) center/cover no-repeat',
       }}>
-        <h1 className="font-black text-center text-[#444444] text-xl mb-4">{messages.competenciesAndValues}</h1>
+        <h1 className="font-black text-center text-black text-xl mb-4">{messages.competenciesAndValues}</h1>
         <hr className="hr-gradient"/>
         <div className="mt-28 mb-4">
           <h2 className="values-title-gradient text-40 mb-5">{messages.accompanimentValue}</h2>

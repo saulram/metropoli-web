@@ -29,12 +29,12 @@ const WayToGo = () => {
     };
   }, []);
   return (
-    <div style={{ background: '#F1F1F1' }} ref={ref}>
+    <div style={{ background: '#F1F1F1' }} ref={ref} id="roads">
       <div className='px-10 md:px-28 pt-28'>
         <div className="w-3/5">
-          <h1 className={`font-medium text-40 text-gradient  ${isVisible ? 'slide-in-left' : 'hidden'}`}>
+          <h2 className={`font-medium text-40 text-gradient  ${isVisible ? 'slide-in-left' : 'hidden'}`}>
             {messages.whichPath}
-          </h1>
+          </h2>
           <h2 className={`font-medium text-2xl text-black ${isVisible ? 'slide-in-left' : 'hidden'}`}>
             {messages.thinkingOfOthers}
           </h2>
