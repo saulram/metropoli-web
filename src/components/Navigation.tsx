@@ -170,11 +170,10 @@ export default function Navigation() {
                                         <PopoverPanel className="pl-2">
                                             <div className="space-y-4">
                                                 <a href="#" className="block text-gray-900 hover:text-gray-700">
-                                                    Empresarial
+                                                    {messages.business}
                                                 </a>
                                                 <a href="#" className="block">
-                                                    <span className="text-gray-900">Personal y/o</span>
-                                                    <span className="text-blue-600"> Familiar</span>
+                                                    <span className="text-gray-900 hover:text-gray-700">{messages.personalFamily}</span>
                                                 </a>
                                             </div>
                                         </PopoverPanel>
