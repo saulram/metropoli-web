@@ -154,7 +154,7 @@ export default function CompetenciesAndValues() {
                 {imges.map((element, index) => (
                   <div key={index} className="w-full flex-shrink-0 flex justify-center items-center">
                     <div className='flex flex-col justify-center items-center md:w-[70%]' style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-                      <img src={element.src} alt={element.alt} style={{ objectFit: "contain" }} className="mb-6 md:w-[200%] w-[60%]" />
+                      <img src={element.src} alt={element.alt} style={{ objectFit: "contain" }} className="mb-6 w-[60%] md:max-w-[492px] md:max-h-[345px]" />
                       <p className="text-3xl values-title-gradient w-3/5 text-center whitespace-pre-line">{element.text}</p>
                     </div>
                   </div>
