@@ -37,7 +37,7 @@ const WayToGo = () => {
             {messages.thinkingOfOthers}
           </motion.h2>
           <motion.h2
-            className="font-medium text-2xl text-gradient lg:w-3/5"
+            className="font-medium text-2xl text-gradient lg:w-3/5 whitespace-pre-line"
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: false }}
@@ -104,7 +104,7 @@ const WayToGo = () => {
         >
           <h3 className="text-black text-xl">{messages.yourPathToPeace}</h3>
           <h3 className="text-black text-3xl text-center mt-4 text-gradient">{messages.focusOnValue}</h3>
-          <h3 className="text-black text-lg mt-4 text-black md:w-2/5 text-center">{messages.weEliminateRisks}</h3>
+          <h3 className="text-black text-lg mt-4 text-black md:w-2/5 text-center whitespace-pre-line">{messages.weEliminateRisks}</h3>
         </motion.div>
       </div>
 
@@ -135,7 +135,7 @@ const WayToGo = () => {
         >
           <div className="flex flex-col justify-end items-end">
             <h3 className="font-medium md:text-end w-3/5 md:w-full text-start text-40 text-gradient">{messages.discoverHow}</h3>
-            <h3 className="font-medium md:text-end w-3/5 md:w-full text-start text-lg text-black">{messages.simpleProcess}</h3>
+            <h3 className="font-medium md:text-end w-3/5 md:w-full text-start text-lg text-black whitespace-pre-line">{messages.simpleProcess}</h3>
           </div>
         </motion.div>
       </div>

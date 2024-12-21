@@ -36,7 +36,7 @@ const DescriptiveText: React.FC<DescriptiveTextProps> = ({ title, text, width, t
     return (
         <div ref={elementRef} style={{ width: width && '25vw' }}>
             <h3
-                className="text-lg font-medium mb-3"
+                className="text-lg font-medium mb-3 whitespace-pre-line"
                 style={{
                     backgroundImage: isActive ? 'linear-gradient(90deg, #091934 0%, #1C6EF6 100%)' : 'hsl(0, 0%, 44%)',
                     lineHeight: '1.2',
@@ -45,6 +45,7 @@ const DescriptiveText: React.FC<DescriptiveTextProps> = ({ title, text, width, t
                     color: isActive ? 'transparent' : 'hsl(0, 0%, 44%)', // Negro cuando no hay gradiente, transparente cuando hay gradiente
                     fontSize: `${titleSize || 27}px`, // Incrementa la fuente en 3px cuando está activo
                     transition: 'background-image 0.6s ease, color 0.6s ease, font-size 0.6s ease, line-height 0.6s ease',
+                    whiteSpace:'pre-line'
                 }}
             >
                 {title}
@@ -75,7 +76,7 @@ const DescriptiveText: React.FC<DescriptiveTextProps> = ({ title, text, width, t
                 </div>
             </div> : <></>}
             <p
-                className="text-sm"
+                className="text-sm whitespace-pre-line"
                 style={{
                     backgroundImage: isActive ? 'linear-gradient(90deg, #091934 0%, #1C6EF6 100%)' : 'hsl(0, 0%, 44%)',
                     WebkitBackgroundClip: isActive ? 'text' : 'none',

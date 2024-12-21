@@ -110,7 +110,7 @@ export default function CompetenciesAndValues() {
             height: '130vh',
             right: 0,
             rotate: '180deg',
-            position: 'absolute', // Asegúrate de que el div esté posicionado correctamente
+            position: 'absolute', 
           }} />
         <div className="mt-5 mb-4">
           <motion.h2 initial={{ x: -100, opacity: 0 }}
@@ -155,7 +155,7 @@ export default function CompetenciesAndValues() {
                   <div key={index} className="w-full flex-shrink-0 flex justify-center items-center">
                     <div className='flex flex-col justify-center items-center md:w-[70%]' style={{ marginLeft: 'auto', marginRight: 'auto' }}>
                       <img src={element.src} alt={element.alt} style={{ objectFit: "contain" }} className="mb-6 md:w-[200%] w-[60%]" />
-                      <p className="text-3xl values-title-gradient w-3/5 text-center">{element.text}</p>
+                      <p className="text-3xl values-title-gradient w-3/5 text-center whitespace-pre-line">{element.text}</p>
                     </div>
                   </div>
                 ))}
@@ -170,8 +170,12 @@ export default function CompetenciesAndValues() {
                       border: '0.5px solid',
                       borderImageSource: 'linear-gradient(90deg, #99C0FF 0%, #1C6EF6 100%)',
                       boxShadow: '0px 4px 4px 0px #00000040 inset',
-                      width: '175px',
+                      width: '275px',
+                      height: '50px',
                       textAlign: 'center',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      display: 'flex',
                       borderRadius: '10px'
                     }}>{messages.EnsureYourPeaceOfMind}</div>
                 </Link>

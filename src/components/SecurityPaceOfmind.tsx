@@ -79,7 +79,7 @@ const SecurityPeaceOfMind = () => {
                     ].map((item, index) => (
                         <motion.div
                             key={index}
-                            className={`w-72 ${index !== 0 ? 'mt-10' : ''}`}
+                            className={`w-96 ${index !== 0 ? 'mt-10' : ''}`}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: false }}
