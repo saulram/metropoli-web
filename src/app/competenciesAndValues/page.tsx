@@ -3,7 +3,7 @@ import Footer from "@/components/footer";
 import Navigation from "@/components/Navigation";
 import { useTranslations } from "@/i18n/useTranslations";
 import Link from "next/link";
-import { color, motion } from 'motion/react';
+import { motion } from 'motion/react';
 import { useState } from "react";
 
 export default function CompetenciesAndValues() {

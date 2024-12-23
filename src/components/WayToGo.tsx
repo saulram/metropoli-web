@@ -104,7 +104,8 @@ const WayToGo = () => {
         >
           <h3 className="text-black text-xl">{messages.yourPathToPeace}</h3>
           <h3 className="text-black text-3xl text-center mt-4 text-gradient">{messages.focusOnValue}</h3>
-          <h3 className="text-black text-lg mt-4 text-black md:w-2/5 text-center whitespace-pre-line">{messages.weEliminateRisks}</h3>
+          <h3 className="text-black text-lg mt-4 md:w-2/5 text-center whitespace-pre-line">{messages.weEliminateRisks}</h3>
+
         </motion.div>
       </div>
 

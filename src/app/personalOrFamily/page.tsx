@@ -150,7 +150,7 @@ export default function CompetenciesAndValues() {
               duration: 0.8,
               ease: [0.16, 1, 0.3, 1]
             }} className="flex containersemitransparente justify-center items-center">
-            <p className="values-title-gradient font-bold text-base  text-center md:text-2xl text-center">{messages.collectors}</p>
+            <p className="values-title-gradient font-bold text-base  text-center md:text-2xl">{messages.collectors}</p>
           </motion.div>
 
           <motion.div
