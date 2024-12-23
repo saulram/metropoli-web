@@ -7,9 +7,10 @@ interface DescriptiveTextProps {
     titleSize?: string;
     active?: boolean;
     button?: string;
+    onClick?: () => void;
 }
 
-const DescriptiveText: React.FC<DescriptiveTextProps> = ({ title, text, width, titleSize, active, button }) => {
+const DescriptiveText: React.FC<DescriptiveTextProps> = ({ title, text, width, titleSize, active, button,onClick }) => {
     const [isActive, setIsActive] = useState(active || false); // Indica si el texto está activo con el gradiente
     const elementRef = useRef<HTMLDivElement>(null);
 
@@ -52,6 +53,7 @@ const DescriptiveText: React.FC<DescriptiveTextProps> = ({ title, text, width, t
             </h3>
             {button ? <div
                 className="inline-block py-1 px-4"
+                onClick={onClick}
                 style={{
                     borderRadius: '12px',
                     background: isActive

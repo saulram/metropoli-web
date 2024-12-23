@@ -12,7 +12,7 @@ import Footer from "@/components/footer";
 export default function Example() {
 
   return (
-    <div className="bg-white">
+    <div className="bg-white w-full max-w-[100vw] overflow-x-hidden">
    
       <Navigation />
       <HeroSection />

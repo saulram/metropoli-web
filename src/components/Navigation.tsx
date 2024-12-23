@@ -19,7 +19,7 @@ export default function Navigation() {
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
                 transition={{ type: "spring", stiffness: 100, damping: 20 }}
-                className="fixed top-0 left-0 right-0 z-50 flex-row items-center justify-between p-4 text-text font-sans sm:hidden md:flex"
+                className="fixed top-0 left-0 right-0 z-10 backdrop-blur  flex-row items-center justify-between p-4 text-text font-sans sm:hidden md:flex"
                 style={{
                     fontSize: '15px',
                     fontWeight: 700,
@@ -61,7 +61,10 @@ export default function Navigation() {
                                         {messages.roads}
                                         <motion.span
                                             animate={{ rotate: open ? 180 : 0 }}
-                                            transition={{ duration: 0.2 }}>
+                                            transition={{ duration: 0.2 }}
+                                            style={{marginLeft:"8px"}}
+                                            >
+                                            
                                             <FaChevronDown className="ml-1" />
                                         </motion.span>
                                     </motion.p>
@@ -69,24 +72,25 @@ export default function Navigation() {
                                 <AnimatePresence>
                                     {open && (
                                         <PopoverPanel
-                                            as={motion.div}
-                                            initial={{ opacity: 0, y: -10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            exit={{ opacity: 0, y: -10 }}
-                                            className="absolute z-10 mt-2 w-48 bg-white rounded-md shadow-lg">
-                                            <div className="p-3">
-                                                <motion.div whileHover={{ x: 5 }}>
-                                                    <Link href="/business" className="block rounded-lg py-2 px-3 transition hover:bg-gray-200">
-                                                        <p className="text-gray-500">{messages.business}</p>
-                                                    </Link>
-                                                </motion.div>
-                                                <motion.div whileHover={{ x: 5 }}>
-                                                    <Link href="/personalOrFamily" className="block rounded-lg py-2 px-3 transition hover:bg-gray-200">
-                                                        <p className="text-gray-500">{messages.personalOrFamily}</p>
-                                                    </Link>
-                                                </motion.div>
-                                            </div>
-                                        </PopoverPanel>
+                                        as={motion.div}
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -10 }}
+                                        className="absolute z-10 mt-2 w-48 rounded-md shadow-lg overflow-hidden"                                    >
+                                        <div className="absolute inset-0 bg-white/70 blur-lg" />
+                                        <div className="relative z-20 p-3">
+                                            <motion.div whileHover={{ x: 5 }}>
+                                                <Link href="/business" className="block rounded-lg py-2 px-3 transition hover:bg-gray-200/50">
+                                                    <p className="text-strongBlue font-medium">{messages.business}</p>
+                                                </Link>
+                                            </motion.div>
+                                            <motion.div whileHover={{ x: 5 }}>
+                                                <Link href="/personalOrFamily" className="block rounded-lg py-2 px-3 transition hover:bg-gray-200/50">
+                                                    <p className="text-strongBlue font-medium">{messages.personalOrFamily}</p>
+                                                </Link>
+                                            </motion.div>
+                                        </div>
+                                    </PopoverPanel>
                                     )}
                                 </AnimatePresence>
                             </>
@@ -140,7 +144,7 @@ export default function Navigation() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 className="fixed top-0 left-0 right-0 z-50 flex md:hidden">
-                <div className="flex w-full items-center justify-between px-4 py-3 bg-white">
+                <div className="flex w-full items-center justify-between px-4 py-3 bg-transparent backdrop-blur">
                     {/* Logo */}
                     <Link href="/">
                         <motion.div

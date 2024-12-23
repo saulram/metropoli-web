@@ -8,16 +8,19 @@ export default function HeroSection() {
     const messages = useTranslations();
 
     return (
-        <div className="relative bg-cover bg-center bg-metropoliBg flex items-center justify-center"
-            style={{ backgroundImage: 'url(/waves.png)', height: '100vh' }}>
-            <div className="px-5 md:px-28 py-28 ">
+        <div className="relative bg-cover bg-center bg-metropoliBg min-h-screen flex items-center justify-center"
+            style={{ 
+                backgroundImage: 'url(/waves.png)',
+                minHeight: '100dvh'
+            }}>
+            <div className="px-5 md:px-28 py-16 md:py-28 w-full">
                 <motion.p
                     className="text-left text-40 line font-bold text-white md:w-3/5"
                     initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{
                         duration: 1.5,
-                        ease: [0.08, 0.82, 0.17, 1], // Slower ease curve
+                        ease: [0.08, 0.82, 0.17, 1],
                     }}
                     style={{
                         fontWeight: 500,
@@ -28,7 +31,6 @@ export default function HeroSection() {
                     }}>
                     {messages.leadersInStrategy} <strong>{messages.insurance}</strong> {messages.invest}
                 </motion.p>
-
                 <motion.p
                     className="text-left text-40 font-bold bg-clip-text text-transparent"
                     initial={{ y: 100, opacity: 0 }}

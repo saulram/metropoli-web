@@ -5,9 +5,11 @@ import Navigation from "@/components/Navigation";
 import { useTranslations } from "@/i18n/useTranslations";
 import { motion } from 'motion/react';
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function CompetenciesAndValues() {
   const messages = useTranslations();
+  const router = useRouter();
 
   return (
     <div>
@@ -68,7 +70,12 @@ export default function CompetenciesAndValues() {
                     duration: 0.8,
                     ease: [0.16, 1, 0.3, 1]
                   }} className='mt-10 mb-14 md:w-4/5'>
-                  <DescriptiveText title={messages.yourPathToYourPeace} text='' button={messages.startsHere} />
+                  
+                  <DescriptiveText title={messages.yourPathToYourPeace} onClick={()=>{
+      
+                    router.push('/contact-us');
+                  }} text='' button={messages.startsHere} />
+          
                 </motion.div>
                 <Link href="/contact-us">
                   <motion.div initial={{ x: -100, opacity: 0 }}
@@ -217,7 +224,7 @@ export default function CompetenciesAndValues() {
               duration: 0.8,
               ease: [0.16, 1, 0.3, 1]
             }} className="flex justify-center items-center md:mb-40 mb-10 z-10">
-          <p className="text-center md:w-3/5 values-title-gradient text-2xl font-normal">
+          <p className="text-center md:w-3/5 values-title-gradient text-2xl font-normal whitespace-pre-line">
             {messages.everythingInsurable}
           </p>
         </motion.div>
@@ -230,7 +237,7 @@ export default function CompetenciesAndValues() {
               duration: 0.8,
               ease: [0.16, 1, 0.3, 1]
             }} className="flex justify-center items-center w-full mb-14">
-          <img src="/business-page.svg" alt="business-img-page" />
+          <img src="/familiar.svg" alt="business-img-page" />
         </motion.div>
         <div className="flex justify-center items-center w-full md:mb-40 mb-10">
           <Link href="/contact-us">
