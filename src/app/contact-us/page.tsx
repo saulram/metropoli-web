@@ -5,7 +5,12 @@ import Navigation from '@/components/Navigation';
 import React from 'react';
 const ContactPage: React.FC = () => {
     return (
-        <div className="bg-white">
+        <div style={
+            {
+
+                background: '#d1d7e1 url(/waves.png) center/cover no-repeat',
+            }
+        }>
             <Navigation />
             <ContactForm />
             <Footer />

@@ -3,7 +3,7 @@ import Footer from "@/components/footer";
 import Navigation from "@/components/Navigation";
 import { useTranslations } from "@/i18n/useTranslations";
 import Link from "next/link";
-import { motion } from 'motion/react';
+import { color, motion } from 'motion/react';
 import { useState } from "react";
 
 export default function CompetenciesAndValues() {
@@ -40,9 +40,11 @@ export default function CompetenciesAndValues() {
   ]
 
   return (
-    <div>
+    <div style={{
+      background: '#d1d7e1 url(/waves.png) center/cover no-repeat',
+    }}>
       <Navigation />
-      <div className="px-10 md:px-28 py-28 bg-white" style={{
+      <div className="px-10 md:px-28 py-2" style={{
         background: '#d1d7e1 url(/waves.png) center/cover no-repeat',
       }}>
         <motion.h1 initial={{ y: -100, opacity: 0 }}
@@ -105,12 +107,12 @@ export default function CompetenciesAndValues() {
             duration: 0.8,
             ease: [0.16, 1, 0.3, 1]
           }} className="hr-gradient" />
-          <div className="stain"
+        <div className="stain"
           style={{
             height: '130vh',
             right: 0,
             rotate: '180deg',
-            position: 'absolute', 
+            position: 'absolute',
           }} />
         <div className="mt-5 mb-4">
           <motion.h2 initial={{ x: -100, opacity: 0 }}
@@ -137,7 +139,7 @@ export default function CompetenciesAndValues() {
               ease: [0.16, 1, 0.3, 1]
             }} className="font-black text-center text-3xl text-[#444444] mb-4">{messages.values}</motion.h2>
         </div>
-        
+
         <div className="flex md:flex-row flex-col " style={{ minHeight: "100vh" }}>
           <div className="md:my-48 my-10 md:left-[-15%] left-[-40%]" style={{ position: "relative", zIndex: "49" }}>
             <div style={{ borderColor: "#90a0c030", borderRadius: "1000px", position: "relative" }} className="border-solid border-2 md:w-[25vw] md:h-[25vw] w-[80vw] h-[80vw]">
@@ -183,9 +185,11 @@ export default function CompetenciesAndValues() {
             </div>
           </div>
         </div>
-
       </div>
+
+
       <Footer />
+
     </div>
   )
 }

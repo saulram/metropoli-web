@@ -10,15 +10,14 @@ export default function Footer() {
   const { setLanguage } = useLanguage();
 
   return (
-    <div className="bg-metropoliBg" style={{
-      backgroundImage: 'url(/waves_bottom.png)',
+    <div className="bg-transparent backdrop-blur" style={{
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'bottom',
       minHeight: "215px",
       transform: "rotate(180deg)"
     }}>
-      <footer className="metropoliBg-dark" style={{ transform: "rotate(-180deg)", minHeight: "215px", borderRadius: "40px 40px 0px 0px" }}>
+      <footer className="metropoliBg-dark drop-shadow-custom" style={{ transform: "rotate(-180deg)", minHeight: "215px", borderRadius: "40px 40px 0px 0px" }}>
         <div className="px-10 md:px-28 pt-14 md:flex md:justify-between grid grid-cols-2 md:grid-cols-4 gap-4 text-white text-sm">
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
@@ -87,8 +86,14 @@ export default function Footer() {
             <div>
               <p>{messages.followUs}</p>
               <div className="flex mb-2">
-                <img src="/facebook.svg" alt="facebook" className="mr-2" width={18} />
-                <img src="/linkedin.svg" alt="inkedin" width={18} />
+                <Link href={"https://www.facebook.com/Grupometropolisegurosyfianzas/"}>
+
+                  <img src="/facebook.svg" alt="facebook" className="mr-2" width={18} />
+                </Link>
+                <Link href={"https://www.linkedin.com/company/grupo-metropoli/?viewAsMember=true"}>
+
+                  <img src="/linkedin.svg" alt="inkedin" width={18} />
+                </Link>
               </div>
             </div>
           </motion.div>

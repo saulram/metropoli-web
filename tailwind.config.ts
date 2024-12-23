@@ -15,6 +15,9 @@ export default {
       'xl': '1280px',
       '2xl': '1536px',
     },
+    dropShadow: {
+      'custom': '0px -6px 4px rgba(16, 17, 30, 0.3)', // Matches X:0, Y:-6, Blur:4, Color:#10171E with 30% opacity
+    },
     extend: {
       colors: {
         background: "var(--background)",

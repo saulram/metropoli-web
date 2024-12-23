@@ -80,6 +80,7 @@ body {
 .values-text {
   color: #90a0c0;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, -webkit-background-clip 0.3s ease, -webkit-text-fill-color 0.3s ease, font-size 0.3s ease;
+  font-size: 18px;
 }
 
 .values-text::before {

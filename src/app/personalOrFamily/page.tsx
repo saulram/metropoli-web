@@ -12,7 +12,9 @@ export default function CompetenciesAndValues() {
   const router = useRouter();
 
   return (
-    <div>
+    <div style={{
+      background: '#d1d7e1 url(/waves.png) bottom/cover no-repeat',
+    }}>
       <Navigation />
       <div className="px-10 md:px-28 py-28 bg-white" style={{
         background: '#d1d7e1 url(/waves.png) center/cover no-repeat',

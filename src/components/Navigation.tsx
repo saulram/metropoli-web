@@ -77,7 +77,7 @@ export default function Navigation() {
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, y: -10 }}
                                         className="absolute z-10 mt-2 w-48 rounded-md shadow-lg overflow-hidden"                                    >
-                                        <div className="absolute inset-0 bg-white/70 blur-lg" />
+                                        <div className="absolute inset-0 bg-white/80 blur-sm" />
                                         <div className="relative z-20 p-3">
                                             <motion.div whileHover={{ x: 5 }}>
                                                 <Link href="/business" className="block rounded-lg py-2 px-3 transition hover:bg-gray-200/50">
