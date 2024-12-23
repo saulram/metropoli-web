@@ -80,12 +80,12 @@ export default function Navigation() {
                                         <div className="absolute inset-0 bg-white/80 blur-sm" />
                                         <div className="relative z-20 p-3">
                                             <motion.div whileHover={{ x: 5 }}>
-                                                <Link href="/business" className="block rounded-lg py-2 px-3 transition bg-white/70 hover:bg-gray-200/50">
+                                                <Link href="/business" className="block rounded-lg py-2 px-3 transition bg-white/20 hover:bg-gray-200/50">
                                                     <p className="text-strongBlue font-medium">{messages.business}</p>
                                                 </Link>
                                             </motion.div>
                                             <motion.div whileHover={{ x: 5 }}>
-                                                <Link href="/personalOrFamily" className="block rounded-lg py-2 px-3 transition hover:bg-gray-200/50">
+                                                <Link href="/personalOrFamily" className="block rounded-lg py-2 px-3 transition  bg-white/20 hover:bg-gray-200/50">
                                                     <p className="text-strongBlue font-medium">{messages.personalOrFamily}</p>
                                                 </Link>
                                             </motion.div>
