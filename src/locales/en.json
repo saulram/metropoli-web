@@ -187,5 +187,7 @@
         "placeholder": "Cuéntanos detalladamente cómo te podemos ayudar"
       }
     }
-  }
+  },
+  "thankYouMessage": "Thank you for getting in touch with us! One of our advisors will contact you.",
+  "followUsOnSocialMedia": "Follow us on our social media:"
 }
