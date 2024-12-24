@@ -59,7 +59,7 @@ const SecurityPeaceOfMind = () => {
                     </div>
                 </motion.div>
 
-                <div className="w-1/2 ps-20">
+                <div className="sm:ps-36 w-1/2 ps-20">
                     {[
                         {
                             title: messages.futureWithoutFear,
@@ -106,7 +106,7 @@ const SecurityPeaceOfMind = () => {
                 }}
             >
                 <div className='md:w-2/5 px-10 md:px-0 text-40'>
-                    <DescriptiveText title={messages.threeGenerations}  text='' />
+                    <DescriptiveText customMobileSize='250px' text={messages.threeGenerations} title={''}  />
                 </div>
             </motion.div>
         </div>

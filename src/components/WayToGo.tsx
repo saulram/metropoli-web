@@ -103,7 +103,7 @@ const WayToGo = () => {
           }}
         >
           <h3 className="text-black text-xl">{messages.yourPathToPeace}</h3>
-          <h3 className="text-black text-3xl text-center mt-4 text-gradient">{messages.focusOnValue}</h3>
+          <h3 className="sm:w-85 md:w-90 text-black text-3xl text-center mt-4 text-gradient">{messages.focusOnValue}</h3>
           <h3 className="text-black text-lg mt-4 md:w-2/5 text-center whitespace-pre-line">{messages.weEliminateRisks}</h3>
 
         </motion.div>
@@ -134,7 +134,7 @@ const WayToGo = () => {
             ease: [0.16, 1, 0.3, 1]
           }}
         >
-          <div className="flex flex-col justify-end items-end">
+          <div className="flex flex-col w-5/4 justify-end items-end">
             <h3 className="font-medium md:text-end w-3/5 md:w-full text-start text-40 text-gradient">{messages.discoverHow}</h3>
             <h3 className="font-medium md:text-end w-3/5 md:w-full text-start text-lg text-black whitespace-pre-line">{messages.simpleProcess}</h3>
           </div>

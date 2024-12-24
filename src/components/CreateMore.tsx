@@ -91,39 +91,57 @@ export default function CreateMore() {
             </div>
           </motion.div>
         </AnimatePresence>
-        <div className="w-full flex justify-center mt-10 gap-3 relative">
+
+        {/* Navigation container with buttons and dots */}
+        <div className="flex justify-center items-center gap-6 mt-6 md:mt-10">
           <motion.button
             onClick={handlePrev}
-            className="px-4 py-2 rounded-md mr-2 absolute bottom-0" // Cambiado a valor fijo
-            style={{ left: "0" }}
-            whileHover={{ scale: 1.1 }}
+            className="p-2 md:p-4"
+            whileHover={{ scale: 1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <img src='/rightArrow.png' alt='rightArrow' className="rotate-180" />
+            <img 
+              src="/rightArrow.png" 
+              alt="Previous" 
+              className="w-6 h-6 md:w-8 md:h-8 rotate-180" 
+            />
           </motion.button>
+
+          {/* Dots */}
+          <div className="flex gap-3">
+            {texts.map((_, index) => (
+              <motion.button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className="rounded-full"
+                style={{
+                  backgroundColor: currentIndex === index ? '#618FDC' : '#BFCCE4',
+                  width: "10px",
+                  height: "10px"
+                }}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+              />
+            ))}
+          </div>
 
           <motion.button
             onClick={handleNext}
-            className="px-4 py-2 rounded-md absolute bottom-0" // Cambiado a valor fijo
-            style={{ right: "0%" }}
-            whileHover={{ scale: 1.1 }}
+            className="p-2 md:p-4"
+            whileHover={{ scale: 1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <img src='/rightArrow.png' alt='rightArrow' />
-          </motion.button>
-          {texts.map((_, index) => (
-            <motion.button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-[10px] h-[10px] rounded-full ${currentIndex === index ? 'bg-[#618FDC]' : 'bg-[#BFCCE4]'} `}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}
+            <img 
+              src="/rightArrow.png" 
+              alt="Next" 
+              className="w-6 h-6 md:w-8 md:h-8" 
             />
-          ))}
+          </motion.button>
         </div>
       </div>
 
-      <div className="w-full overflow-hidden">
+      {/* Slider image */}
+      <div className="w-full overflow-hidden mt-10">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex + 'img'}

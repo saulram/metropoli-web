@@ -67,7 +67,7 @@ const ContactForm: React.FC = () => {
                             {messages.thankYouMessage}
                         </motion.h1>
                         <motion.p
-                            className="text-[#666] w-full text-center mb-8 md:mb-12 text-base md:text-lg mb-10"
+                            className="text-[#666] w-full text-center mb-8 md:mb-12 text-base md:text-lg"
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{
