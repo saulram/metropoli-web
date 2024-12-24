@@ -106,7 +106,7 @@ const SecurityPeaceOfMind = () => {
                 }}
             >
                 <div className='md:w-2/5 px-10 md:px-0 text-40'>
-                    <DescriptiveText customDesktopSize='550px' customMobileSize='250px' text={messages.threeGenerations} title={''}  />
+                    <DescriptiveText customDesktopSize='550px' customMobileSize='250px' title={messages.threeGenerations} text={''}  />
                 </div>
             </motion.div>
         </div>
