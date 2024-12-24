@@ -34,7 +34,7 @@ export const CustomSelect: React.FC<FormInputProps> = ({
                 className={`relative w-full h-[60px] cursor-pointer px-4 sm:px-6 py-4 text-left bg-white
                   ${open ? 'rounded-t-lg' : 'rounded-lg'} focus:outline-none`}
               >
-                <span className={`block truncate text-sm sm:text-base ${!value ? 'text-strongBlue' : 'text-strongBlue font-bold'}`}>
+                <span className={`block truncate text-sm sm:text-base ${!value ? 'text-strongBlue font-bold' : 'text-strongBlue font-bold'}`}>
                   {selectedOption ? selectedOption.label : placeholder}
                 </span>
                 <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2 sm:pr-4">
