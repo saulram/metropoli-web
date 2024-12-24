@@ -74,7 +74,7 @@ export const CustomSelect: React.FC<FormInputProps> = ({
                       text-sm sm:text-base`
                     }
                   >
-                    {({ selected }) => (
+                    {({ }) => (
                       <span className="block truncate">
                         {option.label}
                       </span>

@@ -169,7 +169,7 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
                   rounded-b-lg max-h-[240px] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent border-gradient-nt`}
                 style={{ marginTop: '-2px' }}
               >
-                {options.map((option, idx) => (
+                {options.map((option) => (
                   <Listbox.Option
                     key={option.value}
                     value={option.value}
