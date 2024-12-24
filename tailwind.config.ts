@@ -44,14 +44,14 @@ export default {
     plugin(function ({ addUtilities }) {
       addUtilities({
         '.border-gradient': {
-          'background-image': 'linear-gradient(white, white), linear-gradient(to right, #1C6EF6, #CBDCF8)',
+          'background-image': 'linear-gradient(to right, #EDEDED, rgba(237, 237, 237, 0.7)), linear-gradient(to right,rgba(28, 110, 246, 0.8), rgba(237, 237, 237, 0.5),rgba(237, 237, 237, 0.1))',
           'background-origin': 'border-box',
           'background-clip': 'padding-box, border-box',
           'border': '2px solid transparent',
         },
         '.border-gradient-nt': {
-          'background-image': 'linear-gradient(white, white), linear-gradient(to right, #1C6EF6, #CBDCF8)',
-          'background-origin': 'border-box',
+          'background-image': 'linear-gradient(to right, #EDEDED, rgba(237, 237, 237, 0.7)), linear-gradient(to right,rgba(28, 110, 246, 0.8), rgba(237, 237, 237, 0.5),rgba(237, 237, 237, 0.1))',
+         'background-origin': 'border-box',
           'background-clip': 'padding-box, border-box',
           'border-left': '2px solid transparent',
           'border-right': '2px solid transparent',
