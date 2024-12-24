@@ -11,7 +11,7 @@ interface DescriptiveTextProps {
     onClick?: () => void;
 }
 
-const DescriptiveText: React.FC<DescriptiveTextProps> = ({ title, text, width, titleSize, active, button, onClick ,customMobileSize }) => {
+const DescriptiveText: React.FC<DescriptiveTextProps> = ({ title, text, titleSize, active, button, onClick ,customMobileSize }) => {
     const [isActive, setIsActive] = useState(active || false);
     const elementRef = useRef<HTMLDivElement>(null);
     const [isMobile, setIsMobile] = useState(false);
