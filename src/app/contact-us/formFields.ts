@@ -1,6 +1,5 @@
 import { FormField } from "./form";
 
-
 export const formFields: FormField[] = [
   {
     id: 'name',
@@ -29,12 +28,28 @@ export const formFields: FormField[] = [
   {
     id: 'product',
     label: '¿Qué producto te interesa? *',
-    type: 'select',
+    type: 'multiselect',
     placeholder: '¿Qué producto te interesa? *',
     required: true,
     options: [
-      { value: 'producto1', label: 'Producto 1' },
-      { value: 'producto2', label: 'Producto 2' }
+      { value: 'admin-integral', label: 'Administración integral de tus pólizas' },
+      { value: 'autos', label: 'Autos, camiones y/o flotillas' },
+      { value: 'autos-clasicos', label: 'Autos clásicos o exóticos' },
+      { value: 'aviacion', label: 'Aviación, drones, yates' },
+      { value: 'beneficios-flexibles', label: 'Beneficios flexibles' },
+      { value: 'beneficios-colaboradores', label: 'Beneficios para colaboradores: gastos médicos, vida, accidentes personales, etc.' },
+      { value: 'carga', label: 'Carga / Transporte' },
+      { value: 'construccion', label: 'Construcción / Obra Civil' },
+      { value: 'fianzas', label: 'Fianzas' },
+      { value: 'gastos-medicos', label: 'Gastos médicos' },
+      { value: 'inmuebles', label: 'Inmuebles / empresarial' },
+      { value: 'lineas-financieras', label: 'Líneas financieras: Cyber, D&O, E&O, Instituciones Financieras, Responsabilidad Profesional.' },
+      { value: 'reaseguro', label: 'Reaseguro' },
+      { value: 'responsabilidad-civil', label: 'Responsabilidad Civil' },
+      { value: 'seguros-masivos', label: 'Seguros Masivos' },
+      { value: 'transporte-mercancias', label: 'Transporte de Mercancias' },
+      { value: 'vida-ahorro', label: 'Vida y Ahorro' },
+      { value: 'otro', label: 'Otro' }
     ],
     gridCols: 2
   },
@@ -45,7 +60,8 @@ export const formFields: FormField[] = [
     placeholder: '¿Cómo prefieres que te contactemos?',
     options: [
       { value: 'email', label: 'Correo electrónico' },
-      { value: 'phone', label: 'Teléfono' }
+      { value: 'phone', label: 'Llamada telefónica' },
+      { value: 'whatsapp', label: 'WhatsApp' }
     ],
   },
   {
@@ -75,9 +91,12 @@ export const formFields: FormField[] = [
     type: 'select',
     placeholder: 'Número de colaboradores',
     options: [
-      { value: '1-10', label: '1-10' },
-      { value: '11-50', label: '11-50' },
-      { value: '51-200', label: '51-200' }
+      { value: '0-50', label: '0 - 50' },
+      { value: '51-99', label: '51 - 99' },
+      { value: '100-250', label: '100 - 250' },
+      { value: '251-500', label: '251 - 500' },
+      { value: '501-1000', label: '501 - 1,000' },
+      { value: '1001+', label: '1,001 o más' }
     ]
   },
   {
@@ -87,4 +106,3 @@ export const formFields: FormField[] = [
     placeholder: 'Escribe tu mensaje'
   }
 ];
-

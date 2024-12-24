@@ -40,11 +40,11 @@ export default function CompetenciesAndValues() {
   ]
 
   return (
-    <div style={{
+    <div  className="w-full max-w-[100vw] overflow-x-hidden" style={{
       background: '#d1d7e1 url(/waves.png) center/cover no-repeat',
     }}>
       <Navigation />
-      <div className="px-10 md:px-28 py-2" style={{
+      <div className="px-10 md:px-28 py-32" style={{
         background: '#d1d7e1 url(/waves.png) center/cover no-repeat',
       }}>
         <motion.h1 initial={{ y: -100, opacity: 0 }}

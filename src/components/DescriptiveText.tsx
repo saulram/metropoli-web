@@ -8,10 +8,11 @@ interface DescriptiveTextProps {
     active?: boolean;
     button?: string;
     customMobileSize?: string;
+    customDesktopSize?: string;
     onClick?: () => void;
 }
 
-const DescriptiveText: React.FC<DescriptiveTextProps> = ({ title, text, titleSize, active, button, onClick ,customMobileSize }) => {
+const DescriptiveText: React.FC<DescriptiveTextProps> = ({ title, text, titleSize, active, button, onClick ,customMobileSize ,customDesktopSize }) => {
     const [isActive, setIsActive] = useState(active || false);
     const elementRef = useRef<HTMLDivElement>(null);
     const [isMobile, setIsMobile] = useState(false);
@@ -58,7 +59,7 @@ const DescriptiveText: React.FC<DescriptiveTextProps> = ({ title, text, titleSiz
 
     const commonTextStyles = {
         lineHeight: '1.2',
-        maxWidth: isMobile ? customMobileSize ?? '55%' : '350px',
+        maxWidth: isMobile ? customMobileSize ?? '55%' : customDesktopSize ?? '350px',
         whiteSpace: 'normal' as const,
         wordWrap: 'break-word' as const,
         overflowWrap: 'break-word' as const,

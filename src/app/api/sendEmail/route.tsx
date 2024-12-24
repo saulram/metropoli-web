@@ -29,13 +29,13 @@ export async function POST(req: Request) {
     Messages: [
       {
         From: {
-          Email: 'hola@quatrodesign.com',
-          Name: 'quatrodesign',
+          Email: 'saul@disolutionsmx.com',
+          Name: 'Metropoli',
         },
         To: [
           {
-            Email: 'hola@quatrodesign.com',
-            Name: 'quatrodesign',
+            Email: 'saul@disolutionsmx.com',
+            Name: 'Metropoli',
           },
         ],
         Subject: 'Envio de solicitud Metrópoli',
