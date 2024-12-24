@@ -193,7 +193,7 @@ const SliderComponent = () => {
               y={element.y}
               textAnchor="middle"
               fontFamily='Lato'
-              className={`text-sm md:text-lg cursor-pointer ${isMobile ? 'text-[10px]' : ''}`}
+              className={`text-sm md:text-lg cursor-pointer ${isMobile ? 'text-[9px]' : ''}`}
               fill={currentIndex === index ? '#fff' : '#8B9AAE'}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

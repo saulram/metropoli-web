@@ -74,7 +74,7 @@ export default function CompetenciesAndValues() {
                   }} className='mt-10 mb-14 md:w-4/5'>
                   <DescriptiveText onClick={() => {
                     router.push('/contact-us')
-                  }} title={messages.yourPathToYourPeace} text='' button={messages.startsHere} />
+                  }} title={messages.yourPathToYourPeace} text='' customMobileSize="200px" button={messages.startsHere} />
                 </motion.div>
                 <Link href="/contact-us">
                   <motion.div initial={{ x: -100, opacity: 0 }}
@@ -286,7 +286,7 @@ export default function CompetenciesAndValues() {
             duration: 0.8,
             ease: [0.16, 1, 0.3, 1]
           }} className="flex justify-center items-center md:mb-40 mb-10">
-          <p className="text-center md:w-4/5 values-title-gradient text-2xl font-normal whitespace-pre-line">
+          <p className="text-center md:w-4/5 values-title-gradient text-xl font-normal whitespace-pre-line">
             {messages.everythingIsInsurable}
           </p>
         </motion.div>

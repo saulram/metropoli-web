@@ -144,7 +144,7 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
                       </span>
                     ))
                   ) : (
-                    <span className="text-gray-400">{placeholder}</span>
+                    <span className="text-strongBlue font-bold">{placeholder}</span>
                   )}
                 </div>
                 <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4">
