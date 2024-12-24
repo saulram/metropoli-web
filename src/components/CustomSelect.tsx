@@ -31,7 +31,7 @@ export const CustomSelect: React.FC<FormInputProps> = ({
           <div className="relative">
             <div className={`border-gradient ${open ? 'rounded-t-lg' : 'rounded-lg'}`}>
               <Listbox.Button 
-                className={`relative w-full h-[60px] cursor-pointer px-4 sm:px-6 py-4 text-left bg-white
+                className={`relative w-full h-[60px] cursor-pointer px-4 sm:px-6 py-4 text-left bg-white/50
                   ${open ? 'rounded-t-lg' : 'rounded-lg'} focus:outline-none`}
               >
                 <span className={`block truncate text-sm sm:text-base ${!value ? 'text-strongBlue font-bold' : 'text-strongBlue font-bold'}`}>
@@ -55,7 +55,7 @@ export const CustomSelect: React.FC<FormInputProps> = ({
               leaveTo="opacity-0"
             >
               <Listbox.Options 
-                className={`absolute z-50 w-full overflow-auto bg-white shadow-lg focus:outline-none
+                className={`absolute z-50 w-full overflow-auto bg-white/50 shadow-lg focus:outline-none
                   border-gradient-nt rounded-b-lg max-h-[240px] scrollbar-thin scrollbar-thumb-gray-300 
                   scrollbar-track-transparent`}
                 style={{ 

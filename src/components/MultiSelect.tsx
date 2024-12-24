@@ -118,7 +118,7 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
           <div className="relative">
             <div className={`border-gradient ${open ? 'rounded-t-lg' : 'rounded-lg'} border-gray-300`}> {/* Updated border */}
               <Listbox.Button
-                className={`relative w-full min-h-[50px] cursor-pointer p-4 text-left bg-white border-gray-300 
+                className={`relative w-full min-h-[50px] cursor-pointer p-4 text-left bg-white/50 border-gray-300 
                   ${open ? 'rounded-t-lg' : 'rounded-lg'} focus:outline-none`}
               >
                 <div className="flex flex-wrap gap-2">
