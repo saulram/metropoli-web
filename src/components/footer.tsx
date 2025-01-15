@@ -27,8 +27,7 @@ export default function Footer() {
               duration: 0.8,
               ease: [0.16, 1, 0.3, 1]
             }} className="flex mb-20 md:mb-0 justify-between flex-col items-center col-span-2 md:col-span-1">
-            <img src="/GM_logo.svg" alt="logo dorado" width={65} className="mb-4" />
-            <img src="/GM_logo_text.png" alt="texto logo" width={177} />
+            <img src="/GM_logo.svg" alt="logo dorado" width={177} className="mb-4" />
           </motion.div>
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
