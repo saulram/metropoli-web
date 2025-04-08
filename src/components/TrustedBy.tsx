@@ -81,7 +81,7 @@ export const TrustedBy = () => {
               <h2 className="text-3xl md:text-4xl font-light mb-4">
                 Confían su <span className="italic">tranquilidad</span>
               </h2>
-              <h3 className="text-2xl md:text-3xl font-light">
+              <h3 className="text-3xl md:text-4xl font-light">
                 en nosotros:
               </h3>
             </div>
