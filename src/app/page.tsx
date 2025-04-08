@@ -8,7 +8,7 @@ import CreateMore from "@/components/CreateMore";
 import ImpeccableTradition from "@/components/ImpeccableTradition";
 import Footer from "@/components/footer";
 import TrustedBy from "@/components/TrustedBy";
-
+import Testimonials from "@/components/Testimonials";
 export default function Example() {
 
   return (
@@ -16,6 +16,7 @@ export default function Example() {
       <Navigation />
       <HeroSection />
       <TrustedBy />
+      <Testimonials />
       <SecurityPaceOfmind />
       <WayToGo />
       <CreateMore/>
