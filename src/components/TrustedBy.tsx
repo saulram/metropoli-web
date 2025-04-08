@@ -95,14 +95,14 @@ export const TrustedBy = () => {
                     {[...firstHalf, ...firstHalf].map((logo, index) => (
                       <div
                         key={`${logo.alt}-1-${index}`}
-                        className="w-[220px] h-[80px] flex items-center justify-center px-4"
+                        className="w-[220px] h-[90px] flex items-center justify-center px-4"
                       >
                         <Image
                           src={logo.src}
                           alt={logo.alt}
                           width={220}
-                          height={40}
-                          className="w-auto h-[40px!important] object-contain filter brightness-0 invert"
+                          height={90}
+                          className="w-[80px]!important h-auto object-contain filter brightness-0 invert"
                           priority={index < 5}
                         />
                       </div>
@@ -118,14 +118,14 @@ export const TrustedBy = () => {
                     {[...secondHalf, ...secondHalf].map((logo, index) => (
                       <div
                         key={`${logo.alt}-2-${index}`}
-                        className="w-[220px] flex items-center justify-center px-4"
+                        className="w-[220px] h-[90px] flex items-center justify-center px-4"
                       >
                         <Image
                           src={logo.src}
                           alt={logo.alt}
                           width={220}
-                          height={40}
-                          className="w-auto h-[40px!important] object-contain filter brightness-0 invert"
+                          height={90}
+                          className="w-[80px]!important h-auto object-contain filter brightness-0 invert"
                           priority={index < 5}
                         />
                       </div>
