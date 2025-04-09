@@ -142,11 +142,11 @@ export const Testimonials = () => {
                             >
                                 <div className="flex justify-between items-start mb-4 sm:mb-8">
                                     <div className="flex-1">
-                                        <div className='flex flex-row justify-between items-center'>
-                                            <div onClick={handlePrev} className='sm:flex md:hidden flex-row justify-center items-center'>
+                                        <div className='flex flex-row justify-between'>
+                                            <div onClick={handlePrev} className='sm:flex md:hidden flex-row justify-center sm:items-center md:items-start'>
                                                 <Image src="/arrow-back.svg" alt="Previous" width={40} height={40} className="w-8 h-8 sm:w-10 sm:h-10" />
                                             </div>
-                                            <div className='flex flex-col justify-center items-center sm:mx-4 md:mx-0'>
+                                            <div className='flex flex-col justify-center  sm:mx-4 md:mx-0'>
                                                 <h2 className="text-[#1C6EF6] text-xl sm:text-2xl md:text-4xl font-normal mb-1 sm:mb-2 sm:text-center md:text-left">
                                                     {testimonials[currentIndex].author}
                                                 </h2>
