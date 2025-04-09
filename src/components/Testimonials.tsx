@@ -76,13 +76,13 @@ export const Testimonials = () => {
                     alt="Background"
                     width={1920}
                     height={501}
-                    className="w-full sm:h-[1056px] md:h-[750px] object-cover object-center"
+                    className="w-full sm:h-[1056px] md:h-[750px] lg:h-[500px] object-cover object-center"
                     priority
                 />
 
                 {/* Contenedor con blur y gradiente */}
                 <div
-                    className="absolute inset-0 w-full sm:h-[1056px] md:h-[750px] rounded-bl-[9px] rounded-br-[9px] border border-[#CBDCF8]"
+                    className="absolute inset-0 w-full sm:h-[1056px] md:h-[750px] lg:h-[500px] rounded-bl-[9px] rounded-br-[9px] border border-[#CBDCF8]"
                     style={{
                         backdropFilter: 'blur(72.5px)',
                         background: 'rgba(203, 220, 248, 0.14)',
@@ -104,7 +104,7 @@ export const Testimonials = () => {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={handlePrev}
-                        className="absolute left-8 top-1/4 -translate-y-1/4 z-10 sm:hidden md:block"
+                        className="absolute left-8 md:top-1/4 lg:top-1/2 -translate-y-1/4 z-10 sm:hidden md:block"
                     >
                         <Image
                             src="/arrow-back.svg"
@@ -119,7 +119,7 @@ export const Testimonials = () => {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={handleNext}
-                        className="absolute right-8 top-1/4 -translate-y-1/4 z-10 sm:hidden md:block"
+                        className="absolute right-8 md:top-1/4 lg:top-1/2 -translate-y-1/4 z-10 sm:hidden md:block"
                     >
                         <Image
                             src="/arrow-forward.svg"
