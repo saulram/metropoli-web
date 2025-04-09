@@ -93,19 +93,16 @@ export const TrustedBy = () => {
                 <div className="absolute top-0 left-0 flex whitespace-nowrap">
                   <div ref={scrollRef1} className="flex transition-transform duration-1000 ease-linear">
                     {[...firstHalf, ...firstHalf].map((logo, index) => (
-                      <div
-                        key={`${logo.alt}-1-${index}`}
-                        className="w-[220px] h-[90px] flex items-center justify-center px-4"
-                      >
+                     
                         <Image
+                        key={`${logo.alt}-1-${index}`}
                           src={logo.src}
                           alt={logo.alt}
                           width={220}
-                          height={90}
-                          className="w-[80px]!important h-auto object-contain filter brightness-0 invert"
+                          height={0}
+                          className="w-[150px]!important h-auto filter brightness-0 invert mx-4"
                           priority={index < 5}
                         />
-                      </div>
                     ))}
                   </div>
                 </div>
@@ -116,19 +113,16 @@ export const TrustedBy = () => {
                 <div className="absolute top-0 left-0 flex whitespace-nowrap">
                   <div ref={scrollRef2} className="flex transition-transform duration-1000 ease-linear">
                     {[...secondHalf, ...secondHalf].map((logo, index) => (
-                      <div
-                        key={`${logo.alt}-2-${index}`}
-                        className="w-[220px] h-[90px] flex items-center justify-center px-4"
-                      >
+                    
                         <Image
+                          key={`${logo.alt}-2-${index}`}
                           src={logo.src}
                           alt={logo.alt}
                           width={220}
-                          height={90}
-                          className="w-[80px]!important h-auto object-contain filter brightness-0 invert"
+                          height={0}
+                          className="w-[150px]!important h-auto filter brightness-0 invert mx-4"
                           priority={index < 5}
                         />
-                      </div>
                     ))}
                   </div>
                 </div>
