@@ -50,7 +50,7 @@ const testimonials: Testimonial[] = [
             'La construcción y el desarrollo van más allá de levantar estructuras; implica enfrentar riesgos en cada etapa del proceso. Con Metrópoli, hemos encontrado más que un seguro: una estrategia de protección integral que nos permite enfocarnos en lo que mejor sabemos hacer: desarrollar.',
             'Su equipo nos da la confianza y seguridad que nos libera de preocupaciones innecesarias, asegurando que cada proyecto avance con estabilidad, respaldo y tranquilidad.'
         ],
-        logoSrc: '/logos/Bosque Real.svg',
+        logoSrc: '/logos/Bosque Real 1.svg',
         logoAlt: 'Bosque Real Logo'
     },
     {
@@ -251,7 +251,7 @@ export const Testimonials = () => {
                                                 alt={testimonials[currentIndex].logoAlt}
                                                 width={225}
                                                 height={90}
-                                                className="w-auto h-[90px] object-contain"
+                                                className="w-auto h-[100px] object-contain"
                                             />
                                         </Link>
                                     </div>
@@ -274,7 +274,7 @@ export const Testimonials = () => {
                                                 alt={testimonials[currentIndex].logoAlt}
                                                 width={150}
                                                 height={60}
-                                                className="w-auto h-[60px] object-contain"
+                                                className="w-auto max-w-[150px] h-[100px] object-contain"
                                             />
                                         </Link>
                                     </div>
