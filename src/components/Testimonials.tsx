@@ -3,10 +3,13 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
 interface Testimonial {
     author: string;
     role: string;
+    company: string;
+    website: string;
     content: string[];
     logoSrc: string;
     logoAlt: string;
@@ -15,7 +18,9 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
     {
         author: 'José Carlos Pérez y Pérez',
-        role: 'Presidente del Consejo Grupo Diagnóstico Proa',
+        role: 'Presidente del Consejo',
+        company: 'Grupo Diagnóstico Proa',
+        website: 'https://www.chopo.com.mx/',
         content: [
             'Hemos tenido la suerte de trabajar con Grupo Metrópoli desde hace más de 35 años, siempre con un servicio excepcional, lo que lo convierte en uno de los mejores proveedores con los que cuenta el Grupo.',
             'A lo largo de estos años de colaboración, hemos encontrado un aliado estratégico que ha demostrado un compromiso inquebrantable con la excelencia. Su capacidad para ofrecer soluciones, siempre con las mejores alternativas en precio y calidad, ha sido clave en nuestra relación de confianza y respeto.',
@@ -27,6 +32,8 @@ const testimonials: Testimonial[] = [
     {
         author: 'Arturo Lomeli',
         role: 'Fundador y CEO',
+        company: 'Clase Azul',
+        website: 'https://www.claseazul.com/',
         content: [
             'Nuestra experiencia con Grupo Metrópoli se ha sostenido en la solidez de su propósito de Asegurar Momentos de Tranquilidad. Juntos hemos aprendido y construido una relación de mucho valor y largo plazo, basada en el respeto, la confianza y los valores que comparten nuestras empresas.',
             'Ha sido una gran experiencia que ya acumula tres generaciones.'
@@ -37,6 +44,8 @@ const testimonials: Testimonial[] = [
     {
         author: 'Marcos Salame',
         role: 'CEO',
+        company: 'Bosque Real',
+        website: 'https://www.bosquereal.com.mx/',
         content: [
             'La construcción y el desarrollo van más allá de levantar estructuras; implica enfrentar riesgos en cada etapa del proceso. Con Metrópoli, hemos encontrado más que un seguro: una estrategia de protección integral que nos permite enfocarnos en lo que mejor sabemos hacer: desarrollar.',
             'Su equipo nos da la confianza y seguridad que nos libera de preocupaciones innecesarias, asegurando que cada proyecto avance con estabilidad, respaldo y tranquilidad.'
@@ -47,12 +56,76 @@ const testimonials: Testimonial[] = [
     {
         author: 'Leonel Cravioto',
         role: 'CEO',
+        company: 'Credifiel',
+        website: 'https://www.credifiel.com.mx/',
         content: [
             'Durante más de 20 años, Metrópoli ha sido un aliado estratégico para Credifiel, un pilar fundamental en nuestro crecimiento y estabilidad.',
             'Su acompañamiento nos ha dado la confianza para tomar decisiones con seguridad, sabiendo que siempre contamos con su respaldo. Lo que realmente los hace únicos es su cercanía, su profundo conocimiento del sector y su compromiso genuino con nuestras necesidades. Los resultados que hemos obtenido son el reflejo de una relación basada en confianza, experiencia y visión compartida.'
         ],
         logoSrc: '/logos/color_credifiel.svg',
         logoAlt: 'Credifiel Logo'
+    },
+    {
+        author: 'Jose Antonio Sanchez Perez',
+        role: 'CEO',
+        company: 'Mainbit',
+        website: 'https://www.mainbit.com.mx/',
+        content: [
+            'Para mí, trabajar con Grupo Metrópoli por más de 30 años ha significado poder delegar los temas de seguros y fianzas en una de las empresas más profesionales del rubro que conozco.',
+            'Es saber que siempre estás asegurado ante cualquier percance, ya sea profesional o médico a nivel personal, con gente que tiene la experiencia y el conocimiento de sobra para resolver cualquier situación que se presente, por más compleja que esta sea.',
+            'El continuo estudio y especialización de su equipo directivo en las nuevas tendencias de este mundo globalizado del siglo XXI, así como ante sucesos como la pandemia vivida en años recientes, son sin duda el fiel de la balanza que hace que Grupo Metrópoli esté siempre a la vanguardia. Tener un equipo así a tu lado es invaluable.'
+        ],
+        logoSrc: '/logos/color_mainbit.svg',
+        logoAlt: 'Mainbit Logo'
+    },
+    {
+        author: 'Eduardo Hadad Zarur',
+        role: 'CEO',
+        company: 'Tapón Corona',
+        website: 'https://www.taponcorona.com.mx/',
+        content: [
+            'Trabajar con Grupo Metrópoli ha sido una experiencia extraordinaria a lo largo de los años. Su equipo de expertos en cada rubro nos ha brindado un respaldo invaluable, siempre a la vanguardia y con un conocimiento profundo del mercado.',
+            'Nos han ayudado a encontrar las mejores condiciones y opciones. Su capacidad para resolver problemas y gestionar cualquier tipo de siniestralidad nos ha dado la tranquilidad de saber que siempre contamos con un equipo que vela por nuestros intereses. Gracias a su profesionalismo y compromiso, cada decisión que tomamos está respaldada por su asesoría experta, asegurándonos la mejor protección y estabilidad.'
+        ],
+        logoSrc: '/logos/Tapon Corona 1.svg',
+        logoAlt: 'Tapón Corona Logo'
+    },
+    {
+        author: 'Antonio Elola Salas',
+        role: 'CEO',
+        company: 'Transportes ELOLA',
+        website: 'https://transporteselola.com.mx/',
+        content: [
+            'Trabajar con Metrópoli me da, además de mucha confianza, tranquilidad.',
+            'Su buen desempeño y los resultados en las gestiones que realizamos me hacen sentir seguro al saber que un gran equipo de profesionales está resolviendo los problemas de mi empresa.',
+            'Creo que la mayor diferencia es que trabajamos directamente con los directivos de Metrópoli, lo que nos permite obtener respuestas ágiles y soluciones siempre alineadas con nuestra razón de ser. Es un placer colaborar con su empresa. ¡Muchas gracias!'
+        ],
+        logoSrc: '/logos/Transportes Elola 1.svg',
+        logoAlt: 'Transportes ELOLA Logo'
+    },
+    {
+        author: 'Mario Domínguez Vazquez',
+        role: 'CEO',
+        company: 'Kassel',
+        website: 'https://kassel.mx/',
+        content: [
+            'En nuestra industria, los imprevistos pueden afectar desde la producción hasta la entrega final. Con Metrópoli, hemos encontrado un equipo que entiende nuestros riesgos y nos da soluciones claras y eficientes.',
+            'Su acompañamiento nos ha permitido operar con la tranquilidad de saber que, pase lo que pase, estamos protegidos. Más que un bróker de seguros, son aliados que realmente cuidan nuestra empresa.'
+        ],
+        logoSrc: '/logos/Kassel 1.svg',
+        logoAlt: 'Kassel Logo'
+    },
+    {
+        author: 'Jesús Martínez',
+        role: 'Director Jurídico',
+        company: 'Gas Uribe',
+        website: 'https://www.gasuribe.com.mx/',
+        content: [
+            'Para el sector de Hidrocarburos, cada minuto cuenta. Por eso, tener el respaldo de Metrópoli ha hecho toda la diferencia. Su conocimiento experto, tiempos rápidos de respuesta y la simplicidad con la que gestionan nuestras necesidades nos da justo lo que más valoramos: tranquilidad.',
+            'Se nota su experiencia de generaciones en cada interacción. Con ellos, todo es más fácil.'
+        ],
+        logoSrc: '/logos/49650862_804535846559613_1509308325936758784_n 1.svg',
+        logoAlt: 'Gas Uribe Logo'
     }
 ];
 
@@ -151,7 +224,14 @@ export const Testimonials = () => {
                                                     {testimonials[currentIndex].author}
                                                 </h2>
                                                 <h3 className="text-[#1C6EF6] text-base sm:text-lg md:text-2xl font-normal sm:text-center md:text-left">
-                                                    {testimonials[currentIndex].role}
+                                                    <Link 
+                                                        href={testimonials[currentIndex].website} 
+                                                        target="_blank" 
+                                                        rel="noopener noreferrer"
+                                                        className="hover:underline"
+                                                    >
+                                                        {testimonials[currentIndex].role}, {testimonials[currentIndex].company}
+                                                    </Link>
                                                 </h3>
                                             </div>
                                             <div onClick={handleNext} className='sm:flex md:hidden flex-row justify-center items-center'>
@@ -160,14 +240,20 @@ export const Testimonials = () => {
                                         </div>
                                     </div>
                                     {/* Logo desktop hidden in mobile display after 768px */}
-                                    <div className="sm:hidden md:block w-[150px]">
-                                        <Image
-                                            src={testimonials[currentIndex].logoSrc}
-                                            alt={testimonials[currentIndex].logoAlt}
-                                            width={150}
-                                            height={60}
-                                            className="w-auto h-[60px] object-contain"
-                                        />
+                                    <div className="sm:hidden md:block w-[225px]">
+                                        <Link 
+                                            href={testimonials[currentIndex].website}
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                        >
+                                            <Image
+                                                src={testimonials[currentIndex].logoSrc}
+                                                alt={testimonials[currentIndex].logoAlt}
+                                                width={225}
+                                                height={90}
+                                                className="w-auto h-[90px] object-contain"
+                                            />
+                                        </Link>
                                     </div>
                                 </div>
 
@@ -178,13 +264,19 @@ export const Testimonials = () => {
                                         </p>
                                     ))}
                                     <div className="sm:flex md:hidden w-full flex justify-center items-center">
-                                        <Image
-                                            src={testimonials[currentIndex].logoSrc}
-                                            alt={testimonials[currentIndex].logoAlt}
-                                            width={150}
-                                            height={60}
-                                            className="w-auto h-[40px] object-contain"
-                                        />
+                                        <Link 
+                                            href={testimonials[currentIndex].website}
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                        >
+                                            <Image
+                                                src={testimonials[currentIndex].logoSrc}
+                                                alt={testimonials[currentIndex].logoAlt}
+                                                width={150}
+                                                height={60}
+                                                className="w-auto h-[60px] object-contain"
+                                            />
+                                        </Link>
                                     </div>
                                 </div>
 
