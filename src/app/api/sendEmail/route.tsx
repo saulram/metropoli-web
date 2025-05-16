@@ -1,4 +1,5 @@
-import Mailjet from "node-mailjet";
+import { Resend } from 'resend';
+import { EmailTemplate } from '@/components/EmailTemplate';
 
 export async function POST(req: Request) {
   const {
@@ -14,107 +15,41 @@ export async function POST(req: Request) {
     message
   } = await req.json();
 
-  const mailjetApiKey = process.env.MAILJET_API_KEY;
-  const mailjetSecretKey = process.env.MAILJET_SECRET_KEY;
+  const resendApiKey = process.env.RESEND_API_KEY;
 
-  if (!mailjetApiKey || !mailjetSecretKey) {
-    throw new Error("Mailjet API key and secret key must be defined");
+  if (!resendApiKey) {
+    return Response.json({ error: "Resend API key must be defined" }, { status: 500 });
   }
 
-  const mailjet = Mailjet.apiConnect(
-    mailjetApiKey,
-    mailjetSecretKey,
-  );
-  await mailjet.post('send', { version: 'v3.1' }).request({
-    Messages: [
-      {
-        From: {
-          Email: 'saul@disolutionsmx.com',
-          Name: 'Metropoli',
-        },
-        To: [
-          {
-            Email: 'saul@disolutionsmx.com',
-            Name: 'Metropoli',
-          },
-        ],
-        Subject: 'Envio de solicitud Metrópoli',
-        HTMLPart: `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact Form Submission</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
-                color: #333;
-                margin: 0;
-                padding: 0;
-            }
-            .container {
-                width: 100%;
-                max-width: 600px;
-                margin: 0 auto;
-                background-color: #ffffff;
-                padding: 20px;
-                border-radius: 8px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            }
-            .header {
-                background-color: #1C6EF6;
-                color: #ffffff;
-                padding: 10px;
-                text-align: center;
-                border-radius: 8px 8px 0 0;
-            }
-            .content {
-                padding: 20px;
-            }
-            .content h3 {
-                color: #091934;
-            }
-            .content p {
-                margin: 10px 0;
-            }
-            .footer {
-                text-align: center;
-                padding: 10px;
-                font-size: 12px;
-                color: #666;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">
-                <h2>New Contact Form Submission</h2>
-            </div>
-            <div class="content">
-                <h3>Contact Details</h3>
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Phone:</strong> ${phone}</p>
-                <p><strong>Product:</strong> ${product}</p>
-                <p><strong>Contact Preference:</strong> ${contactPreference}</p>
-                <p><strong>Company:</strong> ${company}</p>
-                <p><strong>Position:</strong> ${position}</p>
-                <p><strong>Industry:</strong> ${industry}</p>
-                <p><strong>Collaborators:</strong> ${collaborators}</p>
-                <p><strong>Message:</strong> ${message}</p>
-            </div>
-            <div class="footer">
-                <p>This email was sent from metropoli.</p>
-            </div>
-        </div>
-    </body>
-    </html>
-  `,
-      },
-    ],
-  });
+  const resend = new Resend(resendApiKey);
 
-  return Response.json({ success: true });
+  try {
+    const { data, error } = await resend.emails.send({
+      from: 'Metropoli <noreply@grupometropoli.com.mx>', // Replace with your verified Resend domain
+      to: ['noreply@fluss.mx'], // Your receiving email
+      subject: 'Envio de solicitud Metrópoli',
+      react: EmailTemplate({
+        name,
+        email,
+        phone,
+        product,
+        contactPreference,
+        company,
+        position,
+        industry,
+        collaborators,
+        message
+      }),
+    });
+
+    if (error) {
+      console.error('Resend API Error:', error);
+      return Response.json({ error: error.message }, { status: 400 });
+    }
+
+    return Response.json({ success: true, data });
+  } catch (exception: any) {
+    console.error('Exception sending email:', exception);
+    return Response.json({ error: exception.message || 'An unknown error occurred' }, { status: 500 });
+  }
 }
