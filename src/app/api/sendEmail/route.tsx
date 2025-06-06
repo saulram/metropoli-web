@@ -48,8 +48,9 @@ export async function POST(req: Request) {
     }
 
     return Response.json({ success: true, data });
-  } catch (exception: any) {
+  } catch (exception: Error | unknown) {
     console.error('Exception sending email:', exception);
-    return Response.json({ error: exception.message || 'An unknown error occurred' }, { status: 500 });
+    const errorMessage = exception instanceof Error ? exception.message : 'An unknown error occurred';
+    return Response.json({ error: errorMessage }, { status: 500 });
   }
 }

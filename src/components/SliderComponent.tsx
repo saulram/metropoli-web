@@ -186,6 +186,9 @@ const SliderComponent = () => {
 
           {elements.map((element, index) => {
             const stepKey = `step${index + 1}` as keyof typeof messages;
+            const textContent = typeof messages[stepKey] === 'string' 
+              ? messages[stepKey] 
+              : String(messages[stepKey]);
             return <motion.text
               onClick={() => setCurrentIndex(index)}
               key={index}
@@ -199,7 +202,7 @@ const SliderComponent = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
             >
-              {messages[stepKey]}
+              {textContent}
             </motion.text>
           }
           )}
