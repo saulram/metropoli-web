@@ -149,8 +149,24 @@
         "label": "¿Qué producto te interesa? *",
         "placeholder": "¿Qué producto te interesa? *",
         "options": {
-          "producto1": "Producto 1",
-          "producto2": "Producto 2"
+          "adminIntegral": "Administración integral de tus pólizas",
+          "autos": "Autos, camiones y/o flotillas",
+          "autosClasicos": "Autos clásicos o exóticos",
+          "aviacion": "Aviación, drones, yates",
+          "beneficiosFlexibles": "Beneficios flexibles",
+          "beneficiosColaboradores": "Beneficios para colaboradores: gastos médicos, vida, accidentes personales, etc.",
+          "carga": "Carga / Transporte",
+          "construccion": "Construcción / Obra Civil",
+          "fianzas": "Fianzas",
+          "gastosMedicos": "Gastos médicos",
+          "inmuebles": "Inmuebles / empresarial",
+          "lineasFinancieras": "Líneas financieras: Cyber, D&O, E&O, Instituciones Financieras, Responsabilidad Profesional.",
+          "reaseguro": "Reaseguro",
+          "responsabilidadCivil": "Responsabilidad Civil",
+          "segurosMasivos": "Seguros Masivos",
+          "transporteMercancias": "Transporte de Mercancías",
+          "vidaAhorro": "Vida y Ahorro",
+          "otro": "Otro"
         }
       },
       "contactPreference": {
@@ -158,7 +174,8 @@
         "placeholder": "¿Cómo prefieres que te contactemos?",
         "options": {
           "email": "Correo electrónico",
-          "phone": "Teléfono"
+          "phone": "Llamada telefónica",
+          "whatsapp": "WhatsApp"
         }
       },
       "company": {
@@ -177,17 +194,25 @@
         "label": "Número de colaboradores",
         "placeholder": "Número de colaboradores",
         "options": {
-          "1-10": "1-10",
-          "11-50": "11-50",
-          "51-200": "51-200"
+          "range1": "0 - 50",
+          "range2": "51 - 99",
+          "range3": "100 - 250",
+          "range4": "251 - 500",
+          "range5": "501 - 1,000",
+          "range6": "1,001 o más"
         }
       },
       "message": {
         "label": "Cuéntanos detalladamente cómo te podemos ayudar",
-        "placeholder": "Cuéntanos detalladamente cómo te podemos ayudar"
+        "placeholder": "Escribe tu mensaje"
       }
     }
   },
   "thankYouMessage": "¡Gracias por ponerte en contacto con nosotros!, Uno de nuestros asesores se pondrá en contacto contigo",
-  "followUsOnSocialMedia": "Síguenos en nuestras redes sociales:"
+  "followUsOnSocialMedia": "Síguenos en nuestras redes sociales:",
+  "contactFormTitle": "Asegura tu tranquilidad",
+  "contactFormDescription": "Queremos conocerte mejor para ofrecerte lo que necesitas.\nCuéntanos un poco más sobre ti y descubre cómo podemos\nayudarte a encontrar tu tranquilidad.",
+  "contactFormSend": "Enviar",
+  "contactFormSending": "Enviando...",
+  "contactFormError": "Hubo un error, inténtalo de nuevo más tarde."
 }

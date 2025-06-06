@@ -134,60 +134,85 @@
   "form": {
     "fields": {
       "name": {
-        "label": "Nombre completo *",
-        "placeholder": "Nombre completo"
+        "label": "Full name *",
+        "placeholder": "Full name"
       },
       "email": {
-        "label": "Correo electrónico *",
-        "placeholder": "Correo electrónico *"
+        "label": "Email *",
+        "placeholder": "Email *"
       },
       "phone": {
-        "label": "Teléfono / WhatsApp *",
-        "placeholder": "Teléfono / WhatsApp *"
+        "label": "Phone / WhatsApp *",
+        "placeholder": "Phone / WhatsApp *"
       },
       "product": {
-        "label": "¿Qué producto te interesa? *",
-        "placeholder": "¿Qué producto te interesa? *",
+        "label": "What product are you interested in? *",
+        "placeholder": "What product are you interested in? *",
         "options": {
-          "producto1": "Producto 1",
-          "producto2": "Producto 2"
+          "adminIntegral": "Comprehensive administration of your policies",
+          "autos": "Cars, trucks and/or fleets",
+          "autosClasicos": "Classic or exotic cars",
+          "aviacion": "Aviation, drones, yachts",
+          "beneficiosFlexibles": "Flexible benefits",
+          "beneficiosColaboradores": "Employee benefits: major medical expenses, life, personal accidents, etc.",
+          "carga": "Cargo / Transport",
+          "construccion": "Construction / Civil Works",
+          "fianzas": "Bonds",
+          "gastosMedicos": "Medical expenses",
+          "inmuebles": "Real estate / business",
+          "lineasFinancieras": "Financial lines: Cyber, D&O, E&O, Financial Institutions, Professional Liability.",
+          "reaseguro": "Reinsurance",
+          "responsabilidadCivil": "Civil Liability",
+          "segurosMasivos": "Mass Insurance",
+          "transporteMercancias": "Freight Transport",
+          "vidaAhorro": "Life and Savings",
+          "otro": "Other"
         }
       },
       "contactPreference": {
-        "label": "¿Cómo prefieres que te contactemos?",
-        "placeholder": "¿Cómo prefieres que te contactemos?",
+        "label": "How do you prefer to be contacted?",
+        "placeholder": "How do you prefer to be contacted?",
         "options": {
-          "email": "Correo electrónico",
-          "phone": "Teléfono"
+          "email": "Email",
+          "phone": "Phone call",
+          "whatsapp": "WhatsApp"
         }
       },
       "company": {
-        "label": "Empresa",
-        "placeholder": "Empresa"
+        "label": "Company",
+        "placeholder": "Company"
       },
       "position": {
-        "label": "Puesto",
-        "placeholder": "Escribe tu puesto"
+        "label": "Position",
+        "placeholder": "Enter your position"
       },
       "industry": {
-        "label": "Industria",
-        "placeholder": "Industria"
+        "label": "Industry",
+        "placeholder": "Industry"
       },
       "collaborators": {
-        "label": "Número de colaboradores",
-        "placeholder": "Número de colaboradores",
+        "label": "Number of employees",
+        "placeholder": "Number of employees",
         "options": {
-          "1-10": "1-10",
-          "11-50": "11-50",
-          "51-200": "51-200"
+          "range1": "0 - 50",
+          "range2": "51 - 99",
+          "range3": "100 - 250",
+          "range4": "251 - 500",
+          "range5": "501 - 1,000",
+          "range6": "1,001 or more"
         }
       },
       "message": {
-        "label": "Cuéntanos detalladamente cómo te podemos ayudar",
-        "placeholder": "Cuéntanos detalladamente cómo te podemos ayudar"
+        "label": "Tell us in detail how we can help you",
+        "placeholder": "Write your message"
       }
     }
   },
   "thankYouMessage": "Thank you for getting in touch with us! One of our advisors will contact you.",
-  "followUsOnSocialMedia": "Follow us on our social media:"
+  "followUsOnSocialMedia": "Follow us on our social media:",
+  "contactFormTitle": "Ensure your peace of mind",
+  "contactFormDescription": "We want to get to know you better to offer you what you need.\nTell us a little more about yourself and discover how we can\nhelp you find your peace of mind.",
+  "contactFormSend": "Send",
+  "contactFormSending": "Sending...",
+  "contactFormError": "There was an error, please try again later."
 }

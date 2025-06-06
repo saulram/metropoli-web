@@ -133,4 +133,86 @@ export interface Translations {
   everythingInsurable: string;
   thankYouMessage: string;
   followUsOnSocialMedia: string;
+  contactFormTitle: string;
+  contactFormDescription: string;
+  contactFormSend: string;
+  contactFormSending: string;
+  contactFormError: string;
+  form: {
+    fields: {
+      name: {
+        label: string;
+        placeholder: string;
+      };
+      email: {
+        label: string;
+        placeholder: string;
+      };
+      phone: {
+        label: string;
+        placeholder: string;
+      };
+      product: {
+        label: string;
+        placeholder: string;
+        options: {
+          adminIntegral: string;
+          autos: string;
+          autosClasicos: string;
+          aviacion: string;
+          beneficiosFlexibles: string;
+          beneficiosColaboradores: string;
+          carga: string;
+          construccion: string;
+          fianzas: string;
+          gastosMedicos: string;
+          inmuebles: string;
+          lineasFinancieras: string;
+          reaseguro: string;
+          responsabilidadCivil: string;
+          segurosMasivos: string;
+          transporteMercancias: string;
+          vidaAhorro: string;
+          otro: string;
+        };
+      };
+      contactPreference: {
+        label: string;
+        placeholder: string;
+        options: {
+          email: string;
+          phone: string;
+          whatsapp: string;
+        };
+      };
+      company: {
+        label: string;
+        placeholder: string;
+      };
+      position: {
+        label: string;
+        placeholder: string;
+      };
+      industry: {
+        label: string;
+        placeholder: string;
+      };
+      collaborators: {
+        label: string;
+        placeholder: string;
+        options: {
+          range1: string;
+          range2: string;
+          range3: string;
+          range4: string;
+          range5: string;
+          range6: string;
+        };
+      };
+      message: {
+        label: string;
+        placeholder: string;
+      };
+    };
+  };
 }

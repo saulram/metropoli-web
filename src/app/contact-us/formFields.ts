@@ -1,5 +1,121 @@
 import { FormField } from "./form";
+import { Translations } from "@/i18n/translations";
 
+export const getFormFields = (messages: Translations): FormField[] => {
+  // Verificación de seguridad
+  if (!messages.form || !messages.form.fields) {
+    return [];
+  }
+
+  return [
+  {
+    id: 'name',
+    label: messages.form.fields.name.label,
+    type: 'text',
+    placeholder: messages.form.fields.name.placeholder,
+    required: true,
+    gridCols: 2
+  },
+  {
+    id: 'email',
+    label: messages.form.fields.email.label,
+    type: 'email',
+    placeholder: messages.form.fields.email.placeholder,
+    required: true,
+    gridCols: 2
+  },
+  {
+    id: 'phone',
+    label: messages.form.fields.phone.label,
+    type: 'tel',
+    placeholder: messages.form.fields.phone.placeholder,
+    required: true,
+    gridCols: 2
+  },
+  {
+    id: 'product',
+    label: messages.form.fields.product.label,
+    type: 'multiselect',
+    placeholder: messages.form.fields.product.placeholder,
+    required: true,
+    options: [
+      { value: 'admin-integral', label: messages.form.fields.product.options.adminIntegral },
+      { value: 'autos', label: messages.form.fields.product.options.autos },
+      { value: 'autos-clasicos', label: messages.form.fields.product.options.autosClasicos },
+      { value: 'aviacion', label: messages.form.fields.product.options.aviacion },
+      { value: 'beneficios-flexibles', label: messages.form.fields.product.options.beneficiosFlexibles },
+      { value: 'beneficios-colaboradores', label: messages.form.fields.product.options.beneficiosColaboradores },
+      { value: 'carga', label: messages.form.fields.product.options.carga },
+      { value: 'construccion', label: messages.form.fields.product.options.construccion },
+      { value: 'fianzas', label: messages.form.fields.product.options.fianzas },
+      { value: 'gastos-medicos', label: messages.form.fields.product.options.gastosMedicos },
+      { value: 'inmuebles', label: messages.form.fields.product.options.inmuebles },
+      { value: 'lineas-financieras', label: messages.form.fields.product.options.lineasFinancieras },
+      { value: 'reaseguro', label: messages.form.fields.product.options.reaseguro },
+      { value: 'responsabilidad-civil', label: messages.form.fields.product.options.responsabilidadCivil },
+      { value: 'seguros-masivos', label: messages.form.fields.product.options.segurosMasivos },
+      { value: 'transporte-mercancias', label: messages.form.fields.product.options.transporteMercancias },
+      { value: 'vida-ahorro', label: messages.form.fields.product.options.vidaAhorro },
+      { value: 'otro', label: messages.form.fields.product.options.otro }
+    ],
+    gridCols: 2
+  },
+  {
+    id: 'contactPreference',
+    label: messages.form.fields.contactPreference.label,
+    type: 'select',
+    placeholder: messages.form.fields.contactPreference.placeholder,
+    options: [
+      { value: 'email', label: messages.form.fields.contactPreference.options.email },
+      { value: 'phone', label: messages.form.fields.contactPreference.options.phone },
+      { value: 'whatsapp', label: messages.form.fields.contactPreference.options.whatsapp }
+    ],
+  },
+  {
+    id: 'company',
+    label: messages.form.fields.company.label,
+    type: 'text',
+    placeholder: messages.form.fields.company.placeholder,
+    gridCols: 3
+  },
+  {
+    id: 'position',
+    label: messages.form.fields.position.label,
+    type: 'text',
+    placeholder: messages.form.fields.position.placeholder,
+    gridCols: 3
+  },
+  {
+    id: 'industry',
+    label: messages.form.fields.industry.label,
+    type: 'text',
+    placeholder: messages.form.fields.industry.placeholder,
+    gridCols: 3
+  },
+  {
+    id: 'collaborators',
+    label: messages.form.fields.collaborators.label,
+    type: 'select',
+    placeholder: messages.form.fields.collaborators.placeholder,
+    options: [
+      { value: '0-50', label: messages.form.fields.collaborators.options.range1 },
+      { value: '51-99', label: messages.form.fields.collaborators.options.range2 },
+      { value: '100-250', label: messages.form.fields.collaborators.options.range3 },
+      { value: '251-500', label: messages.form.fields.collaborators.options.range4 },
+      { value: '501-1000', label: messages.form.fields.collaborators.options.range5 },
+      { value: '1001+', label: messages.form.fields.collaborators.options.range6 }
+    ]
+  },
+  {
+    id: 'message',
+    label: messages.form.fields.message.label,
+    type: 'textarea',
+    placeholder: messages.form.fields.message.placeholder
+  }
+];
+};
+
+// Mantener la exportación original para compatibilidad
 export const formFields: FormField[] = [
   {
     id: 'name',
