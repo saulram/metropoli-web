@@ -4,7 +4,7 @@ import { FormInput } from './FormInput';
 import { formFields } from '../app/contact-us/formFields';
 import type { FormData } from '../app/contact-us/form';
 import { motion } from 'motion/react';
-import { useTranslations } from '@/i18n/useTranslations';
+import { useRouter } from 'next/navigation';
 
 const initialFormData: FormData = {
     name: '',
@@ -21,9 +21,7 @@ const initialFormData: FormData = {
 
 const ContactForm: React.FC = () => {
     const [formData, setFormData] = useState<FormData>(initialFormData);
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const messages = useTranslations();
-
+    const router = useRouter();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { id, value } = e.target;
@@ -39,65 +37,9 @@ const ContactForm: React.FC = () => {
         });
         const res = await req.json();
         if (res.success) {
-            setIsSubmitting(true);
+            router.push('/thank-you');
         }
     };
-
-    if (isSubmitting) {
-        return (
-            <motion.div
-                className="relative flex justify-center items-center bg-cover bg-center bg-metropoliBg"
-                style={{ backgroundImage: 'url(/waves.png)', minHeight: '100vh' }}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: false }}
-                transition={{ duration: 0.8 }}
-            >
-                <div className="container md:pt-40 pt-20 mx-auto px-4 py-8 md:py-16">
-                    <div className="max-w-[800px] mx-auto w-full">
-                        <motion.h1
-                            className="text-[32px] mb-10 text-center md:text-[40px] font-normal leading-[48px] bg-gradient-to-r from-[#091934] to-[#1C6EF6] bg-clip-text text-transparent"
-                            initial={{ y: 20, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{
-                                duration: 0.8,
-                                ease: [0.16, 1, 0.3, 1]
-                            }}
-                        >
-                            {messages.thankYouMessage}
-                        </motion.h1>
-                        <motion.p
-                            className="text-[#666] w-full text-center mb-8 md:mb-12 text-base md:text-lg"
-                            initial={{ y: 20, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{
-                                duration: 0.8,
-                                delay: 0.2,
-                                ease: [0.16, 1, 0.3, 1]
-                            }}
-                        >
-                            {messages.followUsOnSocialMedia}
-                        </motion.p>
-                        <motion.div
-                            className="relative flex justify-evenly items-center bg-cover bg-center"
-                            initial={{ y: 20, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{
-                                duration: 0.8,
-                                delay: 0.2,
-                                ease: [0.16, 1, 0.3, 1]
-                            }}
-                        >
-                            <img src="social1.svg" alt="social" />
-                            <img src="social2.svg" alt="social" />
-                            <img src="social3.svg" alt="social" />
-                            <img src="social4.svg" alt="social" />
-                        </motion.div>
-                    </div>
-                </div>
-            </motion.div>
-        );
-    }
 
     return (
         <motion.div
