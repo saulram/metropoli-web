@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react';
 import { FormInput } from './FormInput';
-import { formFields } from '../app/contact-us/formFields';
+import { getFormFields } from '../app/contact-us/formFields';
 import type { FormData } from '../app/contact-us/form';
 import { motion } from 'motion/react';
 import { useRouter } from 'next/navigation';
@@ -26,11 +26,33 @@ const ContactForm: React.FC = () => {
     const [hasError, setHasError] = useState(false);
     const router = useRouter();
     const messages = useTranslations();
-
+    
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { id, value } = e.target;
         setFormData(prev => ({ ...prev, [id]: value }));
     };
+
+    // Verificar que las traducciones estén completamente cargadas
+    const isTranslationsLoaded = messages.form && 
+                                messages.form.fields && 
+                                messages.form.fields.name && 
+                                messages.contactFormTitle;
+
+    // Si las traducciones no están cargadas, mostrar un estado de carga
+    if (!isTranslationsLoaded) {
+        return (
+            <div className="relative bg-cover bg-center bg-metropoliBg min-h-screen flex items-center justify-center"
+                 style={{ backgroundImage: 'url(/waves.png)' }}>
+                <div className="text-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+                    <p className="mt-4 text-gray-600">Cargando...</p>
+                </div>
+            </div>
+        );
+    }
+
+    // Generar los campos del formulario solo cuando las traducciones estén cargadas
+    const formFields = getFormFields(messages);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();

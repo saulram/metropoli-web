@@ -9,6 +9,7 @@ interface FormInputProps extends FormField {
 
 export const FormInput: React.FC<FormInputProps> = ({
   id,
+  label,
   type,
   placeholder,
   required,
@@ -20,59 +21,61 @@ export const FormInput: React.FC<FormInputProps> = ({
 
   if (type === 'multiselect') {
     return (
-      <MultiSelect
-        id={id}
-        value={Array.isArray(value) ? value : []}
-        onChange={onChange}
-        placeholder={placeholder}
-        required={required}
-        options={options}
-        label={""}
-        type={type}
-      />
+        <MultiSelect
+          id={id}
+          value={Array.isArray(value) ? value : []}
+          onChange={onChange}
+          placeholder={placeholder}
+          required={required}
+          options={options}
+          label={label || ""}
+          type={type}
+        />
     );
   }
 
   if (type === 'select') {
     return (
-      <CustomSelect
-        id={id}
-        value={typeof value === 'string' ? value : ''}
-        onChange={onChange}
-        placeholder={placeholder}
-        required={required}
-        options={options}
-        label={""}
-        type={type}
-      />
+        <CustomSelect
+          id={id}
+          value={typeof value === 'string' ? value : ''}
+          onChange={onChange}
+          placeholder={placeholder}
+          required={required}
+          options={options}
+          label={label || ""}
+          type={type}
+        />
     );
   }
 
   if (type === 'textarea') {
     return (
-      <textarea
-        id={id}
-        value={typeof value === 'string' ? value : ''}
-        onChange={onChange}
-        rows={3}
-        className={`${baseInputClasses} !h-auto placeholder-gradient text-strongBlue`}
-        placeholder={placeholder}
-        required={required}
-        style={{ resize: 'none' }}
-      />
+        <textarea
+          id={id}
+          value={typeof value === 'string' ? value : ''}
+          onChange={onChange}
+          rows={3}
+          className={`${baseInputClasses} !h-auto placeholder-gradient text-strongBlue`}
+          placeholder={placeholder}
+          required={required}
+          style={{ resize: 'none' }}
+        />
     );
   }
 
   return (
-    <input
-      type={type}
-      id={id}
-      value={typeof value === 'string' ? value : ''}
-      onChange={onChange}
-      className={`${baseInputClasses} placeholder-gradient text-strongBlue h-[60px]`}
-      placeholder={placeholder}
-      required={required}
-    />
+    <div className="w-full">
+      <input
+        type={type}
+        id={id}
+        value={typeof value === 'string' ? value : ''}
+        onChange={onChange}
+        className={`${baseInputClasses} placeholder-gradient text-strongBlue h-[60px]`}
+        placeholder={placeholder}
+        required={required}
+      />
+    </div>
   );
 };
 
