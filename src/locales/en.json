@@ -189,5 +189,10 @@
     }
   },
   "thankYouMessage": "Thank you for getting in touch with us! One of our advisors will contact you.",
-  "followUsOnSocialMedia": "Follow us on our social media:"
+  "followUsOnSocialMedia": "Follow us on our social media:",
+  "contactFormTitle": "Ensure your peace of mind",
+  "contactFormDescription": "We want to get to know you better to offer you what you need.\nTell us a little more about yourself and discover how we can\nhelp you find your peace of mind.",
+  "contactFormSend": "Send",
+  "contactFormSending": "Sending...",
+  "contactFormError": "There was an error, please try again later."
 }

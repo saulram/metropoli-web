@@ -189,5 +189,10 @@
     }
   },
   "thankYouMessage": "¡Gracias por ponerte en contacto con nosotros!, Uno de nuestros asesores se pondrá en contacto contigo",
-  "followUsOnSocialMedia": "Síguenos en nuestras redes sociales:"
+  "followUsOnSocialMedia": "Síguenos en nuestras redes sociales:",
+  "contactFormTitle": "Asegura tu tranquilidad",
+  "contactFormDescription": "Queremos conocerte mejor para ofrecerte lo que necesitas.\nCuéntanos un poco más sobre ti y descubre cómo podemos\nayudarte a encontrar tu tranquilidad.",
+  "contactFormSend": "Enviar",
+  "contactFormSending": "Enviando...",
+  "contactFormError": "Hubo un error, inténtalo de nuevo más tarde."
 }

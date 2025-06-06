@@ -5,6 +5,7 @@ import { formFields } from '../app/contact-us/formFields';
 import type { FormData } from '../app/contact-us/form';
 import { motion } from 'motion/react';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from '@/i18n/useTranslations';
 
 const initialFormData: FormData = {
     name: '',
@@ -21,7 +22,10 @@ const initialFormData: FormData = {
 
 const ContactForm: React.FC = () => {
     const [formData, setFormData] = useState<FormData>(initialFormData);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [hasError, setHasError] = useState(false);
     const router = useRouter();
+    const messages = useTranslations();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { id, value } = e.target;
@@ -30,6 +34,7 @@ const ContactForm: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setIsSubmitting(true);
         const req = await fetch('/api/sendEmail', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -37,7 +42,10 @@ const ContactForm: React.FC = () => {
         });
         const res = await req.json();
         if (res.success) {
+            setIsSubmitting(false);
             router.push('/thank-you');
+        } else {
+            setHasError(true);
         }
     };
 
@@ -61,10 +69,10 @@ const ContactForm: React.FC = () => {
                             ease: [0.16, 1, 0.3, 1]
                         }}
                     >
-                        Asegura tu tranquilidad
+                        {messages.contactFormTitle}
                     </motion.h1>
                     <motion.p
-                        className="text-[#666] mb-8 md:mb-12 text-base md:text-lg max-w-[600px]"
+                        className="text-[#666] mb-8 md:mb-12 text-base md:text-lg max-w-[600px] whitespace-pre-line"
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{
@@ -73,9 +81,7 @@ const ContactForm: React.FC = () => {
                             ease: [0.16, 1, 0.3, 1]
                         }}
                     >
-                        Queremos conocerte mejor para ofrecerte lo que necesitas.<br />
-                        Cuéntanos un poco más sobre ti y descubre cómo podemos <br />
-                        ayudarte a encontrar tu tranquilidad.
+                        {messages.contactFormDescription}
                     </motion.p>
 
                     <motion.form
@@ -133,22 +139,43 @@ const ContactForm: React.FC = () => {
                                 ease: [0.16, 1, 0.3, 1]
                             }}
                         >
-                            <motion.button
-                                className="rounded-md px-5 py-3 text-lg font-bold text-white shadow-sm focus:outline-none"
-                                style={{
-                                    background: 'linear-gradient(90deg, #1E2D49 0%, #112039 25.5%, rgba(25, 57, 113, 0.99299) 78.5%, rgba(14, 80, 187, 0.98) 100%)',
-                                    border: '0.5px solid',
-                                    borderImageSource: 'linear-gradient(90deg, #99C0FF 0%, #1C6EF6 100%)',
-                                    boxShadow: '0px 4px 4px 0px #00000040 inset',
-                                    width: '270px',
-                                    textAlign: 'center',
-                                    borderRadius: '10px'
-                                }}
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                            >
-                                {"Enviar"}
-                            </motion.button>
+                            {!hasError ? (
+                                <motion.button
+                                    className="rounded-md px-5 py-3 text-lg font-bold text-white shadow-sm focus:outline-none"
+                                    style={{
+                                        background: 'linear-gradient(90deg, #1E2D49 0%, #112039 25.5%, rgba(25, 57, 113, 0.99299) 78.5%, rgba(14, 80, 187, 0.98) 100%)',
+                                        border: '0.5px solid',
+                                        borderImageSource: 'linear-gradient(90deg, #99C0FF 0%, #1C6EF6 100%)',
+                                        boxShadow: '0px 4px 4px 0px #00000040 inset',
+                                        width: '270px',
+                                        textAlign: 'center',
+                                        borderRadius: '10px'
+                                    }}
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    disabled={isSubmitting}
+                                >
+                                    {isSubmitting ? messages.contactFormSending : messages.contactFormSend}
+                                </motion.button>
+                            ) : (
+                                <motion.button
+                                    className="rounded-md px-5 py-3 text-lg font-bold text-white shadow-sm focus:outline-none"
+                                    style={{
+                                        background: 'linear-gradient(90deg, #1E2D49 0%, #112039 25.5%, rgba(25, 57, 113, 0.99299) 78.5%, rgba(14, 80, 187, 0.98) 100%)',
+                                        border: '0.5px solid',
+                                        borderImageSource: 'linear-gradient(90deg, #99C0FF 0%, #1C6EF6 100%)',
+                                        boxShadow: '0px 4px 4px 0px #00000040 inset',
+                                        width: '270px',
+                                        textAlign: 'center',
+                                        borderRadius: '10px'
+                                    }}
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    disabled={isSubmitting}
+                                >
+                                    {messages.contactFormError}
+                                </motion.button>
+                            )}
                         </motion.div>
                     </motion.form>
                 </div>

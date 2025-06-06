@@ -133,4 +133,9 @@ export interface Translations {
   everythingInsurable: string;
   thankYouMessage: string;
   followUsOnSocialMedia: string;
+  contactFormTitle: string;
+  contactFormDescription: string;
+  contactFormSend: string;
+  contactFormSending: string;
+  contactFormError: string;
 }
