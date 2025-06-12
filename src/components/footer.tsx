@@ -57,10 +57,10 @@ export default function Footer() {
               ease: [0.16, 1, 0.3, 1]
             }}>
             <p className="mb-3">{messages.legal}</p>
-            <Link href="/privacy-policy">
+            <Link href="/privacyNotice">
               <p className="block">{messages.privacyPolicy}</p>
             </Link>
-            <Link href="/legal-notice">
+            <Link href="/privacyNotice">
               <p className="block">{messages.legal}</p>
             </Link>
             <Link href="/terms-and-conditions">
