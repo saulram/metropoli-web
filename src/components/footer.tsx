@@ -66,7 +66,7 @@ export default function Footer() {
             <Link href="/securityRecommendations">
               <p className="block">{messages.securityRecommendations}</p>
             </Link>
-            <Link href="/arco-rights">
+            <Link href="/Formato-Derechos-ARCO-2025.pdf" target="_blank">
               <p className="block">{messages.arcoRights}</p>
             </Link>
           </motion.div>
