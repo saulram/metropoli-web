@@ -57,14 +57,17 @@ export default function Footer() {
               ease: [0.16, 1, 0.3, 1]
             }}>
             <p className="mb-3">{messages.legal}</p>
-            <Link href="/privacy-policy">
-              <p className="block">{messages.privacyPolicy}</p>
+            <Link href="/privacyNotice">
+              <p className="block">{messages.privacyNotice}</p>
             </Link>
-            <Link href="/legal-notice">
-              <p className="block">{messages.legal}</p>
-            </Link>
-            <Link href="/terms-and-conditions">
+            <Link href="/termsAndConditions">
               <p className="block">{messages.termsAndConditions}</p>
+            </Link>
+            <Link href="/securityRecommendations">
+              <p className="block">{messages.securityRecommendations}</p>
+            </Link>
+            <Link href="/Formato-Derechos-ARCO-2025.pdf" target="_blank">
+              <p className="block">{messages.arcoRights}</p>
             </Link>
           </motion.div>
           <motion.div
