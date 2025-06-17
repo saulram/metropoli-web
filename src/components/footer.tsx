@@ -58,13 +58,16 @@ export default function Footer() {
             }}>
             <p className="mb-3">{messages.legal}</p>
             <Link href="/privacyNotice">
-              <p className="block">{messages.privacyPolicy}</p>
+              <p className="block">{messages.privacyNotice}</p>
             </Link>
-            <Link href="/privacyNotice">
-              <p className="block">{messages.legal}</p>
-            </Link>
-            <Link href="/terms-and-conditions">
+            <Link href="/termsAndConditions">
               <p className="block">{messages.termsAndConditions}</p>
+            </Link>
+            <Link href="/securityRecommendations">
+              <p className="block">{messages.securityRecommendations}</p>
+            </Link>
+            <Link href="/arco-rights">
+              <p className="block">{messages.arcoRights}</p>
             </Link>
           </motion.div>
           <motion.div
