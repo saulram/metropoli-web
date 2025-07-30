@@ -88,13 +88,14 @@ export default function Footer() {
             <div>
               <p>{messages.followUs}</p>
               <div className="flex mb-2">
-                <Link href={"https://www.facebook.com/Grupometropolisegurosyfianzas/"}>
-
-                  <img src="/facebook.svg" alt="facebook" className="mr-2" width={18} />
+                <Link href={"https://www.facebook.com/profile.php?id=61575930904222"} target="_blank">
+                  <img src="/facebook.svg" alt="facebook" className="mr-2" width={18} height={18} />
                 </Link>
-                <Link href={"https://www.linkedin.com/company/grupo-metropoli/?viewAsMember=true"}>
-
-                  <img src="/linkedin.svg" alt="inkedin" width={18} />
+                <Link href={"https://www.linkedin.com/company/grupo-metropoli/?viewAsMember=true"} target="_blank">
+                  <img src="/linkedin.svg" alt="inkedin" className="mr-2" width={18} height={18} />
+                </Link>
+                <Link href={"https://www.instagram.com/grupo_metropoli/"} target="_blank">
+                  <img src="/instagram.png" alt="instagram" width={18} height={18} />
                 </Link>
               </div>
             </div>
