@@ -215,6 +215,7 @@ export interface Translations {
         placeholder: string;
       };
     };
+    requiredField: string;
   };
   privacyNotice_title?: string;
   privacyNotice_section1_p1?: string;

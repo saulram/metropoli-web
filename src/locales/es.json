@@ -136,7 +136,7 @@
     "fields": {
       "name": {
         "label": "Nombre completo *",
-        "placeholder": "Nombre completo"
+        "placeholder": "Nombre completo *"
       },
       "email": {
         "label": "Correo electrónico *",
@@ -180,20 +180,20 @@
         }
       },
       "company": {
-        "label": "Empresa",
-        "placeholder": "Empresa"
+        "label": "Empresa *",
+        "placeholder": "Empresa *"
       },
       "position": {
-        "label": "Puesto",
-        "placeholder": "Escribe tu puesto"
+        "label": "Puesto *",
+        "placeholder": "Escribe tu puesto *"
       },
       "industry": {
         "label": "Industria",
         "placeholder": "Industria"
       },
       "collaborators": {
-        "label": "Número de colaboradores",
-        "placeholder": "Número de colaboradores",
+        "label": "Número de colaboradores *",
+        "placeholder": "Número de colaboradores *",
         "options": {
           "range1": "0 - 50",
           "range2": "51 - 99",
@@ -204,10 +204,11 @@
         }
       },
       "message": {
-        "label": "Cuéntanos detalladamente cómo te podemos ayudar",
-        "placeholder": "Escribe tu mensaje"
+        "label": "Cuéntanos detalladamente cómo te podemos ayudar *",
+        "placeholder": "¿Qué momento de tranquilidad quieres asegurar para tu empresa y cuál es el reto que debemos resolver juntos? *"
       }
-    }
+    },
+    "requiredField": "Este campo es obligatorio"
   },
   "thankYouMessage": "¡Gracias por ponerte en contacto con nosotros!, Uno de nuestros asesores se pondrá en contacto contigo",
   "followUsOnSocialMedia": "Síguenos en nuestras redes sociales:",

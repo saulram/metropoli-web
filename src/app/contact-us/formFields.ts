@@ -75,6 +75,7 @@ export const getFormFields = (messages: Translations): FormField[] => {
     id: 'company',
     label: messages.form.fields.company.label,
     type: 'text',
+    required: true,
     placeholder: messages.form.fields.company.placeholder,
     gridCols: 3
   },
@@ -82,6 +83,7 @@ export const getFormFields = (messages: Translations): FormField[] => {
     id: 'position',
     label: messages.form.fields.position.label,
     type: 'text',
+    required: true,
     placeholder: messages.form.fields.position.placeholder,
     gridCols: 3
   },
@@ -96,6 +98,7 @@ export const getFormFields = (messages: Translations): FormField[] => {
     id: 'collaborators',
     label: messages.form.fields.collaborators.label,
     type: 'select',
+    required: true,
     placeholder: messages.form.fields.collaborators.placeholder,
     options: [
       { value: '0-50', label: messages.form.fields.collaborators.options.range1 },
@@ -109,6 +112,7 @@ export const getFormFields = (messages: Translations): FormField[] => {
   {
     id: 'message',
     label: messages.form.fields.message.label,
+    required: true,
     type: 'textarea',
     placeholder: messages.form.fields.message.placeholder
   }
@@ -182,14 +186,16 @@ export const formFields: FormField[] = [
   },
   {
     id: 'company',
-    label: 'Empresa',
+    label: 'Empresa *',
+    required: true,
     type: 'text',
     placeholder: 'Empresa',
     gridCols: 3
   },
   {
     id: 'position',
-    label: 'Puesto',
+    label: 'Puesto *',
+    required: true,
     type: 'text',
     placeholder: 'Escribe tu puesto',
     gridCols: 3
@@ -203,7 +209,8 @@ export const formFields: FormField[] = [
   },
   {
     id: 'collaborators',
-    label: 'Número de colaboradores',
+    label: 'Número de colaboradores *',
+    required: true,
     type: 'select',
     placeholder: 'Número de colaboradores',
     options: [
@@ -217,7 +224,8 @@ export const formFields: FormField[] = [
   },
   {
     id: 'message',
-    label: 'Cuéntanos detalladamente cómo te podemos ayudar',
+    label: 'Cuéntanos detalladamente cómo te podemos ayudar *',
+    required: true,
     type: 'textarea',
     placeholder: 'Escribe tu mensaje'
   }
