@@ -136,7 +136,7 @@
     "fields": {
       "name": {
         "label": "Full name *",
-        "placeholder": "Full name"
+        "placeholder": "Full name *"
       },
       "email": {
         "label": "Email *",
@@ -180,20 +180,20 @@
         }
       },
       "company": {
-        "label": "Company",
-        "placeholder": "Company"
+        "label": "Company *",
+        "placeholder": "Company *"
       },
       "position": {
-        "label": "Position",
-        "placeholder": "Enter your position"
+        "label": "Position *",
+        "placeholder": "Enter your position *"
       },
       "industry": {
         "label": "Industry",
         "placeholder": "Industry"
       },
       "collaborators": {
-        "label": "Number of employees",
-        "placeholder": "Number of employees",
+        "label": "Number of employees *",
+        "placeholder": "Number of employees *",
         "options": {
           "range1": "0 - 50",
           "range2": "51 - 99",
@@ -204,10 +204,11 @@
         }
       },
       "message": {
-        "label": "Tell us in detail how we can help you",
-        "placeholder": "Write your message"
+        "label": "Tell us in detail how we can help you *",
+        "placeholder": "What moment of peace of mind do you want to ensure for your company, and what challenge do we need to solve together? *"
       }
-    }
+    },
+    "requiredField": "This field is required"
   },
   "thankYouMessage": "Thank you for getting in touch with us! One of our advisors will contact you.",
   "followUsOnSocialMedia": "Follow us on our social media:",

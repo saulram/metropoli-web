@@ -3,9 +3,10 @@ import { Fragment } from 'react';
 import { ChevronDownIcon, XMarkIcon } from '@heroicons/react/20/solid';
 import { FormField } from '@/app/contact-us/form';
 
-interface MultiSelectProps extends FormField {
+export interface MultiSelectProps extends FormField {
   value: string[];
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  error?: string;
 }
 
 export const MultiSelect: React.FC<MultiSelectProps> = ({
@@ -14,6 +15,7 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
   options = [],
   value = [],
   onChange,
+  error
 }) => {
   const selectedOptions = options.filter((opt) => value.includes(opt.value));
 
@@ -116,10 +118,10 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
       <Listbox value={value} onChange={handleChange} multiple>
         {({ open }) => (
           <div className="relative">
-            <div className={`border-gradient ${open ? 'rounded-t-lg' : 'rounded-lg'} border-gray-300`}> {/* Updated border */}
+            <div className={`border-gradient ${open ? 'rounded-t-lg' : 'rounded-lg'} border-gray-300 ${error ? 'border-2 border-red-500' : ''}`}> {/* Updated border */}
               <Listbox.Button
                 className={`relative w-full min-h-[50px] cursor-pointer p-4 text-left bg-white/50 border-gray-300 
-                  ${open ? 'rounded-t-lg' : 'rounded-lg'} focus:outline-none`}
+                  ${open ? 'rounded-t-lg' : 'rounded-lg'} focus:outline-none ${error ? 'border-2 border-red-500' : ''}`}
               >
                 <div className="flex flex-wrap gap-2">
                   {selectedOptions.length > 0 ? (
@@ -156,6 +158,12 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
                 </span>
               </Listbox.Button>
             </div>
+            {/* Tooltip de error */}
+            {error && (
+              <div className="absolute left-0 mt-1 text-xs text-red-600 bg-white border border-red-300 rounded px-2 py-1 shadow animate-fade-in z-10">
+                {error}
+              </div>
+            )}
 
             <Transition
               show={open}

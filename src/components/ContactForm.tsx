@@ -24,6 +24,7 @@ const ContactForm: React.FC = () => {
     const [formData, setFormData] = useState<FormData>(initialFormData);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [hasError, setHasError] = useState(false);
+    const [fieldErrors, setFieldErrors] = useState<{ [key: string]: string }>({});
     const router = useRouter();
     const messages = useTranslations();
     
@@ -57,6 +58,27 @@ const ContactForm: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setHasError(false);
+        const errors: { [key: string]: string } = {};
+        formFields.forEach(field => {
+            if (field.required) {
+                const value = formData[field.id as keyof FormData];
+                if (
+                    (Array.isArray(value) && value.length === 0) ||
+                    (!Array.isArray(value) && !value)
+                ) {
+                    errors[field.id] = messages.form?.requiredField
+                        ? messages.form.requiredField
+                        : 'Este campo es obligatorio';
+                }
+            }
+        });
+        if (Object.keys(errors).length > 0) {
+            setFieldErrors(errors);
+            setIsSubmitting(false);
+            return;
+        }
+        setFieldErrors({});
         const req = await fetch('/api/sendEmail', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -145,6 +167,7 @@ const ContactForm: React.FC = () => {
                                         {...formFields[fieldIndex]}
                                         value={formData[formFields[fieldIndex].id as keyof FormData]}
                                         onChange={handleChange}
+                                        error={fieldErrors[formFields[fieldIndex].id]}
                                     />
                                 ))}
                             </motion.div>

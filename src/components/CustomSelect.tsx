@@ -3,9 +3,10 @@ import { Fragment } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { FormField } from '@/app/contact-us/form';
 
-interface FormInputProps extends FormField {
+export interface FormInputProps extends FormField {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
+  error?: string;
 }
 
 export const CustomSelect: React.FC<FormInputProps> = ({
@@ -13,7 +14,8 @@ export const CustomSelect: React.FC<FormInputProps> = ({
   placeholder,
   options = [],
   value,
-  onChange
+  onChange,
+  error
 }) => {
     const selectedOption = options?.find(opt => opt.value === value);
 
@@ -29,10 +31,10 @@ export const CustomSelect: React.FC<FormInputProps> = ({
       <Listbox value={value} onChange={handleChange}>
         {({ open }) => (
           <div className="relative">
-            <div className={`border-gradient ${open ? 'rounded-t-lg' : 'rounded-lg'}`}>
+            <div className={`border-gradient ${open ? 'rounded-t-lg' : 'rounded-lg'} ${error ? 'border-2 border-red-500' : ''}`}>
               <Listbox.Button 
                 className={`relative w-full h-[60px] cursor-pointer px-4 sm:px-6 py-4 text-left bg-white/50
-                  ${open ? 'rounded-t-lg' : 'rounded-lg'} focus:outline-none`}
+                  ${open ? 'rounded-t-lg' : 'rounded-lg'} focus:outline-none ${error ? 'border-2 border-red-500' : ''}`}
               >
                 <span className={`block truncate text-sm sm:text-base ${!value ? 'text-strongBlue font-bold' : 'text-strongBlue font-bold'}`}>
                   {selectedOption ? selectedOption.label : placeholder}
@@ -46,6 +48,12 @@ export const CustomSelect: React.FC<FormInputProps> = ({
                 </span>
               </Listbox.Button>
             </div>
+            {/* Tooltip de error */}
+            {error && (
+              <div className="absolute left-0 mt-1 text-xs text-red-600 bg-white border border-red-300 rounded px-2 py-1 shadow animate-fade-in z-10">
+                {error}
+              </div>
+            )}
             
             <Transition
               show={open}
