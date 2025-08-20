@@ -34,7 +34,7 @@ export default function Navigation() {
                     whileHover={{ scale: 1.05 }}
                     className="w-1/4 text-lg font-bold cursor-pointer" style={{maxWidth:"350px"}}>
                     <Link href="/">
-                        <img src={"/logotipo_negro.svg"} alt={"logotipo"} />
+                        <img src={"/logotipo_negro.svg"} alt={"logotipo"} width={340} />
                     </Link>
                 </motion.div>
 
