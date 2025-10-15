@@ -17,10 +17,10 @@ export const getFormFields = (messages: Translations): FormField[] => {
     gridCols: 2
   },
   {
-    id: 'email',
-    label: messages.form.fields.email.label,
-    type: 'email',
-    placeholder: messages.form.fields.email.placeholder,
+    id: 'lastName',
+    label: messages.form.fields.lastName.label,
+    type: 'text',
+    placeholder: messages.form.fields.lastName.placeholder,
     required: true,
     gridCols: 2
   },
@@ -33,31 +33,11 @@ export const getFormFields = (messages: Translations): FormField[] => {
     gridCols: 2
   },
   {
-    id: 'product',
-    label: messages.form.fields.product.label,
-    type: 'multiselect',
-    placeholder: messages.form.fields.product.placeholder,
+    id: 'email',
+    label: messages.form.fields.email.label,
+    type: 'email',
+    placeholder: messages.form.fields.email.placeholder,
     required: true,
-    options: [
-      { value: 'admin-integral', label: messages.form.fields.product.options.adminIntegral },
-      { value: 'autos', label: messages.form.fields.product.options.autos },
-      { value: 'autos-clasicos', label: messages.form.fields.product.options.autosClasicos },
-      { value: 'aviacion', label: messages.form.fields.product.options.aviacion },
-      { value: 'beneficios-flexibles', label: messages.form.fields.product.options.beneficiosFlexibles },
-      { value: 'beneficios-colaboradores', label: messages.form.fields.product.options.beneficiosColaboradores },
-      { value: 'carga', label: messages.form.fields.product.options.carga },
-      { value: 'construccion', label: messages.form.fields.product.options.construccion },
-      { value: 'fianzas', label: messages.form.fields.product.options.fianzas },
-      { value: 'gastos-medicos', label: messages.form.fields.product.options.gastosMedicos },
-      { value: 'inmuebles', label: messages.form.fields.product.options.inmuebles },
-      { value: 'lineas-financieras', label: messages.form.fields.product.options.lineasFinancieras },
-      { value: 'reaseguro', label: messages.form.fields.product.options.reaseguro },
-      { value: 'responsabilidad-civil', label: messages.form.fields.product.options.responsabilidadCivil },
-      { value: 'seguros-masivos', label: messages.form.fields.product.options.segurosMasivos },
-      { value: 'transporte-mercancias', label: messages.form.fields.product.options.transporteMercancias },
-      { value: 'vida-ahorro', label: messages.form.fields.product.options.vidaAhorro },
-      { value: 'otro', label: messages.form.fields.product.options.otro }
-    ],
     gridCols: 2
   },
   {
@@ -70,14 +50,83 @@ export const getFormFields = (messages: Translations): FormField[] => {
       { value: 'phone', label: messages.form.fields.contactPreference.options.phone },
       { value: 'whatsapp', label: messages.form.fields.contactPreference.options.whatsapp }
     ],
+    gridCols: 1
   },
   {
-    id: 'company',
-    label: messages.form.fields.company.label,
+    id: 'product',
+    label: messages.form.fields.product.label,
+    type: 'multiselect',
+    placeholder: messages.form.fields.product.placeholder,
+    required: true,
+    options: [
+      { value: 'danios', label: messages.form.fields.product.options.danios },
+      { value: 'finanzas', label: messages.form.fields.product.options.finanzas },
+      { value: 'gastos-medicos-mayores', label: messages.form.fields.product.options.gastosMedicosMayores },
+      { value: 'accidentes-personales', label: messages.form.fields.product.options.accidentesPersonales },
+      { value: 'vida', label: messages.form.fields.product.options.vida },
+      { value: 'autos-tractos', label: messages.form.fields.product.options.autosTractos },
+      { value: 'otro', label: messages.form.fields.product.options.otro }
+    ],
+    gridCols: 1
+  },
+  {
+    id: 'danios',
+    label: messages.form.fields.danios.label,
+    type: 'multiselect',
+    placeholder: messages.form.fields.danios.placeholder,
+    required: true,
+    options: [
+      { value: 'obra-civil', label: messages.form.fields.product.options.obraCivil },
+      { value: 'responsabilidad-civil', label: messages.form.fields.product.options.responsabilidadCivil },
+      { value: 'EYQ-Responsabilidad-Civil-Profesional', label: messages.form.fields.product.options.responsabilidadCivilProfesional },
+      { value: 'DyO-Responsabilidad-Civil-para-Directivos-y-Administradores', label: messages.form.fields.product.options.dyoResponsabilidadCivilDirectivos },
+      { value: 'Transporte-de-mercancia', label: messages.form.fields.product.options.transporteMercancia },
+      { value: 'Equipo-de-contratistas', label: messages.form.fields.product.options.equipoContratistas },
+      { value: 'Ciberseguridad-Crime', label: messages.form.fields.product.options.ciberseguridadCrime },
+      { value: 'Credito', label: messages.form.fields.product.options.credito },
+      { value: 'Aeronaves-y-embarcaciones', label: messages.form.fields.product.options.aeronavesEmbarcaciones },
+      { value: 'Obras-de-arte-y-coleccionistas', label: messages.form.fields.product.options.obrasArteColeccionistas },
+      { value: 'Hole-in-One', label: messages.form.fields.product.options.holeInOne },
+      { value: 'otros', label: messages.form.fields.product.options.otros },
+    ],
+    gridCols: 1
+  },
+  {
+    id: 'accidentes-personales',
+    label: messages.form.fields.accidentesPersonales.label,
+    type: 'multiselect',
+    placeholder: messages.form.fields.accidentesPersonales.placeholder,
+    required: true,
+    options: [
+      { value: 'Viaje', label: messages.form.fields.product.options.viaje },
+      { value: 'Básico', label: messages.form.fields.product.options.basico },
+      { value: 'Escolar', label: messages.form.fields.product.options.escolar },
+    ],
+    gridCols: 1
+  },
+  {
+    id: 'finanzas',
+    label: messages.form.fields.finanzas.label,
+    type: 'multiselect',
+    placeholder: messages.form.fields.finanzas.placeholder,
+    required: true,
+    options: [
+      { value: 'Fidelidad', label: messages.form.fields.product.options.fidelidad },
+      { value: 'Judiciales', label: messages.form.fields.product.options.judiciales },
+      { value: 'Administrativas', label: messages.form.fields.product.options.administrativas },
+      { value: 'Credito', label: messages.form.fields.product.options.credito },
+      { value: 'Arrendamiento', label: messages.form.fields.product.options.arrendamiento },
+      { value: 'Programa-de-Proveeduría', label: messages.form.fields.product.options.programaProveduria },
+    ],
+    gridCols: 1
+  },
+  {
+    id: 'ubication',
+    label: messages.form.fields.ubication.label,
     type: 'text',
     required: true,
-    placeholder: messages.form.fields.company.placeholder,
-    gridCols: 3
+    placeholder: messages.form.fields.ubication.placeholder,
+    gridCols: 2
   },
   {
     id: 'position',
@@ -85,14 +134,15 @@ export const getFormFields = (messages: Translations): FormField[] => {
     type: 'text',
     required: true,
     placeholder: messages.form.fields.position.placeholder,
-    gridCols: 3
+    gridCols: 2
   },
   {
-    id: 'industry',
-    label: messages.form.fields.industry.label,
+    id: 'company',
+    label: messages.form.fields.company.label,
     type: 'text',
-    placeholder: messages.form.fields.industry.placeholder,
-    gridCols: 3
+    required: true,
+    placeholder: messages.form.fields.company.placeholder,
+    gridCols: 1
   },
   {
     id: 'collaborators',
@@ -107,15 +157,34 @@ export const getFormFields = (messages: Translations): FormField[] => {
       { value: '251-500', label: messages.form.fields.collaborators.options.range4 },
       { value: '501-1000', label: messages.form.fields.collaborators.options.range5 },
       { value: '1001+', label: messages.form.fields.collaborators.options.range6 }
-    ]
+    ],
+    gridCols: 2
   },
   {
-    id: 'message',
-    label: messages.form.fields.message.label,
-    required: true,
-    type: 'textarea',
-    placeholder: messages.form.fields.message.placeholder
-  }
+    id: 'industry',
+    label: messages.form.fields.industry.label,
+    type: 'select',
+    placeholder: messages.form.fields.industry.placeholder,
+    options: [
+      { value: 'agroindustria', label: messages.form.fields.industry.options.agroindustria },
+      { value: 'alimentosBebidas', label: messages.form.fields.industry.options.alimentosBebidas },
+      { value: 'comercio', label: messages.form.fields.industry.options.comercio },
+      { value: 'construccion', label: messages.form.fields.industry.options.construccion },
+      { value: 'educacion', label: messages.form.fields.industry.options.educacion },
+      { value: 'energiaOilGasMineria', label: messages.form.fields.industry.options.energiaOilGasMineria },
+      { value: 'gobiernoOrganismosPublicos', label: messages.form.fields.industry.options.gobiernoOrganismosPublicos },
+      { value: 'inmobiliaria', label: messages.form.fields.industry.options.inmobiliaria },
+      { value: 'manufactureras', label: messages.form.fields.industry.options.manufactureras },
+      { value: 'otrosServicios', label: messages.form.fields.industry.options.otrosServicios },
+      { value: 'recreacionEntretenimiento', label: messages.form.fields.industry.options.recreacionEntretenimiento },
+      { value: 'salud', label: messages.form.fields.industry.options.salud },
+      { value: 'serviciosFinancieros', label: messages.form.fields.industry.options.serviciosFinancieros },
+      { value: 'serviciosProfesionales', label: messages.form.fields.industry.options.serviciosProfesionales },
+      { value: 'tecnologia', label: messages.form.fields.industry.options.tecnologia },
+      { value: 'transporte', label: messages.form.fields.industry.options.transporte }
+    ],
+    gridCols: 2
+  },
 ];
 };
 
@@ -203,8 +272,26 @@ export const formFields: FormField[] = [
   {
     id: 'industry',
     label: 'Industria',
-    type: 'text',
-    placeholder: 'Industria',
+    type: 'select',
+    placeholder: 'Selecciona tu industria',
+    options: [
+      { value: 'agroindustria', label: 'Agroindustria' },
+      { value: 'alimentosBebidas', label: 'Alimentos y Bebidas' },
+      { value: 'comercio', label: 'Comercio' },
+      { value: 'construccion', label: 'Construcción' },
+      { value: 'educacion', label: 'Educación' },
+      { value: 'energiaOilGasMineria', label: 'Energía, Oil & Gas y Minería' },
+      { value: 'gobiernoOrganismosPublicos', label: 'Gobierno y Organismos Públicos' },
+      { value: 'inmobiliaria', label: 'Inmobiliaria' },
+      { value: 'manufactureras', label: 'Manufactureras' },
+      { value: 'otrosServicios', label: 'Otros Servicios' },
+      { value: 'recreacionEntretenimiento', label: 'Recreación y entretenimiento' },
+      { value: 'salud', label: 'Salud' },
+      { value: 'serviciosFinancieros', label: 'Servicios Financieros' },
+      { value: 'serviciosProfesionales', label: 'Servicios Profesionales' },
+      { value: 'tecnologia', label: 'Tecnología' },
+      { value: 'transporte', label: 'Transporte' }
+    ],
     gridCols: 3
   },
   {

@@ -138,6 +138,10 @@
         "label": "Full name *",
         "placeholder": "Full name *"
       },
+      "lastName": {
+        "label": "Last name *",
+        "placeholder": "Last name *"
+      },
       "email": {
         "label": "Email *",
         "placeholder": "Email *"
@@ -167,7 +171,32 @@
           "segurosMasivos": "Mass Insurance",
           "transporteMercancias": "Freight Transport",
           "vidaAhorro": "Life and Savings",
-          "otro": "Other"
+          "otro": "Other",
+          "danios": "Damages",
+          "finanzas": "Finance",
+          "gastosMedicosMayores": "Major medical expenses",
+          "accidentesPersonales": "Personal accidents",
+          "vida": "Life",
+          "autosTractos": "Cars and trucks",
+          "obraCivil": "Civil works",
+          "responsabilidadCivilProfesional": "Professional Civil Liability (E&Q)",
+          "dyoResponsabilidadCivilDirectivos": "Directors and Officers Civil Liability (D&O)",
+          "transporteMercancia": "Freight transport",
+          "equipoContratistas": "Contractors equipment",
+          "ciberseguridadCrime": "Cybersecurity/Crime",
+          "credito": "Credit",
+          "aeronavesEmbarcaciones": "Aircraft and vessels",
+          "obrasArteColeccionistas": "Art works and collectors",
+          "holeInOne": "Hole in One",
+          "otros": "Others",
+          "viaje": "Travel",
+          "basico": "Basic",
+          "escolar": "School",
+          "fidelidad": "Fidelity",
+          "judiciales": "Judicial",
+          "administrativas": "Administrative",
+          "arrendamiento": "Lease",
+          "programaProveduria": "Supplier Program"
         }
       },
       "contactPreference": {
@@ -189,7 +218,25 @@
       },
       "industry": {
         "label": "Industry",
-        "placeholder": "Industry"
+        "placeholder": "Select your industry",
+        "options": {
+          "agroindustria": "Agribusiness",
+          "alimentosBebidas": "Food and Beverages",
+          "comercio": "Commerce",
+          "construccion": "Construction",
+          "educacion": "Education",
+          "energiaOilGasMineria": "Energy, Oil & Gas and Mining",
+          "gobiernoOrganismosPublicos": "Government and Public Organizations",
+          "inmobiliaria": "Real Estate",
+          "manufactureras": "Manufacturing",
+          "otrosServicios": "Other Services",
+          "recreacionEntretenimiento": "Recreation and Entertainment",
+          "salud": "Healthcare",
+          "serviciosFinancieros": "Financial Services",
+          "serviciosProfesionales": "Professional Services",
+          "tecnologia": "Technology",
+          "transporte": "Transportation"
+        }
       },
       "collaborators": {
         "label": "Number of employees *",
@@ -206,6 +253,22 @@
       "message": {
         "label": "Tell us in detail how we can help you *",
         "placeholder": "What moment of peace of mind do you want to ensure for your company, and what challenge do we need to solve together? *"
+      },
+      "ubication": {
+        "label": "Location *",
+        "placeholder": "City, State or Country *"
+      },
+      "danios": {
+        "label": "Type of damages",
+        "placeholder": "Select the type of damages"
+      },
+      "finanzas": {
+        "label": "Type of finance",
+        "placeholder": "Select the type of finance"
+      },
+      "accidentesPersonales": {
+        "label": "Type of personal accidents",
+        "placeholder": "Select the type of personal accidents"
       }
     },
     "requiredField": "This field is required"

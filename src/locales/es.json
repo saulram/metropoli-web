@@ -138,6 +138,10 @@
         "label": "Nombre completo *",
         "placeholder": "Nombre completo *"
       },
+      "lastName": {
+        "label": "Apellidos *",
+        "placeholder": "Apellidos *"
+      },
       "email": {
         "label": "Correo electrónico *",
         "placeholder": "Correo electrónico *"
@@ -167,7 +171,32 @@
           "segurosMasivos": "Seguros Masivos",
           "transporteMercancias": "Transporte de Mercancías",
           "vidaAhorro": "Vida y Ahorro",
-          "otro": "Otro"
+          "otro": "Otro",
+          "danios": "Daños",
+          "finanzas": "Finanzas",
+          "gastosMedicosMayores": "Gastos médicos mayores",
+          "accidentesPersonales": "Accidentes personales",
+          "vida": "Vida",
+          "autosTractos": "Autos y tractos",
+          "obraCivil": "Obra civil",
+          "responsabilidadCivilProfesional": "Responsabilidad Civil Profesional (E&Q)",
+          "dyoResponsabilidadCivilDirectivos": "Responsabilidad Civil para Directivos y Administradores (D&O)",
+          "transporteMercancia": "Transporte de mercancía",
+          "equipoContratistas": "Equipo de contratistas",
+          "ciberseguridadCrime": "Ciberseguridad/Crime",
+          "credito": "Crédito",
+          "aeronavesEmbarcaciones": "Aeronaves y embarcaciones",
+          "obrasArteColeccionistas": "Obras de arte y coleccionistas",
+          "holeInOne": "Hole in One",
+          "otros": "Otros",
+          "viaje": "Viaje",
+          "basico": "Básico",
+          "escolar": "Escolar",
+          "fidelidad": "Fidelidad",
+          "judiciales": "Judiciales",
+          "administrativas": "Administrativas",
+          "arrendamiento": "Arrendamiento",
+          "programaProveduria": "Programa de Proveeduría"
         }
       },
       "contactPreference": {
@@ -189,7 +218,25 @@
       },
       "industry": {
         "label": "Industria",
-        "placeholder": "Industria"
+        "placeholder": "Selecciona tu industria",
+        "options": {
+          "agroindustria": "Agroindustria",
+          "alimentosBebidas": "Alimentos y Bebidas",
+          "comercio": "Comercio",
+          "construccion": "Construcción",
+          "educacion": "Educación",
+          "energiaOilGasMineria": "Energía, Oil & Gas y Minería",
+          "gobiernoOrganismosPublicos": "Gobierno y Organismos Públicos",
+          "inmobiliaria": "Inmobiliaria",
+          "manufactureras": "Manufactureras",
+          "otrosServicios": "Otros Servicios",
+          "recreacionEntretenimiento": "Recreación y entretenimiento",
+          "salud": "Salud",
+          "serviciosFinancieros": "Servicios Financieros",
+          "serviciosProfesionales": "Servicios Profesionales",
+          "tecnologia": "Tecnología",
+          "transporte": "Transporte"
+        }
       },
       "collaborators": {
         "label": "Número de colaboradores *",
@@ -206,6 +253,22 @@
       "message": {
         "label": "Cuéntanos detalladamente cómo te podemos ayudar *",
         "placeholder": "¿Qué momento de tranquilidad quieres asegurar para tu empresa y cuál es el reto que debemos resolver juntos? *"
+      },
+      "ubication": {
+        "label": "Ubicación *",
+        "placeholder": "Ciudad, Estado o País *"
+      },
+      "danios": {
+        "label": "Tipo de daños",
+        "placeholder": "Selecciona el tipo de daños"
+      },
+      "finanzas": {
+        "label": "Tipo de finanzas",
+        "placeholder": "Selecciona el tipo de finanzas"
+      },
+      "accidentesPersonales": {
+        "label": "Tipo de accidentes personales",
+        "placeholder": "Selecciona el tipo de accidentes personales"
       }
     },
     "requiredField": "Este campo es obligatorio"

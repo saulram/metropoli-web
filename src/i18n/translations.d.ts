@@ -145,6 +145,10 @@ export interface Translations {
         label: string;
         placeholder: string;
       };
+      lastName: {
+        label: string;
+        placeholder: string;
+      };
       email: {
         label: string;
         placeholder: string;
@@ -175,6 +179,35 @@ export interface Translations {
           transporteMercancias: string;
           vidaAhorro: string;
           otro: string;
+          // Nuevas categorías
+          danios: string;
+          finanzas: string;
+          gastosMedicosMayores: string;
+          accidentesPersonales: string;
+          vida: string;
+          autosTractos: string;
+          // Subcategorías de daños
+          obraCivil: string;
+          responsabilidadCivilProfesional: string;
+          dyoResponsabilidadCivilDirectivos: string;
+          transporteMercancia: string;
+          equipoContratistas: string;
+          ciberseguridadCrime: string;
+          credito: string;
+          aeronavesEmbarcaciones: string;
+          obrasArteColeccionistas: string;
+          holeInOne: string;
+          otros: string;
+          // Subcategorías de accidentes personales
+          viaje: string;
+          basico: string;
+          escolar: string;
+          // Subcategorías de finanzas
+          fidelidad: string;
+          judiciales: string;
+          administrativas: string;
+          arrendamiento: string;
+          programaProveduria: string;
         };
       };
       contactPreference: {
@@ -185,6 +218,10 @@ export interface Translations {
           phone: string;
           whatsapp: string;
         };
+      };
+      ubication: {
+        label: string;
+        placeholder: string;
       };
       company: {
         label: string;
@@ -197,6 +234,24 @@ export interface Translations {
       industry: {
         label: string;
         placeholder: string;
+        options: {
+          agroindustria: string;
+          alimentosBebidas: string;
+          comercio: string;
+          construccion: string;
+          educacion: string;
+          energiaOilGasMineria: string;
+          gobiernoOrganismosPublicos: string;
+          inmobiliaria: string;
+          manufactureras: string;
+          otrosServicios: string;
+          recreacionEntretenimiento: string;
+          salud: string;
+          serviciosFinancieros: string;
+          serviciosProfesionales: string;
+          tecnologia: string;
+          transporte: string;
+        };
       };
       collaborators: {
         label: string;
@@ -211,6 +266,18 @@ export interface Translations {
         };
       };
       message: {
+        label: string;
+        placeholder: string;
+      };
+      danios: {
+        label: string;
+        placeholder: string;
+      };
+      finanzas: {
+        label: string;
+        placeholder: string;
+      };
+      accidentesPersonales: {
         label: string;
         placeholder: string;
       };

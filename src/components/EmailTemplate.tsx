@@ -2,10 +2,15 @@ import * as React from 'react';
 
 interface EmailTemplateProps {
   name: string;
+  lastName?: string;
   email: string;
   phone: string;
-  product: string;
+  product: string | string[];
   contactPreference: string;
+  danios?: string | string[];
+  accidentesPersonales?: string | string[];
+  finanzas?: string | string[];
+  ubication?: string;
   company?: string;
   position?: string;
   industry?: string;
@@ -15,16 +20,29 @@ interface EmailTemplateProps {
 
 export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   name,
+  lastName,
   email,
   phone,
   product,
   contactPreference,
+  danios,
+  accidentesPersonales,
+  finanzas,
+  ubication,
   company,
   position,
   industry,
   collaborators,
   message,
-}) => (
+}) => {
+  // Función auxiliar para formatear valores que pueden ser arrays
+  const formatValue = (value: string | string[] | undefined): string => {
+    if (!value) return '';
+    if (Array.isArray(value)) return value.join(', ');
+    return value;
+  };
+
+  return (
   <html lang="en">
     <head>
       <meta charSet="UTF-8" />
@@ -81,14 +99,25 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
         <div className="content">
           <h3>Contact Details</h3>
           <p><strong>Name:</strong> {name}</p>
+          {lastName && <p><strong>Last Name:</strong> {lastName}</p>}
           <p><strong>Email:</strong> {email}</p>
           <p><strong>Phone:</strong> {phone}</p>
-          <p><strong>Product:</strong> {product}</p>
-          <p><strong>Contact Preference:</strong> {contactPreference}</p>
+          {ubication && <p><strong>Location:</strong> {ubication}</p>}
+          
+          <h3>Company Information</h3>
           {company && <p><strong>Company:</strong> {company}</p>}
           {position && <p><strong>Position:</strong> {position}</p>}
           {industry && <p><strong>Industry:</strong> {industry}</p>}
-          {collaborators && <p><strong>Collaborators:</strong> {collaborators}</p>}
+          {collaborators && <p><strong>Number of Employees:</strong> {collaborators}</p>}
+          
+          <h3>Products of Interest</h3>
+          <p><strong>Main Products:</strong> {formatValue(product)}</p>
+          {danios && formatValue(danios) && <p><strong>Damages:</strong> {formatValue(danios)}</p>}
+          {accidentesPersonales && formatValue(accidentesPersonales) && <p><strong>Personal Accidents:</strong> {formatValue(accidentesPersonales)}</p>}
+          {finanzas && formatValue(finanzas) && <p><strong>Finance:</strong> {formatValue(finanzas)}</p>}
+          
+          <h3>Contact Information</h3>
+          <p><strong>Contact Preference:</strong> {contactPreference}</p>
           <p><strong>Message:</strong> {message}</p>
         </div>
         <div className="footer">
@@ -97,4 +126,5 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
       </div>
     </body>
   </html>
-); 
+  );
+}; 

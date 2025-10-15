@@ -10,10 +10,15 @@ export type FormField = {
   
   export type FormData = {
     name: string;
+    lastName: string;
     email: string;
     phone: string;
-    product: string;
+    product: string | string[];
     contactPreference: string;
+    danios: string | string[];
+    'accidentes-personales': string | string[];
+    finanzas: string | string[];
+    ubication: string;
     company: string;
     position: string;
     industry: string;
