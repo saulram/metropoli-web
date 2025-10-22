@@ -172,10 +172,6 @@ body {
   }
 }
 
-.hidden {
-  opacity: 0;
-}
-
 .slide-in-left {
   animation: slideInFromLeft 1s ease-out forwards;
 }

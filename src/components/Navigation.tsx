@@ -15,20 +15,21 @@ export default function Navigation() {
     return (
         <>
             {/* Desktop Navigation */}
-            <motion.nav
-                initial={{ y: -100 }}
-                animate={{ y: 0 }}
-                transition={{ type: "spring", stiffness: 100, damping: 20 }}
-                className="fixed top-0 left-0 right-0 z-10 backdrop-blur  flex-row items-center justify-between p-4 text-text font-sans sm:hidden md:flex"
-                style={{
-                    fontSize: '15px',
-                    fontWeight: 700,
-                    lineHeight: '18px',
-                    textAlign: 'center',
-                    textUnderlinePosition: 'from-font',
-                    textDecorationSkipInk: 'none',
-                    background: "#ffffff00"
-                }}>
+            <div className="hidden md:block">
+                <motion.nav
+                    initial={{ y: -100 }}
+                    animate={{ y: 0 }}
+                    transition={{ type: "spring", stiffness: 100, damping: 20 }}
+                    className="fixed top-0 left-0 right-0 z-10 backdrop-blur flex items-center justify-between p-4 text-text font-sans"
+                    style={{
+                        fontSize: '15px',
+                        fontWeight: 700,
+                        lineHeight: '18px',
+                        textAlign: 'center',
+                        textUnderlinePosition: 'from-font',
+                        textDecorationSkipInk: 'none',
+                        background: "#ffffff00"
+                    }}>
                 {/* Logo */}
                 <motion.div
                     whileHover={{ scale: 1.05 }}
@@ -98,25 +99,28 @@ export default function Navigation() {
                     </Popover>
 
                     {/* Button */}
-                    <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}>
-                        <Link href="/contact-us">
-                            <button
-                                className="rounded-md px-3.5 py-2.5 text-sm font-bold text-white shadow-sm focus:outline-none"
-                                style={{
-                                    background: 'linear-gradient(90deg, #1E2D49 0%, #112039 25.5%, rgba(25, 57, 113, 0.99299) 78.5%, rgba(14, 80, 187, 0.98) 100%)',
-                                    border: '0.5px solid',
-                                    borderImageSource: 'linear-gradient(90deg, #99C0FF 0%, #1C6EF6 100%)',
-                                    boxShadow: '0px 4px 4px 0px #00000040 inset',
-                                    width: '175px',
-                                    textAlign: 'center',
-                                    borderRadius: '10px'
-                                }}>
-                                {messages.sendRequest}
-                            </button>
-                        </Link>
-                    </motion.div>
+                    <div className="hidden md:block">
+                        <motion.div
+                            className="flex"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}>
+                            <Link href="/contact-us">
+                                <button
+                                    className="rounded-md px-3.5 py-2.5 text-sm font-bold text-white shadow-sm focus:outline-none"
+                                    style={{
+                                        background: 'linear-gradient(90deg, #1E2D49 0%, #112039 25.5%, rgba(25, 57, 113, 0.99299) 78.5%, rgba(14, 80, 187, 0.98) 100%)',
+                                        border: '0.5px solid',
+                                        borderImageSource: 'linear-gradient(90deg, #99C0FF 0%, #1C6EF6 100%)',
+                                        boxShadow: '0px 4px 4px 0px #00000040 inset',
+                                        width: '175px',
+                                        textAlign: 'center',
+                                        borderRadius: '10px'
+                                    }}>
+                                    {messages.sendRequest}
+                                </button>
+                            </Link>
+                        </motion.div>
+                    </div>
 
                     {/* Language Selector */}
                     <motion.div
@@ -137,7 +141,8 @@ export default function Navigation() {
                         </span>
                     </motion.div>
                 </div>
-            </motion.nav>
+                </motion.nav>
+            </div>
 
             {/* Mobile Navigation */}
             <motion.nav
@@ -207,7 +212,7 @@ export default function Navigation() {
                                 {/* Header */}
                                 <div className="flex items-center justify-between px-4 py-3 border-b">
                                     <img
-                                        src="/logotipo_negro.png"
+                                        src="/logotipo_negro.svg"
                                         alt="METROPOLI"
                                         className="h-6"
                                     />
