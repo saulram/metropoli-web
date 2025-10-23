@@ -287,7 +287,7 @@ export async function POST(req: Request) {
         success: hubspotSuccess,
         error: hubspotError
       }
-    }, { status: 401 });
+    } , { status: 200 });
     
   } catch (exception: Error | unknown) {
     console.error('Exception sending email:', exception);
