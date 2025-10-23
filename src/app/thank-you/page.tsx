@@ -1,6 +1,7 @@
 "use client"
 import { useTranslations } from "@/i18n/useTranslations";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 
 export default function ThankYou() {
@@ -50,10 +51,15 @@ export default function ThankYou() {
               ease: [0.16, 1, 0.3, 1]
             }}
           >
-            <img src="social1.svg" alt="social" />
-            <img src="social2.svg" alt="social" />
-            <img src="social3.svg" alt="social" />
-            <img src="social4.svg" alt="social" />
+            <Link href={"https://www.facebook.com/profile.php?id=61575930904222"} target="_blank">
+              <img src="/social3.svg" alt="social" />
+            </Link>
+            <Link href={"https://www.linkedin.com/company/grupo-metropoli/?viewAsMember=true"} target="_blank">
+              <img src="/social2.svg" alt="social" />
+            </Link>
+            <Link href={"https://www.instagram.com/grupo_metropoli/"} target="_blank">
+              <img src="/social1.svg" alt="social" />
+            </Link>
           </motion.div>
         </div>
       </div>
