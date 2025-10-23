@@ -9,10 +9,15 @@ import { useTranslations } from '@/i18n/useTranslations';
 
 const initialFormData: FormData = {
     name: '',
+    lastName: '',
     email: '',
     phone: '',
-    product: '',
+    product: [],
     contactPreference: '',
+    danios: [],
+    'accidentes-personales': [],
+    finanzas: [],
+    estado: '',
     company: '',
     position: '',
     industry: '',
@@ -30,7 +35,27 @@ const ContactForm: React.FC = () => {
     
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { id, value } = e.target;
-        setFormData(prev => ({ ...prev, [id]: value }));
+        
+        setFormData(prev => {
+            const newData = { ...prev, [id]: value };
+            
+            // Si se está cambiando el campo 'product', limpiar campos condicionales que ya no aplican
+            if (id === 'product') {
+                const selectedProducts = getSelectedProducts(value);
+                
+                if (!selectedProducts.includes('danios')) {
+                    newData.danios = [];
+                }
+                if (!selectedProducts.includes('accidentes-personales')) {
+                    newData['accidentes-personales'] = [];
+                }
+                if (!selectedProducts.includes('finanzas')) {
+                    newData.finanzas = [];
+                }
+            }
+            
+            return newData;
+        });
     };
 
     // Verificar que las traducciones estén completamente cargadas
@@ -55,13 +80,67 @@ const ContactForm: React.FC = () => {
     // Generar los campos del formulario solo cuando las traducciones estén cargadas
     const formFields = getFormFields(messages);
 
+    // Función auxiliar para obtener productos seleccionados de forma segura
+    const getSelectedProducts = (productValue: string | string[] | unknown): string[] => {
+        if (!productValue) return [];
+        if (Array.isArray(productValue)) return productValue;
+        if (typeof productValue === 'string') return productValue.split(',');
+        return [];
+    };
+
+    // Función para determinar si un campo condicional debe mostrarse
+    const shouldShowConditionalField = (fieldId: string): boolean => {
+        const selectedProducts = getSelectedProducts(formData.product);
+        
+        switch (fieldId) {
+            case 'danios':
+                return selectedProducts.some(product => product.includes('Daños') || product.includes('danios'));
+            case 'accidentes-personales':
+                return selectedProducts.some(product => product.includes('Accidentes Personales') || product.includes('accidentes'));
+            case 'finanzas':
+                return selectedProducts.some(product => product.includes('Fianzas') || product.includes('fianzas'));
+            default:
+                return true;
+        }
+    };
+
+    // Generar las filas del formulario dinámicamente manteniendo el orden
+    const generateFormRows = () => {
+        const rows = [
+            [0, 1], // name, lastName  
+            [2, 3], // phone, email
+            [4],    // contactPreference
+            [5],    // product
+        ];
+
+        // Agregar campos condicionales solo si deben mostrarse
+        if (shouldShowConditionalField('danios')) {
+            rows.push([6]); // danios
+        }
+        if (shouldShowConditionalField('accidentes-personales')) {
+            rows.push([7]); // accidentes-personales
+        }
+        if (shouldShowConditionalField('finanzas')) {
+            rows.push([8]); // finanzas
+        }
+
+        // Continuar con el resto de campos
+        rows.push(
+            [9, 10], // ubication, position
+            [11],    // company
+            [12, 13] // collaborators, industry
+        );
+
+        return rows;
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
         setHasError(false);
         const errors: { [key: string]: string } = {};
         formFields.forEach(field => {
-            if (field.required) {
+            if (field.required && shouldShowConditionalField(field.id)) {
                 const value = formData[field.id as keyof FormData];
                 if (
                     (Array.isArray(value) && value.length === 0) ||
@@ -140,14 +219,7 @@ const ContactForm: React.FC = () => {
                         }}
                     >
                         {/* Form rows with staggered animations */}
-                        {[
-                            [0, 1], // name, email
-                            [2, 3], // phone, product
-                            [4, 5], // contact preference, company
-                            [6, 8], // position, collaborators
-                            [7],    // industry
-                            [9]     // message
-                        ].map((row, rowIndex) => (
+                        {generateFormRows().map((row, rowIndex) => (
                             <motion.div
                                 key={rowIndex}
 
@@ -161,15 +233,22 @@ const ContactForm: React.FC = () => {
                                     ease: [0.16, 1, 0.3, 1]
                                 }}
                             >
-                                {row.map((fieldIndex) => (
-                                    <FormInput
-                                        key={fieldIndex}
-                                        {...formFields[fieldIndex]}
-                                        value={formData[formFields[fieldIndex].id as keyof FormData]}
-                                        onChange={handleChange}
-                                        error={fieldErrors[formFields[fieldIndex].id]}
-                                    />
-                                ))}
+                                {row.map((fieldIndex) => {
+                                    const field = formFields[fieldIndex];
+                                    // Solo renderizar el campo si debe mostrarse
+                                    if (!shouldShowConditionalField(field.id)) {
+                                        return null;
+                                    }
+                                    return (
+                                        <FormInput
+                                            key={fieldIndex}
+                                            {...field}
+                                            value={formData[field.id as keyof FormData] ?? (field.type === 'multiselect' ? [] : '')}
+                                            onChange={handleChange}
+                                            error={fieldErrors[field.id]}
+                                        />
+                                    );
+                                })}
                             </motion.div>
                         ))}
 
@@ -216,7 +295,7 @@ const ContactForm: React.FC = () => {
                                     }}
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
-                                    disabled={isSubmitting}
+                                    // disabled={isSubmitting}
                                 >
                                     {messages.contactFormError}
                                 </motion.button>

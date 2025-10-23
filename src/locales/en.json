@@ -138,6 +138,10 @@
         "label": "Full name *",
         "placeholder": "Full name *"
       },
+      "lastName": {
+        "label": "Last name *",
+        "placeholder": "Last name *"
+      },
       "email": {
         "label": "Email *",
         "placeholder": "Email *"
@@ -167,7 +171,33 @@
           "segurosMasivos": "Mass Insurance",
           "transporteMercancias": "Freight Transport",
           "vidaAhorro": "Life and Savings",
-          "otro": "Other"
+          "otro": "Other",
+          "danios": "Damages",
+          "finanzas": "Finance",
+          "gastosMedicosMayores": "Major medical expenses",
+          "accidentesPersonales": "Personal accidents",
+          "vida": "Life",
+          "autosTractos": "Cars and trucks",
+          "obraCivil": "Civil works",
+          "responsabilidadCivilProfesional": "Professional Civil Liability (E&Q)",
+          "dyoResponsabilidadCivilDirectivos": "Directors and Officers Civil Liability (D&O)",
+          "transporteMercancia": "Freight transport",
+          "equipoContratistas": "Contractors equipment",
+          "ciberseguridadCrime": "Cybersecurity/Crime",
+          "credito": "Credit",
+          "aeronavesEmbarcaciones": "Aircraft and vessels",
+          "obrasArteColeccionistas": "Art works and collectors",
+          "holeInOne": "Hole in One",
+          "otros": "Others",
+          "multipleEmpresarial": "Multiple corporate (Real Estate — Buildings)",
+          "viaje": "Travel",
+          "basico": "Basic",
+          "escolar": "School",
+          "fidelidad": "Fidelity",
+          "judiciales": "Judicial",
+          "administrativas": "Administrative",
+          "arrendamiento": "Lease",
+          "programaProveduria": "Supplier Program"
         }
       },
       "contactPreference": {
@@ -176,20 +206,87 @@
         "options": {
           "email": "Email",
           "phone": "Phone call",
-          "whatsapp": "WhatsApp"
+          "whatsapp": "WhatsApp",
+          "correoElectronico": "Email",
+          "llamadaTelefonica": "Phone call",
+          "whatsappOption": "WhatsApp"
         }
       },
       "company": {
         "label": "Company *",
         "placeholder": "Company *"
       },
+      "estado": {
+        "label": "State of the Republic *",
+        "placeholder": "Select your state *",
+        "options": {
+          "aguascalientes": "Aguascalientes",
+          "bajaCaliforniaSur": "Baja California Sur",
+          "bajaCalifornia": "Baja California",
+          "campeche": "Campeche",
+          "chiapas": "Chiapas",
+          "chihuahua": "Chihuahua",
+          "ciudadDeMexico": "Mexico City",
+          "coahuila": "Coahuila",
+          "colima": "Colima",
+          "durango": "Durango",
+          "estadoDeMexico": "State of Mexico",
+          "guanajuato": "Guanajuato",
+          "guerrero": "Guerrero",
+          "hidalgo": "Hidalgo",
+          "jalisco": "Jalisco",
+          "michoacan": "Michoacán",
+          "morelos": "Morelos",
+          "nayarit": "Nayarit",
+          "nuevoLeon": "Nuevo León",
+          "oaxaca": "Oaxaca",
+          "puebla": "Puebla",
+          "queretaro": "Querétaro",
+          "quintanaRoo": "Quintana Roo",
+          "sanLuisPotosi": "San Luis Potosí",
+          "sinaloa": "Sinaloa",
+          "sonora": "Sonora",
+          "tabasco": "Tabasco",
+          "tamaulipas": "Tamaulipas",
+          "tlaxcala": "Tlaxcala",
+          "veracruz": "Veracruz",
+          "yucatan": "Yucatán",
+          "zacatecas": "Zacatecas"
+        }
+      },
       "position": {
         "label": "Position *",
-        "placeholder": "Enter your position *"
+        "placeholder": "Enter your position *",
+        "options": {
+          "ceoPresidente": "CEO / President",
+          "director": "Director",
+          "gerente": "Manager",
+          "operativo": "Operational"
+        }
       },
       "industry": {
         "label": "Industry",
-        "placeholder": "Industry"
+        "placeholder": "Select your industry",
+        "options": {
+          "agroindustria": "Agribusiness",
+          "alimentosBebidas": "Food and Beverages",
+          "comercio": "Commerce",
+          "construccion": "Construction",
+          "educacion": "Education",
+          "energiaOilGasMineria": "Energy, Oil & Gas and Mining",
+          "gobiernoOrganismosPublicos": "Government and Public Organizations",
+          "inmobiliaria": "Real Estate",
+          "manufactureras": "Manufacturing",
+          "otrosServicios": "Other Services",
+          "recreacionEntretenimiento": "Recreation and Entertainment",
+          "salud": "Healthcare",
+          "serviciosFinancieros": "Financial Services",
+          "serviciosProfesionales": "Professional Services",
+          "tecnologia": "Technology",
+          "transporte": "Transportation",
+          "recreacion": "Recreation",
+          "alimentosYBebidas": "Food and Beverages"
+        }
       },
       "collaborators": {
         "label": "Number of employees *",
@@ -200,12 +297,34 @@
           "range3": "100 - 250",
           "range4": "251 - 500",
           "range5": "501 - 1,000",
-          "range6": "1,001 or more"
+          "range6": "1,001 or more",
+          "range1New": "0-50",
+          "range2New": "51-99",
+          "range3New": "100-250",
+          "range4New": "251-500",
+          "range5New": "501-1000",
+          "range6New": "1001 or more"
         }
       },
       "message": {
         "label": "Tell us in detail how we can help you *",
         "placeholder": "What moment of peace of mind do you want to ensure for your company, and what challenge do we need to solve together? *"
+      },
+      "ubication": {
+        "label": "Location *",
+        "placeholder": "City, State or Country *"
+      },
+      "danios": {
+        "label": "Type of damages",
+        "placeholder": "Select the type of damages"
+      },
+      "finanzas": {
+        "label": "Type of finance",
+        "placeholder": "Select the type of finance"
+      },
+      "accidentesPersonales": {
+        "label": "Type of personal accidents",
+        "placeholder": "Select the type of personal accidents"
       }
     },
     "requiredField": "This field is required"

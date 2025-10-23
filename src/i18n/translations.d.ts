@@ -145,6 +145,10 @@ export interface Translations {
         label: string;
         placeholder: string;
       };
+      lastName: {
+        label: string;
+        placeholder: string;
+      };
       email: {
         label: string;
         placeholder: string;
@@ -175,6 +179,36 @@ export interface Translations {
           transporteMercancias: string;
           vidaAhorro: string;
           otro: string;
+          // Nuevas categorías
+          danios: string;
+          finanzas: string;
+          gastosMedicosMayores: string;
+          accidentesPersonales: string;
+          vida: string;
+          autosTractos: string;
+          // Subcategorías de daños
+          multipleEmpresarial: string;
+          obraCivil: string;
+          responsabilidadCivilProfesional: string;
+          dyoResponsabilidadCivilDirectivos: string;
+          transporteMercancia: string;
+          equipoContratistas: string;
+          ciberseguridadCrime: string;
+          credito: string;
+          aeronavesEmbarcaciones: string;
+          obrasArteColeccionistas: string;
+          holeInOne: string;
+          otros: string;
+          // Subcategorías de accidentes personales
+          viaje: string;
+          basico: string;
+          escolar: string;
+          // Subcategorías de finanzas
+          fidelidad: string;
+          judiciales: string;
+          administrativas: string;
+          arrendamiento: string;
+          programaProveduria: string;
         };
       };
       contactPreference: {
@@ -184,6 +218,47 @@ export interface Translations {
           email: string;
           phone: string;
           whatsapp: string;
+          correoElectronico: string;
+          llamadaTelefonica: string;
+          whatsappOption: string;
+        };
+      };
+      estado: {
+        label: string;
+        placeholder: string;
+        options: {
+          aguascalientes: string;
+          bajaCaliforniaSur: string;
+          bajaCalifornia: string;
+          campeche: string;
+          chiapas: string;
+          chihuahua: string;
+          ciudadDeMexico: string;
+          coahuila: string;
+          colima: string;
+          durango: string;
+          estadoDeMexico: string;
+          guanajuato: string;
+          guerrero: string;
+          hidalgo: string;
+          jalisco: string;
+          michoacan: string;
+          morelos: string;
+          nayarit: string;
+          nuevoLeon: string;
+          oaxaca: string;
+          puebla: string;
+          queretaro: string;
+          quintanaRoo: string;
+          sanLuisPotosi: string;
+          sinaloa: string;
+          sonora: string;
+          tabasco: string;
+          tamaulipas: string;
+          tlaxcala: string;
+          veracruz: string;
+          yucatan: string;
+          zacatecas: string;
         };
       };
       company: {
@@ -193,10 +268,36 @@ export interface Translations {
       position: {
         label: string;
         placeholder: string;
+        options: {
+          ceoPresidente: string;
+          director: string;
+          gerente: string;
+          operativo: string;
+        };
       };
       industry: {
         label: string;
         placeholder: string;
+        options: {
+          agroindustria: string;
+          alimentosBebidas: string;
+          comercio: string;
+          construccion: string;
+          educacion: string;
+          energiaOilGasMineria: string;
+          gobiernoOrganismosPublicos: string;
+          inmobiliaria: string;
+          manufactureras: string;
+          otrosServicios: string;
+          recreacionEntretenimiento: string;
+          salud: string;
+          serviciosFinancieros: string;
+          serviciosProfesionales: string;
+          tecnologia: string;
+          transporte: string;
+          recreacion: string;
+          alimentosYBebidas: string;
+        };
       };
       collaborators: {
         label: string;
@@ -208,9 +309,27 @@ export interface Translations {
           range4: string;
           range5: string;
           range6: string;
+          range1New: string;
+          range2New: string;
+          range3New: string;
+          range4New: string;
+          range5New: string;
+          range6New: string;
         };
       };
       message: {
+        label: string;
+        placeholder: string;
+      };
+      danios: {
+        label: string;
+        placeholder: string;
+      };
+      finanzas: {
+        label: string;
+        placeholder: string;
+      };
+      accidentesPersonales: {
         label: string;
         placeholder: string;
       };
