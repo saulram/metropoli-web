@@ -243,7 +243,7 @@ const ContactForm: React.FC = () => {
                                         <FormInput
                                             key={fieldIndex}
                                             {...field}
-                                            value={formData[field.id as keyof FormData]}
+                                            value={formData[field.id as keyof FormData] ?? (field.type === 'multiselect' ? [] : '')}
                                             onChange={handleChange}
                                             error={fieldErrors[field.id]}
                                         />
