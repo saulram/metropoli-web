@@ -10,7 +10,7 @@ interface EmailTemplateProps {
   danios?: string | string[];
   accidentesPersonales?: string | string[];
   finanzas?: string | string[];
-  ubication?: string;
+  estado?: string;
   company?: string;
   position?: string;
   industry?: string;
@@ -28,12 +28,11 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   danios,
   accidentesPersonales,
   finanzas,
-  ubication,
+  estado,
   company,
   position,
   industry,
   collaborators,
-  message,
 }) => {
   // Función auxiliar para formatear valores que pueden ser arrays
   const formatValue = (value: string | string[] | undefined): string => {
@@ -102,7 +101,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
           {lastName && <p><strong>Last Name:</strong> {lastName}</p>}
           <p><strong>Email:</strong> {email}</p>
           <p><strong>Phone:</strong> {phone}</p>
-          {ubication && <p><strong>Location:</strong> {ubication}</p>}
+          {estado && <p><strong>State:</strong> {estado}</p>}
           
           <h3>Company Information</h3>
           {company && <p><strong>Company:</strong> {company}</p>}
@@ -118,7 +117,6 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
           
           <h3>Contact Information</h3>
           <p><strong>Contact Preference:</strong> {contactPreference}</p>
-          <p><strong>Message:</strong> {message}</p>
         </div>
         <div className="footer">
           <p>This email was sent from metropoli.</p>

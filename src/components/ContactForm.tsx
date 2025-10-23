@@ -17,7 +17,7 @@ const initialFormData: FormData = {
     danios: [],
     'accidentes-personales': [],
     finanzas: [],
-    ubication: '',
+    estado: '',
     company: '',
     position: '',
     industry: '',
@@ -94,11 +94,11 @@ const ContactForm: React.FC = () => {
         
         switch (fieldId) {
             case 'danios':
-                return selectedProducts.includes('danios');
+                return selectedProducts.some(product => product.includes('Daños') || product.includes('danios'));
             case 'accidentes-personales':
-                return selectedProducts.includes('accidentes-personales');
+                return selectedProducts.some(product => product.includes('Accidentes Personales') || product.includes('accidentes'));
             case 'finanzas':
-                return selectedProducts.includes('finanzas');
+                return selectedProducts.some(product => product.includes('Fianzas') || product.includes('fianzas'));
             default:
                 return true;
         }
@@ -295,7 +295,7 @@ const ContactForm: React.FC = () => {
                                     }}
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
-                                    disabled={isSubmitting}
+                                    // disabled={isSubmitting}
                                 >
                                     {messages.contactFormError}
                                 </motion.button>

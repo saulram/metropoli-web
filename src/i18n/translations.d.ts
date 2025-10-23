@@ -187,6 +187,7 @@ export interface Translations {
           vida: string;
           autosTractos: string;
           // Subcategorías de daños
+          multipleEmpresarial: string;
           obraCivil: string;
           responsabilidadCivilProfesional: string;
           dyoResponsabilidadCivilDirectivos: string;
@@ -217,11 +218,48 @@ export interface Translations {
           email: string;
           phone: string;
           whatsapp: string;
+          correoElectronico: string;
+          llamadaTelefonica: string;
+          whatsappOption: string;
         };
       };
-      ubication: {
+      estado: {
         label: string;
         placeholder: string;
+        options: {
+          aguascalientes: string;
+          bajaCaliforniaSur: string;
+          bajaCalifornia: string;
+          campeche: string;
+          chiapas: string;
+          chihuahua: string;
+          ciudadDeMexico: string;
+          coahuila: string;
+          colima: string;
+          durango: string;
+          estadoDeMexico: string;
+          guanajuato: string;
+          guerrero: string;
+          hidalgo: string;
+          jalisco: string;
+          michoacan: string;
+          morelos: string;
+          nayarit: string;
+          nuevoLeon: string;
+          oaxaca: string;
+          puebla: string;
+          queretaro: string;
+          quintanaRoo: string;
+          sanLuisPotosi: string;
+          sinaloa: string;
+          sonora: string;
+          tabasco: string;
+          tamaulipas: string;
+          tlaxcala: string;
+          veracruz: string;
+          yucatan: string;
+          zacatecas: string;
+        };
       };
       company: {
         label: string;
@@ -230,6 +268,12 @@ export interface Translations {
       position: {
         label: string;
         placeholder: string;
+        options: {
+          ceoPresidente: string;
+          director: string;
+          gerente: string;
+          operativo: string;
+        };
       };
       industry: {
         label: string;
@@ -251,6 +295,8 @@ export interface Translations {
           serviciosProfesionales: string;
           tecnologia: string;
           transporte: string;
+          recreacion: string;
+          alimentosYBebidas: string;
         };
       };
       collaborators: {
@@ -263,6 +309,12 @@ export interface Translations {
           range4: string;
           range5: string;
           range6: string;
+          range1New: string;
+          range2New: string;
+          range3New: string;
+          range4New: string;
+          range5New: string;
+          range6New: string;
         };
       };
       message: {

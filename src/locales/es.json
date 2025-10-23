@@ -189,6 +189,7 @@
           "obrasArteColeccionistas": "Obras de arte y coleccionistas",
           "holeInOne": "Hole in One",
           "otros": "Otros",
+          "multipleEmpresarial": "Múltiple empresarial (Inmuebles — Edificios)",
           "viaje": "Viaje",
           "basico": "Básico",
           "escolar": "Escolar",
@@ -205,16 +206,63 @@
         "options": {
           "email": "Correo electrónico",
           "phone": "Llamada telefónica",
-          "whatsapp": "WhatsApp"
+          "whatsapp": "WhatsApp",
+          "correoElectronico": "Correo electrónico",
+          "llamadaTelefonica": "Llamada telefónica",
+          "whatsappOption": "WhatsApp"
         }
       },
       "company": {
         "label": "Empresa *",
         "placeholder": "Empresa *"
       },
+      "estado": {
+        "label": "Estado de la República *",
+        "placeholder": "Selecciona tu estado *",
+        "options": {
+          "aguascalientes": "Aguascalientes",
+          "bajaCaliforniaSur": "Baja California Sur",
+          "bajaCalifornia": "Baja California",
+          "campeche": "Campeche",
+          "chiapas": "Chiapas",
+          "chihuahua": "Chihuahua",
+          "ciudadDeMexico": "Ciudad de México",
+          "coahuila": "Coahuila",
+          "colima": "Colima",
+          "durango": "Durango",
+          "estadoDeMexico": "Estado de México",
+          "guanajuato": "Guanajuato",
+          "guerrero": "Guerrero",
+          "hidalgo": "Hidalgo",
+          "jalisco": "Jalisco",
+          "michoacan": "Michoacán",
+          "morelos": "Morelos",
+          "nayarit": "Nayarit",
+          "nuevoLeon": "Nuevo León",
+          "oaxaca": "Oaxaca",
+          "puebla": "Puebla",
+          "queretaro": "Querétaro",
+          "quintanaRoo": "Quintana Roo",
+          "sanLuisPotosi": "San Luis Potosí",
+          "sinaloa": "Sinaloa",
+          "sonora": "Sonora",
+          "tabasco": "Tabasco",
+          "tamaulipas": "Tamaulipas",
+          "tlaxcala": "Tlaxcala",
+          "veracruz": "Veracruz",
+          "yucatan": "Yucatán",
+          "zacatecas": "Zacatecas"
+        }
+      },
       "position": {
         "label": "Puesto *",
-        "placeholder": "Escribe tu puesto *"
+        "placeholder": "Escribe tu puesto *",
+        "options": {
+          "ceoPresidente": "CEO / Presidente",
+          "director": "Director",
+          "gerente": "Gerente",
+          "operativo": "Operativo"
+        }
       },
       "industry": {
         "label": "Industria",
@@ -235,7 +283,9 @@
           "serviciosFinancieros": "Servicios Financieros",
           "serviciosProfesionales": "Servicios Profesionales",
           "tecnologia": "Tecnología",
-          "transporte": "Transporte"
+          "transporte": "Transporte",
+          "recreacion": "Recreación",
+          "alimentosYBebidas": "Alimentos y Bebidas"
         }
       },
       "collaborators": {
@@ -247,7 +297,13 @@
           "range3": "100 - 250",
           "range4": "251 - 500",
           "range5": "501 - 1,000",
-          "range6": "1,001 o más"
+          "range6": "1,001 o más",
+          "range1New": "0-50",
+          "range2New": "51-99",
+          "range3New": "100-250",
+          "range4New": "251-500",
+          "range5New": "501-1000",
+          "range6New": "1001 o más"
         }
       },
       "message": {

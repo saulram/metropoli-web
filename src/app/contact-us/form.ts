@@ -15,10 +15,10 @@ export type FormField = {
     phone: string;
     product: string | string[];
     contactPreference: string;
-    danios: string | string[];
-    'accidentes-personales': string | string[];
-    finanzas: string | string[];
-    ubication: string;
+    danios?: string | string[];
+    'accidentes-personales'?: string | string[];
+    finanzas?: string | string[];
+    estado: string;
     company: string;
     position: string;
     industry: string;
