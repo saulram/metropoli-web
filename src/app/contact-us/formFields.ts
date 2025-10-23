@@ -55,7 +55,7 @@ export const getFormFields = (messages: Translations): FormField[] => {
   {
     id: 'product',
     label: messages.form.fields.product.label,
-    type: 'multiselect',
+    type: 'select',
     placeholder: messages.form.fields.product.placeholder,
     required: true,
     options: [
@@ -85,7 +85,7 @@ export const getFormFields = (messages: Translations): FormField[] => {
   {
     id: 'danios',
     label: messages.form.fields.danios.label,
-    type: 'multiselect',
+    type: 'select',
     placeholder: messages.form.fields.danios.placeholder,
     required: true,
     options: [
@@ -108,7 +108,7 @@ export const getFormFields = (messages: Translations): FormField[] => {
   {
     id: 'accidentes-personales',
     label: messages.form.fields.accidentesPersonales.label,
-    type: 'multiselect',
+    type: 'select',
     placeholder: messages.form.fields.accidentesPersonales.placeholder,
     required: true,
     options: [
@@ -121,7 +121,7 @@ export const getFormFields = (messages: Translations): FormField[] => {
   {
     id: 'finanzas',
     label: messages.form.fields.finanzas.label,
-    type: 'multiselect',
+    type: 'select',
     placeholder: messages.form.fields.finanzas.placeholder,
     required: true,
     options: [
@@ -271,7 +271,7 @@ export const formFields: FormField[] = [
   {
     id: 'product',
     label: '¿Qué producto te interesa? *',
-    type: 'multiselect',
+    type: 'select',
     placeholder: '¿Qué producto te interesa? *',
     required: true,
     options: [
