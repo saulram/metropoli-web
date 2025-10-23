@@ -1,6 +1,10 @@
 import { Resend } from 'resend';
 import { EmailTemplate } from '@/components/EmailTemplate';
 
+/**
+ * Send an email using the Resend API and create/update a contact in HubSpot CRM.
+ */
+
 // Interfaces for TypeScript
 interface ContactData {
   name: string;
