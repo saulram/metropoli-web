@@ -9,10 +9,11 @@ interface DescriptiveTextProps {
     button?: string;
     customMobileSize?: string;
     customDesktopSize?: string;
+    reverse?: boolean;
     onClick?: () => void;
 }
 
-const DescriptiveText: React.FC<DescriptiveTextProps> = ({ title, text, titleSize, active, button, onClick ,customMobileSize ,customDesktopSize }) => {
+const DescriptiveText: React.FC<DescriptiveTextProps> = ({ title, text, titleSize, active, button, onClick, customMobileSize, customDesktopSize, reverse }) => {
     const [isActive, setIsActive] = useState(active || false);
     const elementRef = useRef<HTMLDivElement>(null);
     const [isMobile, setIsMobile] = useState(false);
@@ -66,6 +67,41 @@ const DescriptiveText: React.FC<DescriptiveTextProps> = ({ title, text, titleSiz
         wordBreak: 'normal' as const,
         hyphens: 'none' as const,
     };
+
+    if (reverse) {
+        return (
+            <div ref={elementRef} className="max-w-full">
+                <p
+                    className="text-sm whitespace-pre-line mb-3"
+                    style={{
+                        ...commonTextStyles,
+                        backgroundImage: isActive ? 'linear-gradient(90deg, #091934 0%, #1C6EF6 100%)' : 'hsl(0, 0%, 44%)',
+                        WebkitBackgroundClip: isActive ? 'text' : 'none',
+                        backgroundClip: isActive ? 'text' : 'none',
+                        color: isActive ? 'transparent' : 'hsl(0, 0%, 44%)',
+                        fontSize: getTextSize(),
+                        transition: 'background-image 0.6s ease, color 0.6s ease, font-size 0.6s ease, line-height 0.6s ease',
+                    }}
+                >
+                    {text}
+                </p>
+                <h3
+                    className="text-lg font-medium whitespace-pre-line"
+                    style={{
+                        ...commonTextStyles,
+                        backgroundImage: isActive ? 'linear-gradient(90deg, #091934 0%, #1C6EF6 100%)' : 'hsl(0, 0%, 44%)',
+                        WebkitBackgroundClip: isActive ? 'text' : 'none',
+                        backgroundClip: isActive ? 'text' : 'none',
+                        color: isActive ? 'transparent' : 'hsl(0, 0%, 44%)',
+                        fontSize: getTitleSize(),
+                        transition: 'background-image 0.6s ease, color 0.6s ease, font-size 0.6s ease, line-height 0.6s ease',
+                    }}
+                >
+                    {title}
+                </h3>
+            </div>
+        );
+    }
 
     return (
         <div ref={elementRef} className="max-w-full">

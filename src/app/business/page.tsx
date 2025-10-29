@@ -62,8 +62,7 @@ export default function CompetenciesAndValues() {
                     duration: 0.8,
                     ease: [0.16, 1, 0.3, 1]
                   }} className='mt-10 md:w-4/5'>
-                  <p className="text-[#444444] text-lg">{messages.marketExperience}</p>
-                  <DescriptiveText title={messages.leadersSeekPeace} text='' />
+                  <DescriptiveText title={messages.leadersSeekPeace} text={messages.marketExperience} reverse={true} />
                 </motion.div>
                 <motion.div initial={{ x: -100, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}

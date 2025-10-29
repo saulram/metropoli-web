@@ -7,6 +7,56 @@ import { motion } from 'motion/react';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from '@/i18n/useTranslations';
 
+// Dominios de correo gratuitos y temporales
+const BLOCKED_EMAIL_DOMAINS = [
+    // Gratuitos comunes
+    'gmail.com',
+    'yahoo.com',
+    'hotmail.com',
+    'outlook.com',
+    'aol.com',
+    'mail.com',
+    'protonmail.com',
+    'tutanota.com',
+    'mail.ru',
+    'yandex.com',
+    'icloud.com',
+    'live.com',
+    'msn.com',
+    'wanadoo.fr',
+    'orange.fr',
+    'free.fr',
+    'sfr.fr',
+    'numericable.fr',
+    'laposte.net',
+    'gmx.com',
+    'gmx.de',
+    'web.de',
+    't-online.de',
+    'vodafone.de',
+    'posteo.de',
+    'mailbox.org',
+    'keemail.me',
+    'disroot.org',
+    'riseup.net',
+    'startmail.com',
+    'mailfence.com',
+    'cock.li',
+    'guerrillamail.com',
+    'tempmail.com',
+    'throwaway.email',
+    '10minutemail.com',
+    'temp-mail.org',
+    'mailnesia.com',
+    'maildrop.cc',
+    'yopmail.com',
+    'ethereal.email',
+    'trashmail.com',
+    'spam4.me',
+    'sharklasers.com',
+    'mailinator.com',
+];
+
 const initialFormData: FormData = {
     name: '',
     lastName: '',
@@ -88,6 +138,13 @@ const ContactForm: React.FC = () => {
         return [];
     };
 
+    // Función para validar que el correo no sea de un dominio gratuito o temporal
+    const isValidInstitutionalEmail = (email: string): boolean => {
+        if (!email || !email.includes('@')) return false;
+        const domain = email.split('@')[1].toLowerCase();
+        return !BLOCKED_EMAIL_DOMAINS.includes(domain);
+    };
+
     // Función para determinar si un campo condicional debe mostrarse
     const shouldShowConditionalField = (fieldId: string): boolean => {
         const selectedProducts = getSelectedProducts(formData.product);
@@ -152,6 +209,12 @@ const ContactForm: React.FC = () => {
                 }
             }
         });
+
+        // Validar que el correo sea institucional
+        if (formData.email && !isValidInstitutionalEmail(formData.email)) {
+            errors['email'] = 'Por favor ingresa un correo institucional o empresarial';
+        }
+
         if (Object.keys(errors).length > 0) {
             setFieldErrors(errors);
             setIsSubmitting(false);

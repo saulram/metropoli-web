@@ -53,7 +53,7 @@ export default function CreateMore() {
             }}
             className="flex justify-center items-center"
           >
-            <div className='md:w-2/3 md:h-[400px]'>
+            <div className='md:w-2/3 '>
               <motion.p
                 className="font-medium text-center text-3xl text-gradient mb-6 whitespace-pre-line"
                 initial={{ opacity: 0, y: 20 }}

@@ -44,6 +44,7 @@ export const getFormFields = (messages: Translations): FormField[] => {
     id: 'contactPreference',
     label: messages.form.fields.contactPreference.label,
     type: 'select',
+    required: true,
     placeholder: messages.form.fields.contactPreference.placeholder,
     options: [
       { value: 'Correo electrónico', label: messages.form.fields.contactPreference.options.correoElectronico },
@@ -203,6 +204,7 @@ export const getFormFields = (messages: Translations): FormField[] => {
   },
   {
     id: 'industry',
+    required: true,
     label: messages.form.fields.industry.label,
     type: 'select',
     placeholder: messages.form.fields.industry.placeholder,
@@ -287,6 +289,7 @@ export const formFields: FormField[] = [
     id: 'contactPreference',
     label: '¿Cómo prefieres que te contactemos?',
     type: 'select',
+    required: true,
     placeholder: '¿Cómo prefieres que te contactemos?',
     options: [
       { value: 'email', label: 'Correo electrónico' },
@@ -312,6 +315,7 @@ export const formFields: FormField[] = [
   },
   {
     id: 'industry',
+    required: true,
     label: 'Industria',
     type: 'select',
     placeholder: 'Selecciona tu industria',

@@ -123,7 +123,7 @@ const WayToGo = () => {
           }}
         />
         <motion.div
-          className='md:w-2/5 w-4/5 md:bottom-40 float-end me-8 md:mt-[-200px]'
+          className='md:w-2/5 w-4/5 md:bottom-40 float-end me-8 md:mt-[-100px] lg:mt-[-250px]'
           style={{ overflow:"hidden", }}
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
