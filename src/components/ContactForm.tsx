@@ -220,6 +220,7 @@ const ContactForm: React.FC = () => {
             setIsSubmitting(false);
             return;
         }
+
         setFieldErrors({});
         const req = await fetch('/api/sendEmail', {
             method: 'POST',
@@ -358,7 +359,7 @@ const ContactForm: React.FC = () => {
                                     }}
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
-                                    // disabled={isSubmitting}
+                                    disabled={isSubmitting}
                                 >
                                     {messages.contactFormError}
                                 </motion.button>
