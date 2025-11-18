@@ -54,7 +54,7 @@ export default function RootLayout({
           `}
         </Script>
         {/* End Google Tag Manager */}
-        
+
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -70,7 +70,7 @@ export default function RootLayout({
         <LanguageProvider>
           {children}
         </LanguageProvider>
-
+        <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/48421759.js"></script>
       </body>
     </html>
   );
