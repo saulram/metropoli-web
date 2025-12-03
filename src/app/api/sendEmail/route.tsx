@@ -199,6 +199,33 @@ export async function POST(req: Request) {
     return Response.json({ error: "Resend API key must be defined" }, { status: 500 });
   }
 
+  // Proveedores de correo gratuitos y temporales bloqueados (búsqueda parcial)
+  const BLOCKED_PROVIDERS = [
+    'gmail', 'yahoo', 'hotmail', 'outlook', 'aol', 'mail', 'proton', 'tutanota', 
+    'yandex', 'icloud', 'live', 'msn', 'wanadoo', 'orange', 'free', 'sfr',
+    'numericable', 'laposte', 'gmx', 'web', 't-online', 'vodafone', 'posteo', 
+    'mailbox', 'keemail', 'disroot', 'riseup', 'startmail', 'mailfence', 'cock', 
+    'guerrillamail', 'tempmail', 'throwaway', '10minutemail', 'temp-mail', 
+    'mailnesia', 'maildrop', 'yopmail', 'ethereal', 'trashmail', 'spam4', 
+    'sharklasers', 'mailinator'
+  ];
+
+  // Validación de correo institucional
+  if (email) {
+    const domain = email.split('@')[1]?.toLowerCase();
+    if (domain) {
+      // Verificar si el dominio contiene alguno de los proveedores bloqueados
+      const isBlocked = BLOCKED_PROVIDERS.some(provider => domain.includes(provider));
+      
+      if (isBlocked) {
+        return Response.json({ 
+          error: "Por favor ingresa un correo institucional o empresarial. Los correos gratuitos no están permitidos.",
+          success: false 
+        }, { status: 400 });
+      }
+    }
+  }
+
   const resend = new Resend(resendApiKey);
 
   // Variables for tracking results
@@ -245,7 +272,7 @@ export async function POST(req: Request) {
     console.log('Sending email...');
     const { data, error } = await resend.emails.send({
       from: 'Metropoli <noreply@grupometropoli.com.mx>',
-      to: ['noreply@fluss.mx'],
+      to: ['saul@fluss.mx'],
       subject: 'Envio de solicitud Metrópoli',
       react: EmailTemplate({
         name,

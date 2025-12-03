@@ -290,6 +290,25 @@ const ContactForm: React.FC = () => {
                             ease: [0.16, 1, 0.3, 1]
                         }}
                     >
+                        {/* Hidden inputs for HubSpot script capture */}
+                        <div style={{ display: 'none' }}>
+                            <input type="text" name="firstname" value={formData.name} readOnly />
+                            <input type="text" name="lastname" value={formData.lastName} readOnly />
+                            <input type="email" name="email" value={formData.email} readOnly />
+                            <input type="tel" name="phone" value={formData.phone} readOnly />
+                            <input type="text" name="company" value={formData.company} readOnly />
+                            <input type="text" name="jobtitle" value={formData.position} readOnly />
+                            <input type="text" name="estado_de_la_republica" value={formData.estado} readOnly />
+                            <input type="text" name="como_prefieres_que_te_contactemos_" value={formData.contactPreference} readOnly />
+                            <input type="text" name="que_producto_te_interesa_" value={Array.isArray(formData.product) ? formData.product.join(';') : formData.product} readOnly />
+                            <input type="text" name="producto__danos_" value={Array.isArray(formData.danios) ? formData.danios.join(';') : formData.danios} readOnly />
+                            <input type="text" name="producto__fianzas_" value={Array.isArray(formData.finanzas) ? formData.finanzas.join(';') : formData.finanzas} readOnly />
+                            <input type="text" name="producto__accidentes_personales_" value={Array.isArray(formData['accidentes-personales']) ? formData['accidentes-personales'].join(';') : formData['accidentes-personales']} readOnly />
+                            <input type="text" name="numero_de_colaboradores" value={formData.collaborators} readOnly />
+                            <input type="text" name="industria_dropdown" value={formData.industry} readOnly />
+                            <textarea name="message" value={formData.message} readOnly />
+                        </div>
+
                         {/* Form rows with staggered animations */}
                         {generateFormRows().map((row, rowIndex) => (
                             <motion.div
