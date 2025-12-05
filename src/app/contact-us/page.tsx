@@ -20,11 +20,11 @@ const ContactPage: React.FC = () => {
             }
         }, 100);
 
-        // Limpiar el intervalo después de 10 segundos
+        // Mostrar el formulario después de 2 segundos sin importar si se detectó o no
         const timeout = setTimeout(() => {
             clearInterval(checkForm);
             setFormLoaded(true);
-        }, 10000);
+        }, 1200);
 
         return () => {
             clearInterval(checkForm);
