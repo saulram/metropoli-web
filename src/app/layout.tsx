@@ -71,7 +71,7 @@ export default function RootLayout({
           {children}
         </LanguageProvider>
         <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/48421759.js"></script>
-        <script src="https://js.hsforms.net/forms/embed/48421759.js" defer></script>
+        <script src="https://js.hsforms.net/forms/embed/48421759.js" async></script>
       </body>
     </html>
   );

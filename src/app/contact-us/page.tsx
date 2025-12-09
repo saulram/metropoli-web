@@ -2,35 +2,13 @@
 //import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/footer';
 import Navigation from '@/components/Navigation';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 import { useTranslations } from '@/i18n/useTranslations';
 
 const ContactPage: React.FC = () => {
     const messages = useTranslations();
-    const [formLoaded, setFormLoaded] = useState(false);
 
-    useEffect(() => {
-        // Detectar cuando el iframe de HubSpot se ha cargado
-        const checkForm = setInterval(() => {
-            const iframe = document.querySelector('.hs-form-iframe');
-            if (iframe) {
-                setFormLoaded(true);
-                clearInterval(checkForm);
-            }
-        }, 100);
-
-        // Mostrar el formulario después de 2 segundos sin importar si se detectó o no
-        const timeout = setTimeout(() => {
-            clearInterval(checkForm);
-            setFormLoaded(true);
-        }, 1200);
-
-        return () => {
-            clearInterval(checkForm);
-            clearTimeout(timeout);
-        };
-    }, []);
     return (
         <div style={
             {
@@ -67,18 +45,10 @@ const ContactPage: React.FC = () => {
                 </div>
 
                 <div className="relative min-h-[600px]">
-                    {!formLoaded && (
-                        <div className="absolute inset-0 px-[40px] space-y-4 animate-pulse">
-                            <div className="h-12 bg-gray-500 rounded"></div>
-                            <div className="h-12 bg-gray-500 rounded"></div>
-                            <div className="h-12 bg-gray-500 rounded"></div>
-                            <div className="h-32 bg-gray-500 rounded"></div>
-                            <div className="h-12 bg-gray-500 rounded w-1/3"></div>
-                        </div>
-                    )}
+                    
 
                     <div
-                        className={`hs-form-frame transition-opacity duration-300 ${formLoaded ? 'opacity-100' : 'opacity-0'}`}
+                        className={`hs-form-frame transition-opacity duration-300`}
                         data-region="na1"
                         data-form-id="053cd3b5-2374-4e68-953c-5dabb2ca4323"
                         data-portal-id="48421759"
