@@ -13,22 +13,22 @@ const ContactPage: React.FC = () => {
 
     useEffect(() => {
         console.log("Setting up HubSpot form");
-        
+
         // Método 1: Listener de mensajes (respaldo para formularios embebidos)
         const messageHandler = (event: MessageEvent) => {
             // Filtrar mensajes irrelevantes
-            if (!event.data || event.data.source === 'react-devtools-bridge' || 
-                event.data.source === 'react-devtools-content-script' || 
+            if (!event.data || event.data.source === 'react-devtools-bridge' ||
+                event.data.source === 'react-devtools-content-script' ||
                 event.data.source === 'react-devtools-backend-manager') {
                 return;
             }
 
             // Detectar envío del formulario de HubSpot
-            if (event.data?.type === "hsFormCallback" && 
+            if (event.data?.type === "hsFormCallback" &&
                 event.data?.eventName === "onFormSubmitted") {
                 console.log("✅ Form submitted via message event!", event.data);
                 const formId = event.data.id;
-                
+
                 if (formId === "053cd3b5-2374-4e68-953c-5dabb2ca4323") {
                     console.log("🎯 Redirecting to thank-you page");
                     router.push("/thank-you");
@@ -37,26 +37,31 @@ const ContactPage: React.FC = () => {
         };
 
         window.addEventListener('message', messageHandler);
-        
+
         // Método 2: Inicializar formulario con API de HubSpot
         const initializeForm = () => {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             if ((window as any).hbspt) {
                 console.log("✅ HubSpot library loaded, creating form");
-                
+
                 try {
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     (window as any).hbspt.forms.create({
                         region: "na1",
                         portalId: "48421759",
                         formId: "053cd3b5-2374-4e68-953c-5dabb2ca4323",
                         target: ".hs-form-frame",
-                        onFormSubmitted: function($form: any, data: any) {
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
+                        onFormSubmitted: function (_$form: any, data: any) {
                             console.log("✅ Form submitted via callback!", data);
                             router.push("/thank-you");
                         },
-                        onFormReady: function($form: any) {
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
+                        onFormReady: function (_$form: any) {
                             console.log("📋 Form is ready");
                         },
-                        onFormSubmit: function($form: any) {
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
+                        onFormSubmit: function (_$form: any) {
                             console.log("📤 Form is being submitted...");
                         }
                     });
@@ -67,11 +72,13 @@ const ContactPage: React.FC = () => {
         };
 
         // Intentar inicializar
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         if ((window as any).hbspt) {
             initializeForm();
         } else {
             console.log("⏳ Waiting for HubSpot library...");
             const checkHubSpot = setInterval(() => {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 if ((window as any).hbspt) {
                     console.log("✅ HubSpot library detected");
                     clearInterval(checkHubSpot);
@@ -81,6 +88,7 @@ const ContactPage: React.FC = () => {
 
             setTimeout(() => {
                 clearInterval(checkHubSpot);
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 if (!(window as any).hbspt) {
                     console.error("❌ HubSpot library failed to load");
                 }
@@ -133,7 +141,7 @@ const ContactPage: React.FC = () => {
                 </div>
 
                 <div className="relative min-h-[600px]">
-                    
+
 
                     <div
                         className={`hs-form-frame transition-opacity duration-300`}
