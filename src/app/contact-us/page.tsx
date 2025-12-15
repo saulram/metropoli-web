@@ -2,12 +2,100 @@
 //import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/footer';
 import Navigation from '@/components/Navigation';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { useTranslations } from '@/i18n/useTranslations';
+import { useRouter } from 'next/navigation';
 
 const ContactPage: React.FC = () => {
     const messages = useTranslations();
+    const router = useRouter();
+
+    useEffect(() => {
+        console.log("Setting up HubSpot form");
+        
+        // Método 1: Listener de mensajes (respaldo para formularios embebidos)
+        const messageHandler = (event: MessageEvent) => {
+            // Filtrar mensajes irrelevantes
+            if (!event.data || event.data.source === 'react-devtools-bridge' || 
+                event.data.source === 'react-devtools-content-script' || 
+                event.data.source === 'react-devtools-backend-manager') {
+                return;
+            }
+
+            // Detectar envío del formulario de HubSpot
+            if (event.data?.type === "hsFormCallback" && 
+                event.data?.eventName === "onFormSubmitted") {
+                console.log("✅ Form submitted via message event!", event.data);
+                const formId = event.data.id;
+                
+                if (formId === "053cd3b5-2374-4e68-953c-5dabb2ca4323") {
+                    console.log("🎯 Redirecting to thank-you page");
+                    router.push("/thank-you");
+                }
+            }
+        };
+
+        window.addEventListener('message', messageHandler);
+        
+        // Método 2: Inicializar formulario con API de HubSpot
+        const initializeForm = () => {
+            if ((window as any).hbspt) {
+                console.log("✅ HubSpot library loaded, creating form");
+                
+                try {
+                    (window as any).hbspt.forms.create({
+                        region: "na1",
+                        portalId: "48421759",
+                        formId: "053cd3b5-2374-4e68-953c-5dabb2ca4323",
+                        target: ".hs-form-frame",
+                        onFormSubmitted: function($form: any, data: any) {
+                            console.log("✅ Form submitted via callback!", data);
+                            router.push("/thank-you");
+                        },
+                        onFormReady: function($form: any) {
+                            console.log("📋 Form is ready");
+                        },
+                        onFormSubmit: function($form: any) {
+                            console.log("📤 Form is being submitted...");
+                        }
+                    });
+                } catch (error) {
+                    console.error("❌ Error creating form:", error);
+                }
+            }
+        };
+
+        // Intentar inicializar
+        if ((window as any).hbspt) {
+            initializeForm();
+        } else {
+            console.log("⏳ Waiting for HubSpot library...");
+            const checkHubSpot = setInterval(() => {
+                if ((window as any).hbspt) {
+                    console.log("✅ HubSpot library detected");
+                    clearInterval(checkHubSpot);
+                    initializeForm();
+                }
+            }, 100);
+
+            setTimeout(() => {
+                clearInterval(checkHubSpot);
+                if (!(window as any).hbspt) {
+                    console.error("❌ HubSpot library failed to load");
+                }
+            }, 10000);
+
+            return () => {
+                clearInterval(checkHubSpot);
+                window.removeEventListener('message', messageHandler);
+            };
+        }
+
+        return () => {
+            window.removeEventListener('message', messageHandler);
+        };
+    }, [router]);
 
     return (
         <div style={

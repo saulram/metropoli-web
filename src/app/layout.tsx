@@ -70,8 +70,18 @@ export default function RootLayout({
         <LanguageProvider>
           {children}
         </LanguageProvider>
-        <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/48421759.js"></script>
-        <script src="https://js.hsforms.net/forms/embed/48421759.js" async></script>
+        
+        {/* HubSpot Scripts */}
+        <Script
+          id="hs-script-loader"
+          src="//js.hs-scripts.com/48421759.js"
+          strategy="lazyOnload"
+        />
+        <Script
+          id="hs-forms-embed"
+          src="//js.hsforms.net/forms/embed/v2.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
