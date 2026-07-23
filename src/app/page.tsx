@@ -9,6 +9,8 @@ import ImpeccableTradition from "@/components/ImpeccableTradition";
 import Footer from "@/components/footer";
 import TrustedBy from "@/components/TrustedBy";
 import Testimonials from "@/components/Testimonials";
+import PartnerAtFront from "@/components/PartnerAtFront";
+import ClosingCTA from "@/components/ClosingCTA";
 export default function Example() {
 
   return (
@@ -18,9 +20,11 @@ export default function Example() {
       <TrustedBy />
       <Testimonials />
       <SecurityPaceOfmind />
-      <WayToGo />
       <CreateMore/>
+      <PartnerAtFront />
+      <WayToGo />
       <ImpeccableTradition/>
+      <ClosingCTA />
       <Footer />
     </div>
   )

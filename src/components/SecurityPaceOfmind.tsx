@@ -1,11 +1,8 @@
 "use client"
-import { useTranslations } from '@/i18n/useTranslations';
 import DescriptiveText from './DescriptiveText';
 import { motion } from 'motion/react';
 
 const SecurityPeaceOfMind = () => {
-    const messages = useTranslations();
-
     return (
         <div className="bg-metropoliBg" style={{
             backgroundImage: 'url(/waves_bottom.png)',
@@ -25,7 +22,7 @@ const SecurityPeaceOfMind = () => {
                             ease: [0.16, 1, 0.3, 1]
                         }}
                     >
-                        {messages.noPolicy}
+                        No estás comprando una póliza.
                     </motion.h2>
                     <motion.h2
                         className="font-normal text-40 text-gradient"
@@ -38,7 +35,7 @@ const SecurityPeaceOfMind = () => {
                             ease: [0.16, 1, 0.3, 1]
                         }}
                     >
-                        {messages.securityAndPeaceOfMind}
+                        Estás comprando experiencia que te acompaña cuando alguien se enferma, te roban un transporte o se incendia tu fábrica.
                     </motion.h2>
                 </div>
             </div>
@@ -62,18 +59,18 @@ const SecurityPeaceOfMind = () => {
                 <div className="sm:ps-36 w-1/2 ps-20">
                     {[
                         {
-                            title: messages.futureWithoutFear,
-                            text: messages.noMoreWorries,
+                            title: 'Un futuro sin sorpresas.',
+                            text: 'Sabes exactamente qué cubre tu póliza y qué no. Te lo explicamos en tu idioma, sin letras chiquitas.',
                             delay: 0
                         },
                         {
-                            title: messages.enjoyPeaceOfMind,
-                            text: messages.wellInsured,
+                            title: 'Dormir tranquilo.',
+                            text: 'Todo lo que te ha tomado una vida construir está bien asegurado. Y si algo pasa, no vas a pelear solo con la aseguradora. Para eso estamos nosotros.',
                             delay: 0.2
                         },
                         {
-                            title: messages.focusYourEnergy,
-                            text: messages.growYourBusiness,
+                            title: 'Tu energía donde importa.',
+                            text: 'Crecer tu empresa, disfrutar a tu familia y vivir a tu manera. Del riesgo nos encargamos nosotros.',
                             delay: 0.4
                         }
                     ].map((item, index) => (
@@ -106,7 +103,7 @@ const SecurityPeaceOfMind = () => {
                 }}
             >
                 <div className='md:w-2/5 px-10 md:px-0 text-40'>
-                    <DescriptiveText customDesktopSize='650px' customMobileSize='250px' title={messages.threeGenerations} text={''}  />
+                    <DescriptiveText customDesktopSize='650px' customMobileSize='250px' title="Más de 60 años. Tres generaciones. Trayectoria impecable." text={''}  />
                 </div>
             </motion.div>
         </div>

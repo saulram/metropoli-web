@@ -29,7 +29,7 @@ export default function HeroSection() {
                         textUnderlinePosition: 'from-font',
                         textDecorationSkipInk: 'none'
                     }}>
-                    {messages.leadersInStrategy} <strong>{messages.insurance}</strong> {messages.invest}
+                    Los líderes que duermen tranquilos no compran seguros. Invierten en
                 </motion.p>
                 <motion.p
                     className="text-left text-40 font-bold bg-clip-text text-transparent"
@@ -50,10 +50,19 @@ export default function HeroSection() {
                         WebkitBackgroundClip: 'text',
                         backgroundClip: 'text'
                     }}>
-                    {messages.momentsOfTranquility}
+                    Asegurar Momentos de Tranquilidad.
                 </motion.p>
 
-                <div className="h-20"></div>
+                <motion.p
+                    className="mt-8 max-w-2xl text-lg leading-relaxed text-[#24334d] md:text-xl"
+                    initial={{ y: 60, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.35 }}
+                >
+                    Metrópoli es el bróker donde un Socio —con nombre y apellido— está al frente de tu póliza. En la negociación, en la renovación y, sobre todo, el día del siniestro.
+                </motion.p>
+
+                <div className="h-12"></div>
 
                 <motion.div
                     initial={{ y: 100, opacity: 0 }}
@@ -80,6 +89,7 @@ export default function HeroSection() {
                     >
                         {messages.EnsureYourPeaceOfMind}
                     </Link>
+                    <p className="mt-4 text-sm italic text-[#24334d]">*Si solo buscas el seguro más barato, no somos tu mejor opción.</p>
                 </motion.div>
             </div>
         </div>

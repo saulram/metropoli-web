@@ -21,7 +21,7 @@ const WayToGo = () => {
               ease: [0.16, 1, 0.3, 1]
             }}
           >
-            {messages.whichPath}
+            ¿Qué camino quieres tomar?
           </motion.h1>
           <motion.h2
             className="font-medium text-2xl text-black md:w-3/5 "
@@ -34,7 +34,7 @@ const WayToGo = () => {
               ease: [0.16, 1, 0.3, 1]
             }}
           >
-            {messages.thinkingOfOthers}
+            No piensas solo en ti.
           </motion.h2>
           <motion.h2
             className="font-medium text-2xl text-gradient lg:w-3/5 whitespace-pre-line"
@@ -47,7 +47,7 @@ const WayToGo = () => {
               ease: [0.16, 1, 0.3, 1]
             }}
           >
-            {messages.investingWisely}
+            Inviertes con inteligencia en la seguridad de tu empresa y en el legado de tu familia.
           </motion.h2>
         </div>
 
@@ -102,9 +102,9 @@ const WayToGo = () => {
             ease: [0.16, 1, 0.3, 1]
           }}
         >
-          <h3 className="text-black text-xl">{messages.yourPathToPeace}</h3>
-          <h3 className="sm:w-85 md:w-90 text-black text-3xl text-center mt-4 text-gradient">{messages.focusOnValue}</h3>
-          <h3 className="text-black text-lg mt-4 md:w-2/5 text-center whitespace-pre-line">{messages.weEliminateRisks}</h3>
+          <h3 className="text-black text-xl">Cuatro pasos. Cero fricciones.</h3>
+          <h3 className="sm:w-85 md:w-90 text-black text-3xl text-center mt-4 text-gradient">Así diseñamos la protección que realmente necesitas.</h3>
+          <h3 className="text-black text-lg mt-4 md:w-2/5 text-center whitespace-pre-line">Escuchamos, descubrimos, negociamos e implementamos. La póliza no es el final: es el inicio.</h3>
 
         </motion.div>
       </div>
@@ -135,8 +135,8 @@ const WayToGo = () => {
           }}
         >
           <div className="flex flex-col w-5/4 justify-end items-end">
-            <h3 className="font-medium md:text-end w-3/5 md:w-full text-start text-40 text-gradient">{messages.discoverHow}</h3>
-            <h3 className="font-medium md:text-end w-3/5 md:w-full text-start text-lg text-black whitespace-pre-line">{messages.simpleProcess}</h3>
+            <h3 className="font-medium md:text-end w-3/5 md:w-full text-start text-40 text-gradient">Así funciona.</h3>
+            <h3 className="font-medium md:text-end w-3/5 md:w-full text-start text-lg text-black whitespace-pre-line">Negociamos condiciones, no solo precio. Cuando el riesgo lo pide, lo colocamos en Londres a través de TBS, nuestra empresa hermana de reaseguro.</h3>
           </div>
         </motion.div>
       </div>

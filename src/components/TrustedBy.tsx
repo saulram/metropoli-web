@@ -195,6 +195,9 @@ export const TrustedBy = () => {
               <h3 className="text-3xl md:text-4xl font-light">
                 en nosotros:
               </h3>
+              <p className="mt-6 max-w-md text-base leading-relaxed text-blue-100">
+                Laboratorios Chopo lleva más de 35 años con nosotros. Grupo Avante y Mainbit, más de 20. En una industria donde los brókers cambian cada renovación, eso dice más que cualquier promesa.
+              </p>
             </div>
 
             {/* Logos Column - 7 columns of 10 */}
@@ -276,4 +279,4 @@ export const TrustedBy = () => {
   );
 };
 
-export default TrustedBy; 
+export default TrustedBy;

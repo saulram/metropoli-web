@@ -1,11 +1,9 @@
 "use client"
-import { useTranslations } from "@/i18n/useTranslations";
 import { useRef } from "react";
 import DescriptiveTextInContainer from "./DescriptiveTextInContainer";
 import { motion } from 'motion/react';
 
 const ImpeccableTradition = () => {
-  const messages = useTranslations();
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -34,7 +32,7 @@ const ImpeccableTradition = () => {
               ease: [0.16, 1, 0.3, 1]
             }}
           >
-            {messages.impeccableTrajectory}
+            Más de 60 años. Tres generaciones. Trayectoria impecable.
           </motion.h2>
           <motion.h2
             className="font-normal text-2xl text-gradient mb-4"
@@ -47,7 +45,7 @@ const ImpeccableTradition = () => {
               ease: [0.16, 1, 0.3, 1]
             }}
           >
-            {messages.sixtyYearsExperience}
+            No prometemos. Cumplimos.
           </motion.h2>
           <motion.h2
             className="font-normal text-lg text-black"
@@ -60,7 +58,7 @@ const ImpeccableTradition = () => {
               ease: [0.16, 1, 0.3, 1]
             }}
           >
-            {messages.decadesOfKnowledge}
+            Clientes en todos los continentes y acceso directo a los mercados de reaseguro del mundo a través de TBS, The Broker Services.
           </motion.h2>
         </div>
       </div>
@@ -72,11 +70,11 @@ const ImpeccableTradition = () => {
           ref={containerRef}
         >
           {[
-            { title: messages.claimsPaid, text: messages.weDeliver, isActive: true },
-            { title: messages.clientRenewal, text: messages.trustEarned },
-            { title: messages.aaaCompanies, text: messages.bigCompaniesTrust },
-            { title: messages.globalClients, text: messages.noBorders },
-            { title: messages.reinsuranceAccess, text: messages.tbsBroker }
+            { title: '200M+ USD pagados en siniestros en los últimos 5 años.', text: 'No prometemos. Cumplimos.', isActive: true },
+            { title: '98.7% de renovación de clientes.', text: 'La confianza se gana cada año. Por algo será.' },
+            { title: 'Empresas AAA aseguradas con nosotros por 35+ años.', text: 'Las grandes empresas no se arriesgan con cualquiera.' },
+            { title: 'Clientes en todos los continentes.', text: 'Nuestra experiencia no tiene fronteras.' },
+            { title: 'Acceso directo al reaseguro mundial.', text: 'A través de TBS, The Broker Services.' }
           ].map((item, index) => (
             <motion.div
               key={index}

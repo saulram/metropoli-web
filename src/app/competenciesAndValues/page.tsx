@@ -68,14 +68,14 @@ export default function CompetenciesAndValues() {
             transition={{
               duration: 0.8,
               ease: [0.16, 1, 0.3, 1]
-            }} className="values-title-gradient text-40 mb-5">{messages.accompanimentValue}</motion.h2>
+          }} className="values-title-gradient text-40 mb-5">Acompañamiento</motion.h2>
           <motion.p initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: false }}
             transition={{
               duration: 0.8,
               ease: [0.16, 1, 0.3, 1]
-            }} className="text-black text-lg">{messages.clientFeelings}</motion.p>
+          }} className="text-black text-lg">Nuestros clientes pueden olvidar nuestras palabras, pero nunca cómo los hicimos sentir. No es una frase bonita: es Laboratorios Chopo llevando más de 35 años con nosotros sin buscar otro bróker.</motion.p>
         </div>
         <motion.hr initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -91,14 +91,14 @@ export default function CompetenciesAndValues() {
             transition={{
               duration: 0.8,
               ease: [0.16, 1, 0.3, 1]
-            }} className="values-title-gradient text-40 mb-5">{messages.zeroFriction}</motion.h2>
+          }} className="values-title-gradient text-40 mb-5">Talento</motion.h2>
           <motion.p initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: false }}
             transition={{
               duration: 0.8,
               ease: [0.16, 1, 0.3, 1]
-            }} className="text-black text-lg">{messages.simpleAndEasy}</motion.p>
+          }} className="text-black text-lg">Lo hacemos simple y sin fricciones. Tu tiempo es lo más valioso. Nosotros llenamos los documentos; tú solo firmas.</motion.p>
         </div>
         <motion.hr initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -128,7 +128,7 @@ export default function CompetenciesAndValues() {
             transition={{
               duration: 0.8,
               ease: [0.16, 1, 0.3, 1]
-            }} className="text-black text-lg">{messages.yearsOfExperience}</motion.p>
+          }} className="text-black text-lg">Tres generaciones creciendo junto a nuestros clientes. No solo conocemos el camino: lo hemos recorrido y perfeccionado.</motion.p>
         </div>
         <div className="my-28 mb-4">
           <motion.h2 initial={{ x: -100, opacity: 0 }}

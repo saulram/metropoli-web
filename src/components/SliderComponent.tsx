@@ -36,20 +36,20 @@ const SliderComponent = () => {
 
   const texts = [
     {
-      title: messages.kickoff,
-      content: messages.kickoffDescription
+      title: '1. Kickoff — Conociéndonos a fondo.',
+      content: 'Empezamos con una conversación sincera. Queremos saber quién eres, qué haces, qué te preocupa y qué valoras. Hacemos muchas preguntas; no nos conformamos con respuestas superficiales.'
     },
     {
-      title: messages.discovery,
-      content: messages.discoveryDescription
+      title: '2. Descubrimiento — Los riesgos que no ves.',
+      content: 'Analizamos cada detalle para encontrar los riesgos invisibles. Revisamos tus pólizas actuales y te decimos qué está cubierto y qué no. Aquí no dejamos piedra sin mover.'
     },
     {
-      title: messages.implementation,
-      content: messages.implementationDescription
+      title: '3. Implementación — Tu póliza, a la medida.',
+      content: 'Tocamos la puerta de las mejores aseguradoras de México y del mundo, y negociamos condiciones, no solo precio.'
     },
     {
-      title: messages.accompaniment,
-      content: messages.accompanimentDescription
+      title: '4. Acompañamiento — Contigo, pase lo que pase.',
+      content: 'La póliza no es el final: es el inicio. Capacitaciones, renovaciones, reportes ejecutivos y, cuando algo pasa, un Socio siempre da la cara.'
     }
   ];
 

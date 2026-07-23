@@ -264,7 +264,7 @@ const ContactForm: React.FC = () => {
                             ease: [0.16, 1, 0.3, 1]
                         }}
                     >
-                        {messages.contactFormTitle}
+                        Así empieza tu camino a la tranquilidad.
                     </motion.h1>
                     <motion.p
                         className="text-[#666] mb-8 md:mb-12 text-base md:text-lg max-w-[600px] whitespace-pre-line"
@@ -276,7 +276,7 @@ const ContactForm: React.FC = () => {
                             ease: [0.16, 1, 0.3, 1]
                         }}
                     >
-                        {messages.contactFormDescription}
+                        Cuéntanos quién eres y qué te preocupa. Te vamos a hacer muchas preguntas, porque no cotizamos sin entender.{'\n\n'}Y algo importante: si después de conocernos decides quedarte con tu bróker actual, no pasa nada. Al menos te llevarás claridad sobre lo que tu póliza sí cubre… y lo que no.
                     </motion.p>
 
                     <motion.form

@@ -142,6 +142,9 @@ export const Testimonials = () => {
 
     return (
         <div className="w-full h-auto">
+            <div className="bg-[#B8CEFF] px-6 pb-8 pt-16 text-center">
+                <p className="text-2xl font-medium text-[#112039] md:text-3xl">Mejor que te lo cuente un cliente:</p>
+            </div>
             <div className="relative w-full h-auto">
                 {/* Fondo SVG */}
                 <Image
@@ -289,4 +292,4 @@ export const Testimonials = () => {
     );
 };
 
-export default Testimonials; 
+export default Testimonials;

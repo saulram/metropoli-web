@@ -42,7 +42,7 @@ export default function CompetenciesAndValues() {
               transition={{
                 duration: 0.8,
                 ease: [0.16, 1, 0.3, 1]
-              }} className="values-title-gradient text-40 md:w-2/5 mb-14">{messages.lifeComplicated}</motion.h2>
+            }} className="values-title-gradient text-40 md:w-3/5 mb-14">La vida ya es bastante complicada. Tu seguro no debería complicarla más.</motion.h2>
             <div className="grid grid-cols-3 gap-0">
               <div className=""></div>
               <div className="col-span-2">
@@ -53,7 +53,7 @@ export default function CompetenciesAndValues() {
                     duration: 0.8,
                     ease: [0.16, 1, 0.3, 1]
                   }} className=' md:w-4/5'>
-                  <DescriptiveText title={messages.deserveToBeHeard} text={messages.insuranceMaze} active={true} />
+                  <DescriptiveText title="Detrás de cada póliza hay algo importante." text="Detrás de una póliza de gastos médicos hay una familia. Detrás de un seguro de vida, un patrimonio que tomó años construir. Nos lo tomamos en serio." active={true} />
                 </motion.div>
                 <motion.div initial={{ x: -100, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
@@ -62,7 +62,7 @@ export default function CompetenciesAndValues() {
                     duration: 0.8,
                     ease: [0.16, 1, 0.3, 1]
                   }} className='mt-10 md:w-4/5'>
-                  <DescriptiveText title={messages.guaranteeFamilySafety} text={messages.sameDesire} reverse={true} />
+                  <DescriptiveText title="Todo claro, todo simple." text="Te escuchamos, te guiamos paso a paso y te explicamos todo en tu idioma. Tú dedícate a lo importante: disfrutar a tu familia." reverse={true} />
                 </motion.div>
                 <motion.div initial={{ x: -100, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
@@ -113,7 +113,7 @@ export default function CompetenciesAndValues() {
                     duration: 0.8,
                     ease: [0.16, 1, 0.3, 1]
                   }} className="text-black text-3xl md:w-2/5 md:mb-40 mb-10 z-10" >
-          <b className="values-title-gradient font-normal">{messages.differentNeeds}</b>
+          <b className="values-title-gradient font-normal">Te acompañamos en cada etapa de la vida.</b>
         </motion.p>
         <div className="stain"
           style={{

@@ -42,7 +42,7 @@ export default function CompetenciesAndValues() {
               transition={{
                 duration: 0.8,
                 ease: [0.16, 1, 0.3, 1]
-              }} className="values-title-gradient text-40 md:w-2/5 mb-14">{messages.firefighting}</motion.h2>
+            }} className="values-title-gradient text-40 md:w-3/5 mb-14">Si diriges una empresa seguramente vives apagando fuegos. El seguro no debería ser uno de ellos.</motion.h2>
             <div className="grid grid-cols-3 gap-0">
               <div className=""></div>
               <div className="col-span-2">
@@ -53,7 +53,7 @@ export default function CompetenciesAndValues() {
                     duration: 0.8,
                     ease: [0.16, 1, 0.3, 1]
                   }} className=' md:w-4/5'>
-                  <DescriptiveText title={messages.deserveToBeHeard} text={messages.weHandleFires} active={true} />
+                  <DescriptiveText title="Dormir tranquilos." text="No importa tu industria ni tu tamaño: todos los líderes buscan lo mismo. Nosotros nos encargamos del riesgo para que pongas tu energía donde deja huella: hacer crecer tu empresa." active={true} />
                 </motion.div>
                 <motion.div initial={{ x: -100, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
@@ -62,7 +62,7 @@ export default function CompetenciesAndValues() {
                     duration: 0.8,
                     ease: [0.16, 1, 0.3, 1]
                   }} className='mt-10 md:w-4/5'>
-                  <DescriptiveText title={messages.leadersSeekPeace} text={messages.marketExperience} reverse={true} />
+                  <DescriptiveText title="Un Socio, no un call center." text="Cuando un cliente tiene un siniestro, le contesta un Socio acompañado de todo el equipo. Así llevamos más de 35 años con Laboratorios Chopo y más de 20 con Grupo Avante y Mainbit." reverse={true} />
                 </motion.div>
                 <motion.div initial={{ x: -100, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
@@ -110,7 +110,7 @@ export default function CompetenciesAndValues() {
             duration: 0.8,
             ease: [0.16, 1, 0.3, 1]
           }} className="text-black text-3xl md:w-2/5 md:mb-40 mb-10 z-10" >
-          <b className="text-[#444444] font-normal">{messages.longTrajectory}</b> <b className="values-title-gradient font-normal">{messages.clientsFromAllIndustries}</b> <b className="text-[#444444] font-normal">{messages.comprehensiveInsurancePrograms}</b>
+          <b className="text-[#444444] font-normal">Gestionamos programas completos de seguros para todas las industrias.</b>
         </motion.p>
         <div className="stain"
           style={{
