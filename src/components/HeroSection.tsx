@@ -59,7 +59,7 @@ export default function HeroSection() {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.35 }}
                 >
-                    Metrópoli es el bróker donde un Socio —con nombre y apellido— está al frente de tu póliza. En la negociación, en la renovación y, sobre todo, el día del siniestro.
+                    Metrópoli es el bróker donde un Socio, con nombre y apellido, está al frente de tu póliza. En la negociación, en la renovación y, sobre todo, el día del siniestro.
                 </motion.p>
 
                 <div className="h-12"></div>
