@@ -16,8 +16,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Grupo Metrópoli - Agentes de Seguros y de Finanzas S.A. de C.V.",
-  description: "Lideres estraégicos y visionarios en momentos de tranqulidad",
+  title: "Grupo Metrópoli - Agentes de Seguros y de Fianzas",
+  description: "Nuestro propósito es Asegurar Momentos de Tranquilidad",
   manifest: "/manifest.json",
 };
 
