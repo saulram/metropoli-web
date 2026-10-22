@@ -15,9 +15,49 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const title = "Grupo Metrópoli - Agentes de Seguros y de Fianzas";
+const description = "Nuestro propósito es Asegurar Momentos de Tranquilidad";
+const canonicalOrigin = new URL("https://www.grupometropoli.com.mx");
+// Preview images must exist on the deployment being reviewed, before promotion.
+const imageOrigin = process.env.VERCEL_ENV === "preview" && process.env.VERCEL_URL
+  ? new URL(`https://${process.env.VERCEL_URL}`)
+  : canonicalOrigin;
+const socialImage = {
+  url: new URL("/social/metropoli.png", imageOrigin).href,
+  width: 1200,
+  height: 630,
+  alt: "Grupo Metrópoli. Nuestro propósito es Asegurar Momentos de Tranquilidad",
+  type: "image/png",
+};
+
 export const metadata: Metadata = {
-  title: "Grupo Metrópoli - Agentes de Seguros y de Finanzas S.A. de C.V.",
-  description: "Lideres estraégicos y visionarios en momentos de tranqulidad",
+  metadataBase: canonicalOrigin,
+  title,
+  description,
+  // Next resolves ./ against each route, preserving its canonical pathname.
+  alternates: { canonical: "./" },
+  openGraph: {
+    title,
+    description,
+    url: "./",
+    type: "website",
+    siteName: "Grupo Metrópoli",
+    locale: "es_MX",
+    images: [socialImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [socialImage],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/icons/icon-192x192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   manifest: "/manifest.json",
 };
 
